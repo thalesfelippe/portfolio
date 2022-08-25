@@ -239,10 +239,11 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .avatar-box {
-  border-radius: 30px;
+  border-radius: 50%;
   background: #0A192F;
   box-shadow:  -15px 15px 30px #060f1c,
              15px -15px 30px #0e2342;
+  overflow: hidden;
 }
 
 .experience-box {
@@ -337,7 +338,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .work-list {
-
+  margin: 100px 0;
 }
 
 .featured-work-right {
@@ -350,7 +351,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .featured-work-right:nth-of-type(2n+1) .work-content-right {
-  grid-column: 7 / -1;
+  grid-column: 8 / -1;
   text-align: right;
 }
 
@@ -388,7 +389,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   position: relative;
   z-index: 3;
   padding: 25px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #060f1c;
   color: #BAC4E3;
   font-size: 16px;
@@ -505,6 +506,177 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .work-image-right a .image-project-right img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #339989 ;
+  z-index: 1;
+}
+
+.featured-work-left {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.featured-work-left:nth-of-type(2n+1) .work-content-left {
+  grid-column: 6 / 1;
+  text-align: left;
+}
+
+.featured-work-left .work-content-left {
+  position: relative;
+  grid-area: -1 / -1 / 1 / 7;
+}
+
+.work-overline-left {
+  font-family: 'PT Mono', monospace;
+  font-weight: 400;
+  color: #00D5B5 !important;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.work-title-left {
+  color: #BAC4E3;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.work-title-left a {
+  text-decoration: none;
+  color: #BAC4E3;
+  cursor: default;
+}
+
+.work-title-left a:hover {
+  color: #BAC4E3;
+}
+
+.work-description-left {
+  box-shadow: 0 10px 30px -15px #0e2342;
+  position: relative;
+  z-index: 3;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #060f1c;
+  color: #BAC4E3;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.featured-work-left:nth-of-type(2n+1) .technology-list-left {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
+.technology-list-left {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  margin: 25px 0px 10px;
+  padding: 0px;
+  list-style: none;
+}
+
+.featured-work-left:nth-of-type(2n+1) .work-links-left {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  margin-left: 0px;
+}
+
+.work-links-left {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  color: #BAC4E3;
+}
+
+.work-links-left a {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.work-links-left svg {
+  color: #339989;
+  transition: all 0.2s ease-in-out;
+}
+
+.work-links-left svg:hover {
+  color: #00D5B5;
+}
+
+.featured-work-left:nth-of-type(2n+1) .technology-list-left li {
+    margin: 0px 20px 5px 0px;
+    color: #58657F;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.featured-work-left:nth-of-type(2n+1) .work-image-left {
+  grid-column: -1 / 7;
+}
+
+.featured-work-left .work-image-left {
+  box-shadow: 0 10px 30px -15px #58657F;
+  border-radius: 20px;
+  grid-area: 1 / 6 / 1 / 1;
+  position: relative;
+  z-index: 1;
+}
+
+.work-image-left {
+  transition: all 0.2s ease-in-out;
+}
+
+.work-image-left:hover {
+  box-shadow:
+          1px 1px #339989,
+          2px 1px #339989,
+          1px 1px #339989;
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+.work-image-left a {
+  width: 100%;
+  height: 100%;
+  background-color: #64ffda;
+  vertical-align: middle;
+  z-index: 2;
+}
+
+.work-image-left a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0px;
+  z-index: 3;
+  background-color: #00D5B5;
+  mix-blend-mode: soft-light;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.work-image-left a:hover::before {
+  opacity: 0;
+}
+
+.work-image-left a .image-project-left img {
   width: 100%;
   border-radius: 20px;
   border: 1px solid #339989 ;
