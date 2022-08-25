@@ -3,6 +3,7 @@ import Particle from './Components/Particle';
 import { NavBar } from './Components/NavBar';
 import { Intro } from './Components/Intro';
 import { About } from './Components/About';
+import { Experience } from './Components/Experience';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <Intro />
       <About />
+      <Experience />
     </div>
   );
 }
