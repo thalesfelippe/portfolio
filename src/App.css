@@ -35,6 +35,14 @@ html {
   scroll-padding-top: 75px;
 }
 
+ul {
+  list-style-type: none;
+}
+
+ol, ul {
+  padding-left: 0px !important;
+}
+
 body {
   font-weight: 400;
   overflow-x: hidden;
@@ -42,6 +50,20 @@ body {
   background-color: #0A192F;
   color: #FFF;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0A192F !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #58657F !important;
+  border-radius: 20px;
+  border: 3px solid #0A192F !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,16 +91,17 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition: 0.20 ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 nav.navbar.scrolled {
-  padding: 0px 0;
+  padding: 10px 50px;
   background-color: #0A192F;
+  transition: all 0.2s ease-in-out;
 }
 
-nav.navbar a.navbar-brand {
-  width: 5%;
+.navbar-brand img {
+  width: 50%;
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
@@ -153,6 +176,73 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .btn-blue:active {
   background-color: #00d5b570 !important;
   transition: all 0.3s ease-in-out !important;
+}
+
+.about-box {
+  margin-bottom: 150px;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.about-header h3 {
+  font-weight: 500;
+  color: #BAC4E3 !important;
+  font-size: 26px;
+  margin-right: 15px;
+}
+
+.about-header span {
+  font-family: 'PT Mono', monospace;
+  font-weight: 400;
+  color: #00D5B5 !important;
+  font-size: 24px;
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inner-info {
+  max-width: 600px;
+}
+
+.inner-info p {
+  font-weight: 400;
+  color: #BAC4E3 !important;
+  font-size: 16px;
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+}
+
+.skill-list img {
+  padding-right: 5px;
+}
+
+.skill-list li {
+  font-weight: 400;
+  color: #339989 !important;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.inner-avatar {
+  margin-right: 100px;
+}
+
+.avatar-box {
+  border-radius: 30px;
+  background: #0A192F;
+  box-shadow:  -15px 15px 30px #060f1c,
+             15px -15px 30px #0e2342;
 }
 
 .App-logo {
