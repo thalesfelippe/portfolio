@@ -738,6 +738,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: #BAC4E3;
   margin-bottom: 30px;
   max-width: 400px;
+  text-align: center;
 }
 /* Contact */
 
@@ -810,7 +811,9 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   }
 
   .experience-card-list {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .react-multiple-carousel__arrow {
@@ -879,7 +882,9 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
+  .inner-avatar {
+    margin-right: 0px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
