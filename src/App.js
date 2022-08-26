@@ -5,6 +5,8 @@ import { Intro } from './Components/Intro';
 import { About } from './Components/About';
 import { Experience } from './Components/Experience';
 import { Work } from './Components/Work';
+import { Contact } from './Components/Contact';
+import { Footer } from './Components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <About />
       <Experience />
       <Work />
+      <Contact />
+      <Footer />
     </div>
   );
 }

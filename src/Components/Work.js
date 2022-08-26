@@ -60,7 +60,7 @@ export const Work = () => {
                                     <li>JavaScript</li>
                                 </ul>
                                 <div className="work-links-left">
-                                <a href="https://thalesfelippe.github.io/PokedexJS/" alt="Website"><BsArrowUpLeftSquareFill/></a>
+                                    <a href="https://thalesfelippe.github.io/PokedexJS/" alt="Website"><BsArrowUpLeftSquareFill/></a>
                                     <a href="https://github.com/thalesfelippe/PokedexJS" alt="GitHub"><BsGithub/></a>
                                 </div>
                             </div>
