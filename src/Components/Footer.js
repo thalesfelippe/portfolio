@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import { BsGithub } from "react-icons/bs";
+import { BsFillEnvelopeFill } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 
 export const Footer = () => {
@@ -8,7 +9,8 @@ export const Footer = () => {
             <Container className="footer-box">
                 <div className="footer-socials">
                     <a href="https://github.com/thalesfelippe/" alt="GitHub"><BsGithub/></a>
-                    <a href="https://github.com/thalesfelippe/" alt="GitHub"><BsLinkedin/></a>
+                    <a href="https://github.com/thalesfelippe/" alt="Email"><BsFillEnvelopeFill/></a>
+                    <a href="https://www.linkedin.com/in/thales-felippe/" alt="Linkedin"><BsLinkedin/></a>
                 </div>
                 <div className="footer-copyright">
                     <p><a href="https://github.com/thalesfelippe">© 2022 Built by Thales Felippe.</a></p>
