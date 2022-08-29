@@ -789,6 +789,10 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  nav.navbar {
+    padding: 10px 20px;
+  }
+
   nav.navbar.scrolled {
     padding: 10px 20px;
   }
@@ -893,6 +897,74 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #0A192F;
+    opacity: 0.9;
+  }
+
+  .navbar-toggler {
+    font-size: 20px !important;
+    line-height: 1;
+    color: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  .navbar-toggler:active ,.navbar-toggler:focus {
+    border: none !important;
+    outline: none !important;
+  }
+
+  .toggler-box {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+  }
+
+  .custom-toggler {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #00D5B5;
+  }
+
+  .custom-toggler::before {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    width: 120%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #00D5B5;
+  }
+
+  .custom-toggler::after {
+    content: "";
+    display: block;
+    position: absolute;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+    width: 80%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #00D5B5;
+  }
+
+  .navbar-nav {
+    margin-top: 10px;
+    margin-right: 10px;
+    align-items: flex-end;
+  }
+
   .intro-box, .about-box, .experience-box, .work-box, .contact-box {
     padding: 0 30px;
     margin: 150px 0;

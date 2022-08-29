@@ -31,7 +31,9 @@ export const NavBar = () => {
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav">
-                <span className="navbar-toggler-icon"></span>
+                <div className="toggler-box">
+                    <div className="custom-toggler"></div>
+                </div>
             </Navbar.Toggle>
 
             <Navbar.Collapse id="basic-navbar-nav">
