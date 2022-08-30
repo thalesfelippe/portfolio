@@ -20,7 +20,7 @@ export const Work = () => {
                             <div>
                                 <p className="work-overline-right">Featured Project</p>
                                 <h3 className="work-title-right">
-                                    <a href="https://netflixclone774.netlify.app/" alt="Website">Netflix Clone</a>
+                                    <a href="https://netflixclone774.netlify.app/" target="_blank" rel="noreferrer" alt="Website">Netflix Clone</a>
                                 </h3>
                                 <div className="work-description-right">
                                     <p>A clone of Netflix made in React with the implementation of the TMDB Api for movie and series information</p>
@@ -32,13 +32,13 @@ export const Work = () => {
                                     <li>React</li>
                                 </ul>
                                 <div className="work-links-right">
-                                    <a href="https://github.com/thalesfelippe/netflixClone" alt="GitHub"><BsGithub/></a>
-                                    <a href="https://netflixclone774.netlify.app/" alt="Website"><BsArrowUpRightSquareFill/></a>
+                                    <a href="https://github.com/thalesfelippe/netflixClone" target="_blank" rel="noreferrer" alt="GitHub"><BsGithub/></a>
+                                    <a href="https://netflixclone774.netlify.app/" target="_blank" rel="noreferrer" alt="Website"><BsArrowUpRightSquareFill/></a>
                                 </div>
                             </div>
                         </div>
                         <div className="work-image-right">
-                            <a href="https://netflixclone774.netlify.app/" alt="Website">
+                            <a href="https://netflixclone774.netlify.app/" target="_blank" rel="noreferrer" alt="Website">
                                 <div className="image-project-right">
                                     <img src={netflix} alt="Project" />
                                 </div>
@@ -52,7 +52,7 @@ export const Work = () => {
                             <div>
                                 <p className="work-overline-left">Featured Project</p>
                                 <h3 className="work-title-left">
-                                    <a href="https://thalesfelippe.github.io/PokedexJS/" alt="Website">Virtual Pokedex</a>
+                                    <a href="https://thalesfelippe.github.io/PokedexJS/" target="_blank" rel="noreferrer" alt="Website">Virtual Pokedex</a>
                                 </h3>
                                 <div className="work-description-left">
                                     <p>Pokedex JS was developed from scratch in order to improve knowledge in JavaScript and CSS using a pokemon api</p>
@@ -63,13 +63,13 @@ export const Work = () => {
                                     <li>JavaScript</li>
                                 </ul>
                                 <div className="work-links-left">
-                                    <a href="https://thalesfelippe.github.io/PokedexJS/" alt="Website"><BsArrowUpLeftSquareFill/></a>
-                                    <a href="https://github.com/thalesfelippe/PokedexJS" alt="GitHub"><BsGithub/></a>
+                                    <a href="https://thalesfelippe.github.io/PokedexJS/" target="_blank" rel="noreferrer" alt="Website"><BsArrowUpLeftSquareFill/></a>
+                                    <a href="https://github.com/thalesfelippe/PokedexJS" target="_blank" rel="noreferrer" alt="GitHub"><BsGithub/></a>
                                 </div>
                             </div>
                         </div>
                         <div className="work-image-left">
-                            <a href="https://thalesfelippe.github.io/PokedexJS/" alt="Website">
+                            <a href="https://thalesfelippe.github.io/PokedexJS/" target="_blank" rel="noreferrer" alt="Website">
                                 <div className="image-project-left">
                                     <img src={virtualpokedex} alt="project" />
                                 </div>
@@ -83,7 +83,7 @@ export const Work = () => {
                             <div>
                                 <p className="work-overline-right">Featured Project</p>
                                 <h3 className="work-title-right">
-                                    <a href="https://dragonfinance.netlify.app/" alt="Website">Expense Tracker</a>
+                                    <a href="https://dragonfinance.netlify.app/" target="_blank" rel="noreferrer" alt="Website">Expense Tracker</a>
                                 </h3>
                                 <div className="work-description-right">
                                     <p>The personal finance system was developed with the aim of improving knowledge in React and Typescript</p>
@@ -94,13 +94,13 @@ export const Work = () => {
                                     <li>JavaScript</li>
                                 </ul>
                                 <div className="work-links-right">
-                                    <a href="https://github.com/thalesfelippe/expense-tracker" alt="GitHub"><BsGithub/></a>
-                                    <a href="https://dragonfinance.netlify.app/" alt="Website"><BsArrowUpRightSquareFill/></a>
+                                    <a href="https://github.com/thalesfelippe/expense-tracker" target="_blank" rel="noreferrer" alt="GitHub"><BsGithub/></a>
+                                    <a href="https://dragonfinance.netlify.app/" target="_blank" rel="noreferrer" alt="Website"><BsArrowUpRightSquareFill/></a>
                                 </div>
                             </div>
                         </div>
                         <div className="work-image-right">
-                            <a href="https://dragonfinance.netlify.app/" alt="Website">
+                            <a href="https://dragonfinance.netlify.app/" target="_blank" rel="noreferrer" alt="Website">
                                 <div className="image-project-right">
                                     <img src={expensetracker} alt="Project" />
                                 </div>
@@ -114,7 +114,7 @@ export const Work = () => {
                             <div>
                                 <p className="work-overline-left">Featured Project</p>
                                 <h3 className="work-title-left">
-                                    <a href="https://thalesfelippe.github.io/LevelUp-app-page/" alt="Website">LevelUp APP</a>
+                                    <a href="https://thalesfelippe.github.io/LevelUp-app-page/" target="_blank" rel="noreferrer" alt="Website">LevelUp APP</a>
                                 </h3>
                                 <div className="work-description-left">
                                     <p>Level Up is a project developed thinking about responsiveness and the use of dark-mode</p>
@@ -125,13 +125,13 @@ export const Work = () => {
                                     <li>JavaScript</li>
                                 </ul>
                                 <div className="work-links-left">
-                                    <a href="https://thalesfelippe.github.io/LevelUp-app-page/" alt="Website"><BsArrowUpLeftSquareFill/></a>
-                                    <a href="https://github.com/thalesfelippe/LevelUp-app-page" alt="GitHub"><BsGithub/></a>
+                                    <a href="https://thalesfelippe.github.io/LevelUp-app-page/" target="_blank" rel="noreferrer" alt="Website"><BsArrowUpLeftSquareFill/></a>
+                                    <a href="https://github.com/thalesfelippe/LevelUp-app-page" target="_blank" rel="noreferrer" alt="GitHub"><BsGithub/></a>
                                 </div>
                             </div>
                         </div>
                         <div className="work-image-left">
-                            <a href="https://thalesfelippe.github.io/LevelUp-app-page/" alt="Website">
+                            <a href="https://thalesfelippe.github.io/LevelUp-app-page/" target="_blank" rel="noreferrer" alt="Website">
                                 <div className="image-project-left">
                                     <img src={levelup} alt="project" />
                                 </div>

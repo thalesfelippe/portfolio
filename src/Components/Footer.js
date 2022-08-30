@@ -8,12 +8,12 @@ export const Footer = () => {
         <footer className="footer">
             <Container className="footer-box">
                 <div className="footer-socials">
-                    <a href="https://github.com/thalesfelippe/" alt="GitHub"><BsGithub/></a>
-                    <a href="https://github.com/thalesfelippe/" alt="Email"><BsFillEnvelopeFill/></a>
-                    <a href="https://www.linkedin.com/in/thales-felippe/" alt="Linkedin"><BsLinkedin/></a>
+                    <a href="https://github.com/thalesfelippe/" target="_blank" rel="noreferrer" alt="GitHub"><BsGithub/></a>
+                    <a href="mailto:thales.dev.flp@gmail.com" target="_blank" rel="noreferrer" alt="Email"><BsFillEnvelopeFill/></a>
+                    <a href="https://www.linkedin.com/in/thales-felippe/" target="_blank" rel="noreferrer" alt="Linkedin"><BsLinkedin/></a>
                 </div>
                 <div className="footer-copyright">
-                    <p><a href="https://github.com/thalesfelippe">© 2022 Built by Thales Felippe.</a></p>
+                    <p><a href="https://github.com/thalesfelippe" target="_blank" rel="noreferrer" alt="Copyright">© 2022 Built by Thales Felippe.</a></p>
                 </div>
             </Container>
         </footer>

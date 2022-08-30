@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <Particle></Particle>
+      <Particle />
       <NavBar />
       <Intro />
       <About />
