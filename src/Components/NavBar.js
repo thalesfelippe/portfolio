@@ -32,7 +32,7 @@ export const NavBar = () => {
                 <img src={logo} alt="Logo" />
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")}>
+            <Navbar.Toggle aria-controls="basic-navbar-nav">
                 <div className="toggler-box">
                     <div className="custom-toggler"></div>
                 </div>
