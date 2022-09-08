@@ -24,13 +24,15 @@ export const NavBar = () => {
         setActiveLink(value);
     }
 
+    const [expanded, setExpanded] = useState(false);
+
     return (
-        <Navbar expand="md" className={scrolled ? "scrolled": ""}>
+        <Navbar expand="md" className={scrolled ? "scrolled": ""} expanded={expanded}>
             <Navbar.Brand href="/">
                 <img src={logo} alt="Logo" />
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls="basic-navbar-nav">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : "expanded")}>
                 <div className="toggler-box">
                     <div className="custom-toggler"></div>
                 </div>
@@ -38,10 +40,10 @@ export const NavBar = () => {
 
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
-                    <Nav.Link href="#about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')} ><span>01.</span> About</Nav.Link>
-                    <Nav.Link href="#experience" className={activeLink === 'experience' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('experience')} ><span>02.</span> Experience</Nav.Link>
-                    <Nav.Link href="#work" className={activeLink === 'work' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('work')} ><span>03.</span> Work</Nav.Link>
-                    <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')} ><span>04.</span> Contact</Nav.Link>
+                    <Nav.Link href="#about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('about'); setExpanded(false)}} ><span>01.</span> About</Nav.Link>
+                    <Nav.Link href="#experience" className={activeLink === 'experience' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('experience'); setExpanded(false)}} ><span>02.</span> Experience</Nav.Link>
+                    <Nav.Link href="#work" className={activeLink === 'work' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('work'); setExpanded(false)}} ><span>03.</span> Work</Nav.Link>
+                    <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => {onUpdateActiveLink('contact'); setExpanded(false)}} ><span>04.</span> Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
