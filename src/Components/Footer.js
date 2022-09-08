@@ -9,11 +9,12 @@ export const Footer = () => {
             <Container className="footer-box">
                 <div className="footer-socials">
                     <a href="https://github.com/thalesfelippe/" target="_blank" rel="noreferrer" alt="GitHub"><BsGithub/></a>
-                    <a href="mailto:thales.dev.flp@gmail.com" target="_blank" rel="noreferrer" alt="Email" onClick={() => window.open("https://mail.google.com/mail/u/0/?fs=1&to=thales.dev.flp@gmail.com&su=I%20arrived%20through%20your%20portfolio&body=Hi&bcc=&tf=cm", "Popup")}><BsFillEnvelopeFill/></a>
+                    <a href="mailto:thales.dev.flp@gmail.com" rel="noreferrer" alt="Email" onClick={() => window.open("https://mail.google.com/mail/u/0/?fs=1&to=thales.dev.flp@gmail.com&su=I%20arrived%20through%20your%20portfolio&body=Hi&bcc=&tf=cm", "Popup", "_top")}><BsFillEnvelopeFill/></a>
                     <a href="https://www.linkedin.com/in/thales-felippe/" target="_blank" rel="noreferrer" alt="Linkedin"><BsLinkedin/></a>
                 </div>
                 <div className="footer-copyright">
                     <p><a href="https://github.com/thalesfelippe" target="_blank" rel="noreferrer" alt="Copyright">© 2022 Built by Thales Felippe.</a></p>
+                    <p><a href="mailto:thales.dev.flp@gmail.com" rel="noreferrer" alt="Email" onClick={() => window.open("https://mail.google.com/mail/u/0/?fs=1&to=thales.dev.flp@gmail.com&su=I%20arrived%20through%20your%20portfolio&body=Hi&bcc=&tf=cm", "Popup", "_top")}>thales.dev.flp@gmail.com</a></p>
                 </div>
             </Container>
         </footer>

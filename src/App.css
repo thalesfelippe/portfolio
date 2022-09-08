@@ -782,7 +782,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .footer-socials {
-  margin-top: 100px;
+  margin: 50px 0;
 }
 
 .footer-socials a {
@@ -800,13 +800,18 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .footer-copyright {
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }
 
 .footer-copyright p a {
   font-weight: 400;
   color: #BAC4E3;
+  text-align: center;
   text-decoration: none;
+  margin-top: 20px;
 }
 /* Footer */
 
