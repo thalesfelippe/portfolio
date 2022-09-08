@@ -1,15 +1,14 @@
-
 <h1 align="center">
   <p>Portfolio</p>
 </h1>
 
 <h1 align="center">
-<img src="https://i.imgur.com/dihJ4NE.png"
+<img src="https://i.imgur.com/XU9dYMi.png"
   />
 </h1>
 
 <h2 align="center">
-  <a href="https://thalesfelippe-portfolio.netlify.app/" target="_blank">See the site</a>
+  <a href="https://thalesfelippe.netlify.app/" target="_blank">See the site</a>
 </h2>
 
 ## 🧾 About
