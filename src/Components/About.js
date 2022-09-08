@@ -17,7 +17,7 @@ export const About = () => {
                         interest in web development started in 2020, when I saw a friend 
                         working on a project, after an incentive from him I started in the 
                         programming world.</p>
-                        <p>Fast forward to today, I had the privilege of working at a technology 
+                        <p>Fast forward to 2021, I had the privilege of working at a technology 
                         start-up called ARTLAB, which focused on being an accelerator 
                         supporting other companies to reach their break even.</p>
                         <p>My focus today is to improve my knowledge and find a new 
