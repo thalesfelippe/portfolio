@@ -17,7 +17,7 @@ export const Intro = () => {
                     <h4 className="white-text-light">I’m a self-taught student, that has been working as a Front-End developer since 2021.</h4>
                 </div>
                 <div>
-                    <button onClick={()=> window.open("https://drive.google.com/file/d/1SZekjN34MNPuXvrNWsqUOHSHputG-HqF/view", "_blank")} className="btn btn-blue">Resume</button>
+                    <button onClick={()=> window.open("https://drive.google.com/file/d/1QxObqz3gsI_BixN9XoAeEbbbSK6a-uGc/view", "_blank")} className="btn btn-blue">Resume</button>
                 </div>
             </Container>
         </section>
