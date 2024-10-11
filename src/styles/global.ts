@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     background-color: #0a192f;
     color: #ccd6f6;
+    overflow: hidden;
   }
 
   a {

@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const FooterSection = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 60px 20px;
   background-color: #0a192f;
+  color: white;
+  height: 20vh;
+  font-size: 36px;
 `;

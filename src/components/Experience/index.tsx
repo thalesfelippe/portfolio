@@ -1,9 +1,18 @@
 import * as S from './styles';
 
-const Experience = () => {
+interface ExperienceProps {
+  scrollToSection: (section: string) => void;
+}
+
+const Experience: React.FC<ExperienceProps> = ({ scrollToSection }) => {
   return (
     <S.ExperienceSection>
-      Experiencia
+      Experiência
+      <S.ScrollIndicator>
+        <div onClick={() => scrollToSection('contact')}>
+          <S.ScrollArrow />
+        </div>
+      </S.ScrollIndicator>
     </S.ExperienceSection>
   );
 };

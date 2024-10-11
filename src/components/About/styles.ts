@@ -1,18 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const AboutSection = styled.section`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 0 20px;
   background-color: #0a192f;
-  height: 500px;
+  height: 100vh;
+  position: relative;
 `;
 
 export const TextContainer = styled.div`
-  flex: 1;
-  margin-right: 20px;
   color: #ccd6f6;
+  margin-bottom: 40px;
   
   h2 {
     font-size: 36px;
@@ -24,19 +25,32 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const ModelContainer = styled.div`
-  flex: 1;
-  max-width: 800px;
-  height: 100%;
-  
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
   }
 `;
 
-export const SketchfabEmbedWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+export const ScrollIndicator = styled.div`
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const ScrollArrow = styled.div`
+  width: 24px;
+  height: 24px;
+  border-left: 2px solid #64ffda;
+  border-bottom: 2px solid #64ffda;
+  transform: rotate(45deg);
+  animation: ${bounce} 2s infinite;
 `;
