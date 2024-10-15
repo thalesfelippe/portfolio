@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { Element, scroller } from 'react-scroll';
 import Header from './components/Header';
 import About from './components/About';
-import Projects from './components/Projects';
+import Home from './components/Home';
+import Services from './components/Services';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -20,7 +21,7 @@ function App() {
   const [currentSection, setCurrentSection] = useState<string>('about');
   const scrolling = useRef<boolean>(false);
 
-  const sections: string[] = ['about', 'projects', 'experience', 'contact'];
+  const sections: string[] = ['home', 'about', 'experience', 'services', 'contact'];
 
   const handleScroll = (e: WheelEvent) => {
     if (scrolling.current) return;
@@ -72,14 +73,17 @@ function App() {
     <>
       <GlobalStyle />
       <Header scrollToSection={scrollToSection} />
+      <Element name="home">
+        <Home scrollToSection={scrollToSection} />
+      </Element>
       <Element name="about">
         <About scrollToSection={scrollToSection} />
       </Element>
-      <Element name="projects">
-        <Projects scrollToSection={scrollToSection} />
-      </Element>
       <Element name="experience">
         <Experience scrollToSection={scrollToSection} />
+      </Element>
+      <Element name="services">
+        <Services scrollToSection={scrollToSection} />
       </Element>
       <Element name="contact">
         <Contact />

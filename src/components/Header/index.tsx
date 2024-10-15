@@ -21,8 +21,36 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
             onMouseLeave={() => setHoveredIndex(null)}
           >
             <S.Tooltip onClick={() => {
-              scrollToSection('about');
+              scrollToSection('home');
               handleSetActive(0);
+            }}>
+              Home
+            </S.Tooltip>
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              activeClass="active"
+              spyThrottle={100}
+              onSetActive={() => handleSetActive(0)}
+              className={activeIndex === 0 ? 'active' : ''}
+              onClick={() => {
+                scrollToSection('home');
+                handleSetActive(0);
+              }}
+            >
+              00.
+            </Link>
+          </S.NavItem>
+
+          <S.NavItem
+            onMouseEnter={() => setHoveredIndex(1)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <S.Tooltip onClick={() => {
+              scrollToSection('about');
+              handleSetActive(1);
             }}>
               About
             </S.Tooltip>
@@ -33,41 +61,13 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
               spy={true}
               activeClass="active"
               spyThrottle={100}
-              onSetActive={() => handleSetActive(0)}
-              className={activeIndex === 0 ? 'active' : ''}
-              onClick={() => {
-                scrollToSection('about');
-                handleSetActive(0);
-              }}
-            >
-              00
-            </Link>
-          </S.NavItem>
-
-          <S.NavItem
-            onMouseEnter={() => setHoveredIndex(1)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <S.Tooltip onClick={() => {
-              scrollToSection('projects');
-              handleSetActive(1);
-            }}>
-              Projects
-            </S.Tooltip>
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              spy={true}
-              activeClass="active"
-              spyThrottle={100}
               onSetActive={() => handleSetActive(1)}
               onClick={() => {
-                scrollToSection('projects');
+                scrollToSection('about');
                 handleSetActive(1);
               }}
             >
-              01
+              01.
             </Link>
           </S.NavItem>
 
@@ -94,7 +94,7 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
                 handleSetActive(2);
               }}
             >
-              02
+              02.
             </Link>
           </S.NavItem>
 
@@ -103,8 +103,37 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
             onMouseLeave={() => setHoveredIndex(null)}
           >
             <S.Tooltip onClick={() => {
-              scrollToSection('contact');
+              scrollToSection('projects');
               handleSetActive(3);
+            }}>
+              Services
+            </S.Tooltip>
+            <Link
+              to="services"
+              smooth={true}
+              duration={500}
+              spy={true}
+              activeClass="active"
+              spyThrottle={100}
+              onSetActive={() => handleSetActive(3)}
+              onClick={() => {
+                scrollToSection('services');
+                handleSetActive(3);
+              }}
+            >
+              03.
+            </Link>
+          </S.NavItem>
+
+          
+
+          <S.NavItem
+            onMouseEnter={() => setHoveredIndex(4)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <S.Tooltip onClick={() => {
+              scrollToSection('contact');
+              handleSetActive(4);
             }}>
               Contact
             </S.Tooltip>
@@ -115,13 +144,13 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
               spy={true}
               activeClass="active"
               spyThrottle={100}
-              onSetActive={() => handleSetActive(3)}
+              onSetActive={() => handleSetActive(4)}
               onClick={() => {
                 scrollToSection('contact');
-                handleSetActive(3);
+                handleSetActive(4);
               }}
             >
-              03
+              04.
             </Link>
           </S.NavItem>
 

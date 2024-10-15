@@ -9,7 +9,7 @@ const Experience: React.FC<ExperienceProps> = ({ scrollToSection }) => {
     <S.ExperienceSection>
       Experiência
       <S.ScrollIndicator>
-        <div onClick={() => scrollToSection('contact')}>
+        <div onClick={() => scrollToSection('services')}>
           <S.ScrollArrow />
         </div>
       </S.ScrollIndicator>

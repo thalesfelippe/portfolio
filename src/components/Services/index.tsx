@@ -1,20 +1,20 @@
 import * as S from './styles';
 
-interface ProjectsProps {
+interface ServicesProps {
   scrollToSection: (section: string) => void;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ scrollToSection }) => {
+const Services: React.FC<ServicesProps> = ({ scrollToSection }) => {
   return (
-    <S.ProjectsSection>
-      Projetos
+    <S.ServicesSection>
+      Services
       <S.ScrollIndicator>
         <div onClick={() => scrollToSection('experience')}>
           <S.ScrollArrow />
         </div>
       </S.ScrollIndicator>
-    </S.ProjectsSection>
+    </S.ServicesSection>
   );
 };
 
-export default Projects;
+export default Services;

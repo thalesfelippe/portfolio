@@ -7,10 +7,7 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ scrollToSection }) => {
   return (
     <S.AboutSection>
-      <S.TextContainer>
-        <h2>Sobre Mim</h2>
-        <p>Sou um desenvolvedor front-end...</p>
-      </S.TextContainer>
+      About
       <S.ScrollIndicator>
         <div onClick={() => scrollToSection('projects')}>
           <S.ScrollArrow />

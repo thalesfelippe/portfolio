@@ -96,7 +96,7 @@ export const ActiveIndicator = styled.div<{ activeIndex: number; hoveredIndex: n
   position: absolute;
   right: 0;
   width: 4px;
-  height: 40px;
+  height: 38px;
   background-color: #64ffda;
   transition: top 0.3s ease;
   z-index: 1;

@@ -1,14 +1,28 @@
 import styled, { keyframes } from 'styled-components';
 
-export const ProjectsSection = styled.section`
+export const HomeSection = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
   background-color: #0a192f;
-  color: white;
   height: 100vh;
-  font-size: 36px;
   position: relative;
+`;
+
+export const TextContainer = styled.div`
+  color: #ccd6f6;
+  margin-bottom: 40px;
+  
+  h2 {
+    font-size: 36px;
+    color: #64ffda;
+  }
+
+  p {
+    font-size: 18px;
+  }
 `;
 
 const bounce = keyframes`
