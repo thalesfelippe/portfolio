@@ -8,10 +8,8 @@ const Services: React.FC<ServicesProps> = ({ scrollToSection }) => {
   return (
     <S.ServicesSection>
       Services
-      <S.ScrollIndicator>
-        <div onClick={() => scrollToSection('experience')}>
-          <S.ScrollArrow />
-        </div>
+      <S.ScrollIndicator onClick={() => scrollToSection('contact')}>
+        <S.MouseIndicator />
       </S.ScrollIndicator>
     </S.ServicesSection>
   );

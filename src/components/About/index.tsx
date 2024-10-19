@@ -8,10 +8,8 @@ const About: React.FC<AboutProps> = ({ scrollToSection }) => {
   return (
     <S.AboutSection>
       About
-      <S.ScrollIndicator>
-        <div onClick={() => scrollToSection('projects')}>
-          <S.ScrollArrow />
-        </div>
+      <S.ScrollIndicator onClick={() => scrollToSection('experience')}>
+        <S.MouseIndicator />
       </S.ScrollIndicator>
     </S.AboutSection>
   );

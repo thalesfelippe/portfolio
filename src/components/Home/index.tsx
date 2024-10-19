@@ -11,10 +11,8 @@ const Home: React.FC<HomeProps> = ({ scrollToSection }) => {
         <h2>Sobre Mim</h2>
         <p>Sou um desenvolvedor front-end...</p>
       </S.TextContainer>
-      <S.ScrollIndicator>
-        <div onClick={() => scrollToSection('about')}>
-          <S.ScrollArrow />
-        </div>
+      <S.ScrollIndicator onClick={() => scrollToSection('about')}>
+        <S.MouseIndicator />
       </S.ScrollIndicator>
     </S.HomeSection>
   );

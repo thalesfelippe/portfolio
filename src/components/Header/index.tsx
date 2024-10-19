@@ -125,8 +125,6 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
             </Link>
           </S.NavItem>
 
-          
-
           <S.NavItem
             onMouseEnter={() => setHoveredIndex(4)}
             onMouseLeave={() => setHoveredIndex(null)}
