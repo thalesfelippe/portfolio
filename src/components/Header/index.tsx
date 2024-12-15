@@ -13,7 +13,7 @@ const Header = ({ scrollToSection }: { scrollToSection: (section: string) => voi
 
   return (
     <S.HeaderContainer>
-      <S.Logo>Thales.dev</S.Logo>
+      <S.Logo>Thales Felippe</S.Logo>
       <S.NavigationWrapper>
         <S.Navigation>
           <S.NavItem
