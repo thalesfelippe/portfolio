@@ -6,6 +6,6 @@ export const ContactSection = styled.section`
   align-items: center;
   background-color: #0a192f;
   color: white;
-  height: 80vh;
+  height: 70vh;
   font-size: 36px;
 `;
