@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { BsFillCupFill } from "react-icons/bs";
+import { BsFillCupFill, BsWhatsapp } from "react-icons/bs";
 import { MdEmail } from 'react-icons/md';
 
 const Footer = () => {
@@ -32,6 +32,12 @@ const Footer = () => {
           <a href="mailto:thales.dev.flp@gmail.com" target="_blank" rel="noopener noreferrer">
             <S.FooterSocialCircle>
               <MdEmail />
+            </S.FooterSocialCircle>
+          </a>
+
+          <a href="https://wa.link/ayjl3y" target="_blank" rel="noopener noreferrer">
+            <S.FooterSocialCircle>
+              <BsWhatsapp />
             </S.FooterSocialCircle>
           </a>
           
