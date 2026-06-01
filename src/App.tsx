@@ -9,7 +9,13 @@ import { translations } from './i18n/translations'
 
 type Theme = 'light' | 'dark'
 
-function getInitialTheme(): Theme {
+const themeStorageKey = 'portfolio-theme'
+
+function isTheme(value: string | null): value is Theme {
+  return value === 'light' || value === 'dark'
+}
+
+function getSystemTheme(): Theme {
   if (typeof window === 'undefined') {
     return 'light'
   }
@@ -19,9 +25,20 @@ function getInitialTheme(): Theme {
     : 'light'
 }
 
+function getSavedTheme(): Theme | null {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  const savedTheme = window.localStorage.getItem(themeStorageKey)
+  return isTheme(savedTheme) ? savedTheme : null
+}
+
 function App() {
   const [language, setLanguage] = useState<Language>('pt')
-  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+  const [systemTheme, setSystemTheme] = useState<Theme>(getSystemTheme)
+  const [themeOverride, setThemeOverride] = useState<Theme | null>(getSavedTheme)
+  const theme = themeOverride ?? systemTheme
   const t = useMemo(() => translations[language], [language])
 
   useEffect(() => {
@@ -29,7 +46,22 @@ function App() {
   }, [language])
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+    function handleSystemThemeChange(event: MediaQueryListEvent) {
+      setSystemTheme(event.matches ? 'dark' : 'light')
+    }
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange)
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleSystemThemeChange)
+    }
+  }, [])
+
+  useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
+    document.documentElement.dataset.theme = theme
   }, [theme])
 
   return (
@@ -40,9 +72,11 @@ function App() {
           onLanguageChange={() =>
             setLanguage((current) => (current === 'pt' ? 'en' : 'pt'))
           }
-          onThemeChange={() =>
-            setTheme((current) => (current === 'light' ? 'dark' : 'light'))
-          }
+          onThemeChange={() => {
+            const nextTheme = theme === 'light' ? 'dark' : 'light'
+            window.localStorage.setItem(themeStorageKey, nextTheme)
+            setThemeOverride(nextTheme)
+          }}
           theme={theme}
         />
       }

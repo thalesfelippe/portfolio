@@ -8,6 +8,25 @@
       name="description"
       content="Professional portfolio of Thales Felippe, Full Stack Developer."
     />
+    <script>
+      try {
+        const savedTheme = window.localStorage.getItem('portfolio-theme')
+        const systemPrefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        const theme =
+          savedTheme === 'light' || savedTheme === 'dark'
+            ? savedTheme
+            : systemPrefersDark
+              ? 'dark'
+              : 'light'
+
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+        document.documentElement.dataset.theme = theme
+      } catch {
+        document.documentElement.dataset.theme = 'light'
+      }
+    </script>
     <title>Thales Felippe | Full Stack Developer</title>
   </head>
   <body>
