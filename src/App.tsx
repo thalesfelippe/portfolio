@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { ContactLinks } from './components/ContactLinks'
 import { Hero } from './components/Hero'
+import { LanguageTransitionText } from './components/LanguageTransitionText'
 import { Layout } from './components/Layout'
 import { SiteHeader } from './components/SiteHeader'
 import { Card, SectionTitle } from './components/ui'
@@ -98,8 +99,28 @@ function App() {
           <Card>
             <SectionTitle
               id="status-title"
-              subtitle={t.statusText}
-              title={t.statusTitle}
+              subtitle={
+                <LanguageTransitionText
+                  as="span"
+                  mode="fade"
+                  reserveText={[
+                    translations.en.statusText,
+                    translations.pt.statusText,
+                  ]}
+                  text={t.statusText}
+                />
+              }
+              title={
+                <LanguageTransitionText
+                  as="span"
+                  reserveText={[
+                    translations.en.statusTitle,
+                    translations.pt.statusTitle,
+                  ]}
+                  speed={12}
+                  text={t.statusTitle}
+                />
+              }
             />
           </Card>
         </section>

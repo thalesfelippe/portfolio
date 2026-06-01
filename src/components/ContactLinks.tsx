@@ -1,6 +1,7 @@
 import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
+import { LanguageTransitionText } from './LanguageTransitionText'
 import { Card, SectionTitle } from './ui'
 
 type ContactLinksProps = {
@@ -35,8 +36,28 @@ export function ContactLinks({ language }: ContactLinksProps) {
     <section aria-labelledby="contact-title" className="grid gap-5">
       <SectionTitle
         id="contact-title"
-        subtitle={t.contactSubtitle}
-        title={t.contactTitle}
+        subtitle={
+          <LanguageTransitionText
+            as="span"
+            mode="fade"
+            reserveText={[
+              translations.en.contactSubtitle,
+              translations.pt.contactSubtitle,
+            ]}
+            text={t.contactSubtitle}
+          />
+        }
+        title={
+          <LanguageTransitionText
+            as="span"
+            reserveText={[
+              translations.en.contactTitle,
+              translations.pt.contactTitle,
+            ]}
+            speed={12}
+            text={t.contactTitle}
+          />
+        }
       />
       <ul className="grid gap-3 sm:grid-cols-3">
         {contactItems.map((item) => (

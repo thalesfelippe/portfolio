@@ -1,6 +1,7 @@
 import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
+import { LanguageTransitionText } from './LanguageTransitionText'
 import { Badge, Button } from './ui'
 
 type HeroProps = {
@@ -22,15 +23,28 @@ export function Hero({ language }: HeroProps) {
             {profile.role}
           </p>
         </div>
-        <p className="max-w-3xl text-balance text-2xl font-medium leading-tight text-dark-text dark:text-slate-100 sm:text-3xl">
-          {t.headline}
-        </p>
-        <p className="max-w-2xl text-base leading-7 text-muted-text dark:text-slate-300 sm:text-lg">
-          {t.summary}
-        </p>
+        <LanguageTransitionText
+          ariaLive="polite"
+          as="p"
+          className="max-w-3xl text-balance text-2xl font-medium leading-tight text-dark-text dark:text-slate-100 sm:text-3xl"
+          reserveText={[translations.en.headline, translations.pt.headline]}
+          showCursor
+          speed={14}
+          text={t.headline}
+        />
+        <LanguageTransitionText
+          as="p"
+          className="max-w-2xl text-base leading-7 text-muted-text dark:text-slate-300 sm:text-lg"
+          mode="fade"
+          reserveText={[translations.en.summary, translations.pt.summary]}
+          text={t.summary}
+        />
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Button href={`mailto:${profile.email}`}>{t.email}</Button>
+          <Button className="min-w-28" href={`mailto:${profile.email}`}>
+            {t.email}
+          </Button>
           <Button
+            className="min-w-28"
             href={profile.links.github}
             rel="noreferrer"
             target="_blank"

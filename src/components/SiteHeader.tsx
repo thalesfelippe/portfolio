@@ -44,7 +44,7 @@ export function SiteHeader({
           theme={theme}
         />
         <Button
-          className="h-10 px-4"
+          className="h-10 min-w-28 px-4"
           href={profile.links.linkedin}
           rel="noreferrer"
           target="_blank"
