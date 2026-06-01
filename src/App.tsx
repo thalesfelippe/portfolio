@@ -1,10 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { About } from './components/About'
 import { ContactLinks } from './components/ContactLinks'
 import { Hero } from './components/Hero'
-import { LanguageTransitionText } from './components/LanguageTransitionText'
 import { Layout } from './components/Layout'
 import { SiteHeader } from './components/SiteHeader'
-import { Card, SectionTitle } from './components/ui'
 import {
   defaultLanguage,
   getSavedLanguage,
@@ -12,7 +11,6 @@ import {
   languageStorageKey,
   type Language,
 } from './i18n/languages'
-import { translations } from './i18n/translations'
 
 type Theme = 'light' | 'dark'
 
@@ -48,7 +46,6 @@ function App() {
   const [systemTheme, setSystemTheme] = useState<Theme>(getSystemTheme)
   const [themeOverride, setThemeOverride] = useState<Theme | null>(getSavedTheme)
   const theme = themeOverride ?? systemTheme
-  const t = useMemo(() => translations[language], [language])
 
   useEffect(() => {
     document.documentElement.lang = htmlLanguageByCode[language]
@@ -94,36 +91,8 @@ function App() {
     >
       <Hero language={language} />
       <div className="grid gap-8 pb-12 lg:pb-16">
+        <About language={language} />
         <ContactLinks language={language} />
-        <section aria-labelledby="status-title">
-          <Card>
-            <SectionTitle
-              id="status-title"
-              subtitle={
-                <LanguageTransitionText
-                  as="span"
-                  mode="fade"
-                  reserveText={[
-                    translations.en.statusText,
-                    translations.pt.statusText,
-                  ]}
-                  text={t.statusText}
-                />
-              }
-              title={
-                <LanguageTransitionText
-                  as="span"
-                  reserveText={[
-                    translations.en.statusTitle,
-                    translations.pt.statusTitle,
-                  ]}
-                  speed={12}
-                  text={t.statusTitle}
-                />
-              }
-            />
-          </Card>
-        </section>
       </div>
     </Layout>
   )

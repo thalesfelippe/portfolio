@@ -33,7 +33,7 @@ export function ContactLinks({ language }: ContactLinksProps) {
   const t = translations[language]
 
   return (
-    <section aria-labelledby="contact-title" className="grid gap-5">
+    <section aria-labelledby="contact-title" className="grid gap-5" id="contact">
       <SectionTitle
         id="contact-title"
         subtitle={
