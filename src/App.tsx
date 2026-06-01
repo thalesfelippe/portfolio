@@ -4,7 +4,13 @@ import { Hero } from './components/Hero'
 import { Layout } from './components/Layout'
 import { SiteHeader } from './components/SiteHeader'
 import { Card, SectionTitle } from './components/ui'
-import type { Language } from './i18n/translations'
+import {
+  defaultLanguage,
+  getSavedLanguage,
+  htmlLanguageByCode,
+  languageStorageKey,
+  type Language,
+} from './i18n/languages'
 import { translations } from './i18n/translations'
 
 type Theme = 'light' | 'dark'
@@ -35,14 +41,18 @@ function getSavedTheme(): Theme | null {
 }
 
 function App() {
-  const [language, setLanguage] = useState<Language>('pt')
+  const [language, setLanguage] = useState<Language>(
+    () => getSavedLanguage() ?? defaultLanguage,
+  )
   const [systemTheme, setSystemTheme] = useState<Theme>(getSystemTheme)
   const [themeOverride, setThemeOverride] = useState<Theme | null>(getSavedTheme)
   const theme = themeOverride ?? systemTheme
   const t = useMemo(() => translations[language], [language])
 
   useEffect(() => {
-    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en'
+    document.documentElement.lang = htmlLanguageByCode[language]
+    document.documentElement.dataset.language = language
+    window.localStorage.setItem(languageStorageKey, language)
   }, [language])
 
   useEffect(() => {
@@ -70,7 +80,7 @@ function App() {
         <SiteHeader
           language={language}
           onLanguageChange={() =>
-            setLanguage((current) => (current === 'pt' ? 'en' : 'pt'))
+            setLanguage((current) => (current === 'en' ? 'pt' : 'en'))
           }
           onThemeChange={() => {
             const nextTheme = theme === 'light' ? 'dark' : 'light'
