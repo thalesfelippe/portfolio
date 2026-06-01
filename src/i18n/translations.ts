@@ -3,9 +3,13 @@ export type Language = 'pt' | 'en'
 export const translations = {
   pt: {
     languageName: 'Português',
+    languageToggleLabel: 'Alternar idioma',
     switchLanguage: 'English',
     themeLight: 'Claro',
     themeDark: 'Escuro',
+    themeSwitchToLight: 'Alternar para tema claro',
+    themeSwitchToDark: 'Alternar para tema escuro',
+    resume: 'Currículo',
     introLabel: 'Portfólio profissional',
     headline: 'Construindo software web confiável e manutenível.',
     summary:
@@ -25,9 +29,13 @@ export const translations = {
   },
   en: {
     languageName: 'English',
+    languageToggleLabel: 'Switch language',
     switchLanguage: 'Português',
     themeLight: 'Light',
     themeDark: 'Dark',
+    themeSwitchToLight: 'Switch to light theme',
+    themeSwitchToDark: 'Switch to dark theme',
+    resume: 'Resume',
     introLabel: 'Professional portfolio',
     headline: 'Building reliable and maintainable web software.',
     summary:

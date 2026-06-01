@@ -1,6 +1,8 @@
 import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
+import { LanguageToggle } from './LanguageToggle'
+import { ThemeToggle } from './ThemeToggle'
 import { Button } from './ui'
 
 type Theme = 'light' | 'dark'
@@ -19,7 +21,6 @@ export function SiteHeader({
   theme,
 }: SiteHeaderProps) {
   const t = translations[language]
-  const isDark = theme === 'dark'
 
   return (
     <header className="flex flex-col gap-4 border-b border-violet/10 py-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
@@ -29,17 +30,26 @@ export function SiteHeader({
       >
         {profile.domain}
       </a>
-      <nav aria-label="Portfolio controls" className="flex flex-wrap gap-2">
-        <Button onClick={onLanguageChange} type="button" variant="ghost">
-          {t.switchLanguage}
-        </Button>
+      <nav
+        aria-label="Portfolio controls"
+        className="flex flex-wrap items-center gap-2"
+      >
+        <LanguageToggle
+          language={language}
+          onLanguageChange={onLanguageChange}
+        />
+        <ThemeToggle
+          language={language}
+          onThemeChange={onThemeChange}
+          theme={theme}
+        />
         <Button
-          aria-pressed={isDark}
-          onClick={onThemeChange}
-          type="button"
-          variant="secondary"
+          className="h-10 px-4"
+          href={profile.links.linkedin}
+          rel="noreferrer"
+          target="_blank"
         >
-          {isDark ? t.themeDark : t.themeLight}
+          {t.resume}
         </Button>
       </nav>
     </header>
