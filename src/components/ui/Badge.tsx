@@ -7,10 +7,14 @@ type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
 export function Badge({ children, className = '', ...props }: BadgeProps) {
   return (
     <span
-      className={`inline-flex w-fit items-center gap-2 rounded-full border border-violet/15 bg-violet/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-violet dark:border-soft-lavender/20 dark:bg-soft-lavender/10 dark:text-soft-lavender ${className}`}
+      className={`availability-badge inline-flex w-fit items-center gap-2 rounded-full border border-violet/15 bg-violet/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-violet dark:border-soft-lavender/20 dark:bg-soft-lavender/10 dark:text-soft-lavender ${className}`}
       {...props}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-success-accent shadow-[0_0_16px_rgba(34,197,94,0.8)]" />
+      <span className="relative inline-flex h-2 w-2 shrink-0 items-center justify-center">
+        <span className="absolute h-full w-full rounded-full bg-success-accent/55" />
+        <span className="availability-dot-sonar absolute h-full w-full rounded-full bg-success-accent/55" />
+        <span className="relative h-1.5 w-1.5 rounded-full bg-success-accent shadow-[0_0_12px_rgba(34,197,94,0.72)]" />
+      </span>
       {children}
     </span>
   )
