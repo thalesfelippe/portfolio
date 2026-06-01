@@ -2,6 +2,17 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-deep-navy: #0b1020;
+  --color-dark-purple: #1f1147;
+  --color-violet: #6c2bd9;
+  --color-soft-lavender: #b9a7ff;
+  --color-light-bg: #f8f7ff;
+  --color-dark-text: #1f2937;
+  --color-muted-text: #6b7280;
+  --color-success-accent: #22c55e;
+}
+
 :root {
   color-scheme: light;
   font-family:
@@ -19,4 +30,9 @@
 
 body {
   margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
