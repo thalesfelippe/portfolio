@@ -1,6 +1,7 @@
 import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
+import { Card, SectionTitle } from './ui'
 
 type ContactLinksProps = {
   language: Language
@@ -31,29 +32,30 @@ export function ContactLinks({ language }: ContactLinksProps) {
   const t = translations[language]
 
   return (
-    <section aria-labelledby="contact-title" className="grid gap-4">
-      <h2
+    <section aria-labelledby="contact-title" className="grid gap-5">
+      <SectionTitle
         id="contact-title"
-        className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400"
-      >
-        {t.contactTitle}
-      </h2>
+        subtitle={t.contactSubtitle}
+        title={t.contactTitle}
+      />
       <ul className="grid gap-3 sm:grid-cols-3">
         {contactItems.map((item) => (
           <li key={item.key}>
-            <a
-              className="block h-full rounded-lg border border-slate-200 bg-white/80 p-4 text-sm shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:border-slate-800 dark:bg-slate-900/70 dark:hover:border-slate-700 dark:focus-visible:outline-white"
-              href={item.href}
-              rel="noreferrer"
-              target={item.key === 'email' ? undefined : '_blank'}
-            >
-              <span className="block font-medium text-slate-950 dark:text-white">
-                {t[item.labelKey]}
-              </span>
-              <span className="mt-1 block break-words text-slate-600 dark:text-slate-300">
-                {item.value}
-              </span>
-            </a>
+            <Card className="h-full p-0 transition hover:-translate-y-0.5 hover:border-violet/25">
+              <a
+                className="block h-full p-5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
+                href={item.href}
+                rel="noreferrer"
+                target={item.key === 'email' ? undefined : '_blank'}
+              >
+                <span className="block font-medium text-dark-text dark:text-white">
+                  {t[item.labelKey]}
+                </span>
+                <span className="mt-1 block break-words text-muted-text dark:text-slate-300">
+                  {item.value}
+                </span>
+              </a>
+            </Card>
           </li>
         ))}
       </ul>

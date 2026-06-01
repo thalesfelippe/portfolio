@@ -1,6 +1,7 @@
 import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
+import { Button } from './ui'
 
 type Theme = 'light' | 'dark'
 
@@ -21,29 +22,25 @@ export function SiteHeader({
   const isDark = theme === 'dark'
 
   return (
-    <header className="flex flex-col gap-4 border-b border-slate-200 py-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+    <header className="flex flex-col gap-4 border-b border-violet/10 py-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
       <a
-        className="text-base font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900 dark:text-white dark:focus-visible:outline-white"
+        className="text-base font-semibold text-dark-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet dark:text-white"
         href={`https://${profile.domain}`}
       >
         {profile.domain}
       </a>
       <nav aria-label="Portfolio controls" className="flex flex-wrap gap-2">
-        <button
-          className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:border-slate-800 dark:text-slate-200 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:focus-visible:outline-white"
-          onClick={onLanguageChange}
-          type="button"
-        >
+        <Button onClick={onLanguageChange} type="button" variant="ghost">
           {t.switchLanguage}
-        </button>
-        <button
+        </Button>
+        <Button
           aria-pressed={isDark}
-          className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:border-slate-800 dark:text-slate-200 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:focus-visible:outline-white"
           onClick={onThemeChange}
           type="button"
+          variant="secondary"
         >
           {isDark ? t.themeDark : t.themeLight}
-        </button>
+        </Button>
       </nav>
     </header>
   )
