@@ -10,8 +10,8 @@ type LayoutProps = {
 export function Layout({ children, header }: LayoutProps) {
   return (
     <AppBackground>
-      <Container className="flex min-h-svh flex-col">
-        {header}
+      {header}
+      <Container className="flex min-h-svh flex-col pt-16 sm:pt-[4.5rem]">
         <main className="flex flex-1 flex-col">{children}</main>
       </Container>
     </AppBackground>

@@ -58,7 +58,7 @@ export function ThemeToggle({
   return (
     <button
       aria-label={label}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-violet/15 bg-white/70 text-violet shadow-[0_10px_30px_rgba(31,17,71,0.06)] backdrop-blur-md transition duration-200 ease-out hover:-translate-y-0.5 hover:border-violet/30 hover:bg-white hover:text-dark-purple hover:shadow-[0_16px_40px_rgba(31,17,71,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/8 dark:text-soft-lavender dark:hover:border-soft-lavender/25 dark:hover:bg-white/12 dark:hover:text-white"
+      className="inline-flex h-8 w-8 items-center justify-center rounded-[10px] border border-violet/15 bg-white/55 text-violet shadow-[0_8px_24px_rgba(31,17,71,0.05)] backdrop-blur-md transition duration-200 ease-out hover:-translate-y-0.5 hover:border-violet/30 hover:bg-white/80 hover:text-dark-purple hover:shadow-[0_12px_32px_rgba(31,17,71,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-soft-lavender dark:hover:border-soft-lavender/25 dark:hover:bg-white/12 dark:hover:text-white"
       onClick={onThemeChange}
       type="button"
     >
