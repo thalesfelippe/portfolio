@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { profile } from '../data/profile'
+import { useActiveSection } from '../hooks/useActiveSection'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageToggle } from './LanguageToggle'
@@ -15,6 +16,15 @@ type SiteHeaderProps = {
   onThemeChange: () => void
   theme: Theme
 }
+
+const navSectionIds = [
+  'home',
+  'about',
+  'experience',
+  'projects',
+  'stack',
+  'contact',
+] as const
 
 function MenuIcon({ isOpen }: { isOpen: boolean }) {
   return (
@@ -70,19 +80,23 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const activeSection = useActiveSection(navSectionIds)
   const t = translations[language]
   const navItems = [
     {
+      id: 'home',
       href: '#home',
       label: t.navHome,
       reserveText: [translations.en.navHome, translations.pt.navHome],
     },
     {
+      id: 'about',
       href: '#about',
       label: t.navAbout,
       reserveText: [translations.en.navAbout, translations.pt.navAbout],
     },
     {
+      id: 'experience',
       href: '#experience',
       label: t.navExperience,
       reserveText: [
@@ -91,16 +105,19 @@ export function SiteHeader({
       ],
     },
     {
+      id: 'projects',
       href: '#projects',
       label: t.navProjects,
       reserveText: [translations.en.navProjects, translations.pt.navProjects],
     },
     {
+      id: 'stack',
       href: '#stack',
       label: t.navStack,
       reserveText: [translations.en.navStack, translations.pt.navStack],
     },
     {
+      id: 'contact',
       href: '#contact',
       label: t.navContact,
       reserveText: [translations.en.navContact, translations.pt.navContact],
@@ -122,15 +139,15 @@ export function SiteHeader({
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 w-full py-4 transition duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 w-full py-3 transition duration-300 sm:py-4 ${
         isScrolled || isMenuOpen
           ? 'border-b border-violet/10 bg-light-bg/72 shadow-[0_12px_40px_rgba(31,17,71,0.05)] backdrop-blur-xl dark:border-white/10 dark:bg-[#070a18]/72'
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <Container className="flex items-center justify-between gap-5">
+      <Container className="flex items-center justify-between gap-3 sm:gap-5">
         <a
-          className="group inline-flex min-w-0 items-center gap-3 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet"
+          className="group inline-flex min-w-0 items-center gap-2.5 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet sm:gap-3"
           href="#home"
         >
           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] bg-gradient-to-br from-soft-lavender to-violet text-sm font-bold text-white shadow-[0_8px_18px_rgba(108,43,217,0.16)] transition group-hover:-translate-y-0.5">
@@ -145,19 +162,36 @@ export function SiteHeader({
           aria-label="Primary navigation"
           className="hidden items-center gap-7 lg:flex"
         >
-          {navItems.map((item) => (
-            <a
-              className="rounded-lg py-1 text-sm font-medium text-muted-text transition hover:-translate-y-0.5 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet dark:text-slate-300 dark:hover:text-white"
-              href={item.href}
-              key={item.href}
-            >
-              <LanguageTransitionText
-                reserveText={item.reserveText}
-                speed={11}
-                text={item.label}
-              />
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id
+
+            return (
+              <a
+                aria-current={isActive ? 'true' : undefined}
+                className={`group relative rounded-lg px-1.5 py-1 text-sm font-medium transition hover:-translate-y-0.5 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:text-white ${
+                  isActive
+                    ? 'text-violet dark:text-soft-lavender'
+                    : 'text-muted-text dark:text-slate-300'
+                }`}
+                href={item.href}
+                key={item.href}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-1 -bottom-1 h-px rounded-full bg-gradient-to-r from-transparent via-violet to-transparent transition duration-300 dark:via-soft-lavender ${
+                    isActive
+                      ? 'scale-x-100 opacity-80'
+                      : 'scale-x-0 opacity-0 group-hover:scale-x-75 group-hover:opacity-45'
+                  }`}
+                />
+                <LanguageTransitionText
+                  reserveText={item.reserveText}
+                  speed={11}
+                  text={item.label}
+                />
+              </a>
+            )
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -173,9 +207,7 @@ export function SiteHeader({
             />
             <Button
               className="h-8 gap-1.5 rounded-[10px] px-3 py-0 text-xs"
-              disabled={!profile.links.resume}
-              title={profile.links.resume ? undefined : t.resumeUnavailable}
-              type="button"
+              href="#resume"
             >
               <DownloadIcon />
               {t.resume}
@@ -197,24 +229,39 @@ export function SiteHeader({
       {isMenuOpen ? (
         <Container className="lg:hidden">
           <div
-            className="mt-3 grid gap-3 rounded-2xl border border-violet/10 bg-white/80 p-3 shadow-[0_18px_60px_rgba(31,17,71,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-deep-navy/92"
+            className="mt-3 grid max-h-[calc(100svh-5rem)] gap-3 overflow-y-auto rounded-2xl border border-violet/10 bg-white/88 p-3 shadow-[0_18px_60px_rgba(31,17,71,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-deep-navy/92"
             id="mobile-navigation"
           >
             <nav aria-label="Mobile navigation" className="grid gap-1">
-              {navItems.map((item) => (
-                <a
-                  className="rounded-xl px-3 py-2.5 text-sm font-semibold text-muted-text transition hover:bg-violet/10 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
-                  href={item.href}
-                  key={item.href}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <LanguageTransitionText
-                  reserveText={item.reserveText}
-                  speed={11}
-                  text={item.label}
-                />
-              </a>
-            ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id
+
+                return (
+                  <a
+                    aria-current={isActive ? 'true' : undefined}
+                    className={`relative rounded-xl px-3 py-2.5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none ${
+                      isActive
+                        ? 'bg-violet/10 text-violet dark:bg-soft-lavender/10 dark:text-soft-lavender'
+                        : 'text-muted-text hover:bg-violet/10 hover:text-violet dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white'
+                    }`}
+                    href={item.href}
+                    key={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`absolute left-1.5 top-1/2 h-5 w-0.5 -translate-y-1/2 rounded-full bg-violet transition dark:bg-soft-lavender ${
+                        isActive ? 'opacity-75' : 'opacity-0'
+                      }`}
+                    />
+                    <LanguageTransitionText
+                      reserveText={item.reserveText}
+                      speed={11}
+                      text={item.label}
+                    />
+                  </a>
+                )
+              })}
             </nav>
             <div className="flex flex-wrap gap-2 border-t border-violet/10 pt-3 dark:border-white/10 sm:hidden">
               <LanguageToggle
@@ -227,10 +274,9 @@ export function SiteHeader({
                 theme={theme}
               />
               <Button
-                className="h-8 gap-1.5 rounded-[10px] px-3 py-0 text-xs"
-                disabled={!profile.links.resume}
-                title={profile.links.resume ? undefined : t.resumeUnavailable}
-                type="button"
+                className="h-9 gap-1.5 rounded-[10px] px-3 py-0 text-xs"
+                href="#resume"
+                onClick={() => setIsMenuOpen(false)}
               >
                 <DownloadIcon />
                 {t.resume}

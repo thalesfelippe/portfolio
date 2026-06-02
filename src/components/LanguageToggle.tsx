@@ -35,7 +35,7 @@ export function LanguageToggle({
   return (
     <button
       aria-label={t.languageToggleLabel}
-      className="inline-flex h-8 items-center justify-center gap-1.5 rounded-[10px] border border-violet/15 bg-white/55 px-2.5 text-xs font-semibold text-dark-text shadow-[0_8px_24px_rgba(31,17,71,0.05)] backdrop-blur-md transition duration-200 ease-out hover:-translate-y-0.5 hover:border-violet/30 hover:bg-white/80 hover:shadow-[0_12px_32px_rgba(31,17,71,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:border-soft-lavender/25 dark:hover:bg-white/12"
+      className="inline-flex h-9 items-center justify-center gap-1.5 rounded-[10px] border border-violet/15 bg-white/55 px-2.5 text-xs font-semibold text-dark-text shadow-[0_8px_24px_rgba(31,17,71,0.05)] backdrop-blur-md transition duration-200 ease-out hover:-translate-y-0.5 hover:border-violet/30 hover:bg-white/80 hover:shadow-[0_12px_32px_rgba(31,17,71,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:border-soft-lavender/25 dark:hover:bg-white/12 sm:h-8"
       onClick={onLanguageChange}
       type="button"
     >
