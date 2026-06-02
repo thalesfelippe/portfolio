@@ -159,7 +159,7 @@ export const translations = {
       usuallySolve: [
         'Product flows',
         'Dashboards',
-        'Webhooks & APIs',
+        'APIs & Webhooks',
         'Operational systems',
       ],
     },
@@ -401,7 +401,7 @@ export const translations = {
       usuallySolve: [
         'Fluxos de produto',
         'Dashboards',
-        'Webhooks & APIs',
+        'APIs & Webhooks',
         'Sistemas operacionais',
       ],
     },
