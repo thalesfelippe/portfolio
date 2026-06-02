@@ -3,13 +3,12 @@ import { stackBadges } from '../i18n/content'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
+import { TechBadgeIcon } from './TechBadgeIcon'
 import { Badge, Button } from './ui'
 
 type HeroProps = {
   language: Language
 }
-
-type StackBadge = (typeof stackBadges)[number]
 
 function ArrowRightIcon() {
   return (
@@ -91,165 +90,6 @@ function LocationIcon() {
   )
 }
 
-function TechBadgeIcon({ badge }: { badge: StackBadge }) {
-  const iconClass = 'h-3 w-3 shrink-0'
-
-  switch (badge) {
-    case 'React':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-[#61DAFB]`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" fill="currentColor" r="1.8" />
-          <ellipse
-            cx="12"
-            cy="12"
-            rx="9"
-            ry="3.8"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <ellipse
-            cx="12"
-            cy="12"
-            rx="9"
-            ry="3.8"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            transform="rotate(60 12 12)"
-          />
-          <ellipse
-            cx="12"
-            cy="12"
-            rx="9"
-            ry="3.8"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            transform="rotate(120 12 12)"
-          />
-        </svg>
-      )
-    case 'Next.js':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-dark-text dark:text-white`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
-          <path
-            d="M8 16V8l8 8V8"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.8"
-          />
-        </svg>
-      )
-    case 'TypeScript':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-[#3178C6]`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <rect
-            fill="currentColor"
-            height="18"
-            rx="3.5"
-            width="18"
-            x="3"
-            y="3"
-          />
-          <path
-            d="M7 9h6M10 9v7M14 16c1.7 1 3.5.3 3.5-1 0-2-3.4-1.2-3.4-3.2 0-1.2 1.7-1.7 3.1-.9"
-            stroke="white"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.35"
-          />
-        </svg>
-      )
-    case 'Python':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-[#3776AB]`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 3h3.2A3.8 3.8 0 0 1 19 6.8V11H9.5A2.5 2.5 0 0 0 7 13.5V15H5.8A2.8 2.8 0 0 1 3 12.2V9.8A3.8 3.8 0 0 1 6.8 6H12V3Z"
-            fill="currentColor"
-          />
-          <path
-            d="M12 21H8.8A3.8 3.8 0 0 1 5 17.2V13h9.5a2.5 2.5 0 0 0 2.5-2.5V9h1.2A2.8 2.8 0 0 1 21 11.8v2.4a3.8 3.8 0 0 1-3.8 3.8H12v3Z"
-            fill="#FFD43B"
-          />
-          <circle cx="8.2" cy="8.2" fill="white" r="0.85" />
-          <circle cx="15.8" cy="15.8" fill="#0B1020" r="0.85" />
-        </svg>
-      )
-    case 'Django':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-[#44B78B]`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7 5h5.3C15.9 5 18 7.4 18 12s-2.1 7-5.7 7H7V5Zm3.2 3v8h1.9c1.7 0 2.7-1.2 2.7-4s-1-4-2.7-4h-1.9Z"
-            fill="currentColor"
-          />
-        </svg>
-      )
-    case 'APIs':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-violet dark:text-soft-lavender`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m8 7-4 5 4 5M16 7l4 5-4 5M14 5l-4 14"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.8"
-          />
-        </svg>
-      )
-    case 'Webhooks':
-      return (
-        <svg
-          aria-hidden="true"
-          className={`${iconClass} text-success-accent`}
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="7" cy="7" r="3" stroke="currentColor" strokeWidth="1.7" />
-          <circle cx="17" cy="17" r="3" stroke="currentColor" strokeWidth="1.7" />
-          <path
-            d="M9.2 9.2 14.8 14.8M14.5 6.5h2.8v2.8M17.3 6.7 13.5 10.5"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-        </svg>
-      )
-    default:
-      return null
-  }
-}
-
 export function Hero({ language }: HeroProps) {
   const t = translations[language]
   const otherLanguage = language === 'en' ? 'pt' : 'en'
@@ -262,11 +102,7 @@ export function Hero({ language }: HeroProps) {
       <div className="grid max-w-[43rem] gap-6">
         <Badge>
           <LanguageTransitionText
-            reserveText={[
-              translations.en.availability,
-              translations.pt.availability,
-            ]}
-            speed={12}
+            mode="fade"
             text={t.availability}
           />
         </Badge>
@@ -344,7 +180,7 @@ export function Hero({ language }: HeroProps) {
           {stackBadges.map((badge) => (
             <li key={badge}>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-white/55 px-2.5 py-1 text-[0.68rem] font-semibold leading-none text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
-                <TechBadgeIcon badge={badge} />
+                <TechBadgeIcon name={badge} />
                 {badge}
               </span>
             </li>
