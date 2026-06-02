@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { About } from './components/About'
 import { ContactLinks } from './components/ContactLinks'
+import { Experience } from './components/Experience'
 import { Hero } from './components/Hero'
 import { Layout } from './components/Layout'
 import { SiteHeader } from './components/SiteHeader'
@@ -92,6 +93,7 @@ function App() {
       <Hero language={language} />
       <div className="grid gap-8 pb-12 lg:pb-16">
         <About language={language} />
+        <Experience language={language} />
         <ContactLinks language={language} />
       </div>
     </Layout>
