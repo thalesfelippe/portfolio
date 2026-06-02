@@ -159,11 +159,11 @@ function AboutBackground() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-y-[-4rem] left-1/2 w-screen -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.95)_18%,rgba(0,0,0,0.95)_82%,transparent_100%)]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_82%_48%,rgba(108,43,217,0.18),rgba(185,167,255,0.08)_30%,transparent_68%)] dark:bg-[radial-gradient(ellipse_at_82%_48%,rgba(108,43,217,0.26),rgba(185,167,255,0.08)_34%,transparent_72%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_42%,rgba(108,43,217,0.06)_64%,transparent_86%)] dark:bg-[linear-gradient(115deg,transparent_0%,transparent_42%,rgba(185,167,255,0.055)_64%,transparent_86%)]" />
+      <div className="about-system-glow-drift absolute inset-0 bg-[radial-gradient(ellipse_at_82%_48%,rgba(108,43,217,0.18),rgba(185,167,255,0.08)_30%,transparent_68%)] dark:bg-[radial-gradient(ellipse_at_82%_48%,rgba(108,43,217,0.26),rgba(185,167,255,0.08)_34%,transparent_72%)]" />
+      <div className="about-system-sheen-drift absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,transparent_42%,rgba(108,43,217,0.06)_64%,transparent_86%)] dark:bg-[linear-gradient(115deg,transparent_0%,transparent_42%,rgba(185,167,255,0.055)_64%,transparent_86%)]" />
 
       <svg
-        className="absolute inset-0 h-full w-full text-violet/44 dark:text-soft-lavender/36"
+        className="about-system-map-float absolute inset-0 h-full w-full text-violet/44 dark:text-soft-lavender/36"
         fill="none"
         preserveAspectRatio="none"
         viewBox="0 0 1440 620"
@@ -182,7 +182,12 @@ function AboutBackground() {
             <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
           </radialGradient>
         </defs>
-        <g stroke="url(#about-line-fade)" strokeLinecap="round" strokeWidth="1">
+        <g
+          className="about-system-lines"
+          stroke="url(#about-line-fade)"
+          strokeLinecap="round"
+          strokeWidth="1"
+        >
           <path d="M104 430 C246 286 392 248 572 266 C760 284 884 210 1184 92" />
           <path d="M186 146 C342 224 508 214 680 142 C830 80 1004 94 1296 190" />
           <path d="M80 532 C284 404 452 374 656 408 C836 438 994 386 1330 274" />
@@ -192,7 +197,7 @@ function AboutBackground() {
           <path d="M902 132 C962 178 1020 190 1098 164 C1180 138 1246 158 1348 234" />
           <path d="M694 482 C780 444 848 448 932 492 C1018 536 1108 522 1266 448" />
         </g>
-        <g fill="url(#about-node-fade)">
+        <g className="about-system-nodes" fill="url(#about-node-fade)">
           {[
             [186, 146],
             [296, 322],
@@ -218,7 +223,11 @@ function AboutBackground() {
             />
           ))}
         </g>
-        <g stroke="url(#about-line-fade)" strokeWidth="1">
+        <g
+          className="about-system-orbits"
+          stroke="url(#about-line-fade)"
+          strokeWidth="1"
+        >
           <circle cx="1040" cy="190" r="66" />
           <circle cx="1192" cy="366" r="96" />
           <ellipse cx="910" cy="332" rx="148" ry="72" />
@@ -236,12 +245,12 @@ export function About({ language }: AboutProps) {
   return (
     <section
       aria-labelledby="about-title"
-      className="relative isolate grid gap-7 py-11 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-10 lg:py-18"
+      className="relative isolate grid gap-6 py-10 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-10 lg:py-18"
       id="about"
     >
       <AboutBackground />
 
-      <div className="relative z-10 grid max-w-[44rem] gap-4">
+      <div className="relative z-10 grid min-w-0 max-w-[44rem] gap-3.5 sm:gap-4">
         <SectionTitle
           eyebrow={
             <LanguageTransitionText
@@ -268,7 +277,7 @@ export function About({ language }: AboutProps) {
           }
         />
 
-        <div className="grid gap-2.5 text-base leading-[1.68] text-muted-text dark:text-slate-300">
+        <div className="grid gap-2.5 text-[0.95rem] leading-[1.62] text-muted-text dark:text-slate-300 sm:text-base sm:leading-[1.68]">
           {t.about.paragraphs.map((paragraph, index) => (
             <p key={paragraph}>
               <LanguageTransitionText
@@ -285,7 +294,7 @@ export function About({ language }: AboutProps) {
         </div>
       </div>
 
-      <aside className="relative z-10 grid gap-2.5">
+      <aside className="relative z-10 grid min-w-0 gap-2.5">
         <AboutSnapshotCard language={language} />
         <AboutSolveCard language={language} />
       </aside>

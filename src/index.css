@@ -14,6 +14,9 @@
 }
 
 :root {
+  --scrollbar-track: rgba(248, 247, 255, 0.62);
+  --scrollbar-thumb: rgba(108, 43, 217, 0.48);
+  --scrollbar-thumb-hover: rgba(108, 43, 217, 0.7);
   color-scheme: light;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -25,11 +28,52 @@
 }
 
 .dark {
+  --scrollbar-track: rgba(7, 10, 24, 0.58);
+  --scrollbar-thumb: rgba(185, 167, 255, 0.34);
+  --scrollbar-thumb-hover: rgba(185, 167, 255, 0.58);
   color-scheme: dark;
 }
 
 body {
   margin: 0;
+}
+
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.75rem;
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+::-webkit-scrollbar {
+  height: 0.65rem;
+  width: 0.65rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-thumb),
+    rgba(185, 167, 255, 0.34)
+  );
+  border: 0.18rem solid var(--scrollbar-track);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-thumb-hover),
+    var(--scrollbar-thumb)
+  );
 }
 
 button,
@@ -43,6 +87,122 @@ a {
 
 .availability-dot-sonar {
   animation: availability-dot-sonar 1.9s ease-out infinite;
+}
+
+.hero-light-drift-primary,
+.hero-light-drift-secondary,
+.hero-light-drift-vertical,
+.hero-purple-glow-core,
+.hero-purple-glow-orbit,
+.about-system-glow-drift,
+.about-system-sheen-drift,
+.about-system-map-float,
+.about-system-lines,
+.about-system-nodes,
+.about-system-orbits,
+.projects-showcase-glow,
+.projects-showcase-streak,
+.projects-showcase-card,
+.stack-mesh-glow,
+.stack-mesh-map,
+.stack-mesh-lines,
+.stack-mesh-nodes,
+.contact-ambient-glow,
+.contact-signal-lines {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+}
+
+.hero-light-drift-primary {
+  animation: hero-light-drift-primary 24s ease-in-out infinite;
+}
+
+.hero-light-drift-secondary {
+  animation: hero-light-drift-secondary 30s ease-in-out infinite;
+}
+
+.hero-light-drift-vertical {
+  animation: hero-light-drift-vertical 18s ease-in-out infinite;
+}
+
+.hero-purple-glow-core {
+  animation: hero-purple-glow-core 28s ease-in-out infinite;
+}
+
+.hero-purple-glow-orbit {
+  animation: hero-purple-glow-orbit 34s ease-in-out infinite;
+}
+
+.about-system-glow-drift {
+  animation: about-system-glow-drift 34s ease-in-out infinite;
+}
+
+.about-system-sheen-drift {
+  animation: about-system-sheen-drift 38s ease-in-out infinite;
+}
+
+.about-system-map-float {
+  animation: about-system-map-float 30s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.about-system-lines {
+  animation: about-system-lines 36s ease-in-out infinite;
+}
+
+.about-system-nodes {
+  animation: about-system-nodes 24s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.about-system-orbits {
+  animation: about-system-orbits 42s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.projects-showcase-glow {
+  animation: projects-showcase-glow 28s ease-in-out infinite;
+}
+
+.projects-showcase-streak {
+  animation: projects-showcase-streak 34s ease-in-out infinite;
+}
+
+.projects-showcase-card-a {
+  animation: projects-showcase-card-a 30s ease-in-out infinite;
+}
+
+.projects-showcase-card-b {
+  animation: projects-showcase-card-b 36s ease-in-out infinite;
+}
+
+.stack-mesh-glow {
+  animation: stack-mesh-glow 32s ease-in-out infinite;
+}
+
+.stack-mesh-map {
+  animation: stack-mesh-map 34s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.stack-mesh-lines {
+  animation: stack-mesh-lines 28s ease-in-out infinite;
+}
+
+.stack-mesh-nodes {
+  animation: stack-mesh-nodes 22s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.contact-ambient-glow {
+  animation: contact-ambient-glow 32s ease-in-out infinite;
+}
+
+.contact-signal-lines {
+  animation: contact-signal-lines 38s ease-in-out infinite;
 }
 
 @keyframes availability-badge-breathe {
@@ -69,9 +229,411 @@ a {
   }
 }
 
+@keyframes hero-light-drift-primary {
+  0%,
+  100% {
+    opacity: 0.92;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translate3d(22px, -18px, 0) scale(1.035);
+  }
+
+  72% {
+    opacity: 0.86;
+    transform: translate3d(-10px, 12px, 0) scale(0.985);
+  }
+}
+
+@keyframes hero-purple-glow-core {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  44% {
+    opacity: 0.9;
+    transform: translate3d(18px, -12px, 0) scale(1.08);
+  }
+
+  74% {
+    opacity: 0.64;
+    transform: translate3d(-12px, 10px, 0) scale(0.96);
+  }
+}
+
+@keyframes hero-purple-glow-orbit {
+  0%,
+  100% {
+    opacity: 0.58;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  42% {
+    opacity: 0.78;
+    transform: translate3d(-24px, 18px, 0) scale(1.06);
+  }
+
+  72% {
+    opacity: 0.48;
+    transform: translate3d(14px, -16px, 0) scale(0.97);
+  }
+}
+
+@keyframes hero-light-drift-secondary {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  48% {
+    opacity: 0.9;
+    transform: translate3d(-28px, 20px, 0) scale(1.045);
+  }
+
+  76% {
+    opacity: 0.72;
+    transform: translate3d(10px, -10px, 0) scale(0.98);
+  }
+}
+
+@keyframes hero-light-drift-vertical {
+  0%,
+  100% {
+    opacity: 0.54;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: translate3d(8px, -24px, 0) scale(1.04);
+  }
+}
+
+@keyframes about-system-glow-drift {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  48% {
+    opacity: 0.98;
+    transform: translate3d(-18px, 10px, 0) scale(1.025);
+  }
+
+  76% {
+    opacity: 0.76;
+    transform: translate3d(10px, -8px, 0) scale(0.99);
+  }
+}
+
+@keyframes about-system-sheen-drift {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(-22px, 8px, 0);
+  }
+}
+
+@keyframes about-system-map-float {
+  0%,
+  100% {
+    opacity: 0.96;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  46% {
+    opacity: 1;
+    transform: translate3d(-10px, -7px, 0) scale(1.006);
+  }
+
+  74% {
+    opacity: 0.9;
+    transform: translate3d(7px, 6px, 0) scale(0.998);
+  }
+}
+
+@keyframes about-system-lines {
+  0%,
+  100% {
+    opacity: 0.86;
+  }
+
+  52% {
+    opacity: 1;
+  }
+}
+
+@keyframes about-system-nodes {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: translate3d(6px, -5px, 0);
+  }
+}
+
+@keyframes about-system-orbits {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.82;
+    transform: translate3d(-7px, 5px, 0);
+  }
+}
+
+@keyframes projects-showcase-glow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  48% {
+    opacity: 0.95;
+    transform: translate3d(-20px, 12px, 0) scale(1.04);
+  }
+
+  76% {
+    opacity: 0.66;
+    transform: translate3d(12px, -8px, 0) scale(0.98);
+  }
+}
+
+@keyframes projects-showcase-streak {
+  0%,
+  100% {
+    opacity: 0.58;
+    transform: translate3d(0, 0, 0) rotate(-12deg);
+  }
+
+  50% {
+    opacity: 0.82;
+    transform: translate3d(34px, -10px, 0) rotate(-12deg);
+  }
+}
+
+@keyframes projects-showcase-card-a {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: translate3d(-10px, 12px, 0) rotate(-6deg);
+  }
+}
+
+@keyframes projects-showcase-card-b {
+  0%,
+  100% {
+    opacity: 0.58;
+    transform: translate3d(0, 0, 0) rotate(6deg);
+  }
+
+  50% {
+    opacity: 0.78;
+    transform: translate3d(12px, -10px, 0) rotate(4deg);
+  }
+}
+
+@keyframes stack-mesh-glow {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(0, -8px, 0) scale(1.015);
+  }
+}
+
+@keyframes stack-mesh-map {
+  0%,
+  100% {
+    opacity: 0.92;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(-8px, 6px, 0);
+  }
+}
+
+@keyframes stack-mesh-lines {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 0.96;
+  }
+}
+
+@keyframes stack-mesh-nodes {
+  0%,
+  100% {
+    opacity: 0.66;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translate3d(5px, -4px, 0);
+  }
+}
+
+@keyframes contact-ambient-glow {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  52% {
+    opacity: 0.96;
+    transform: translate3d(-12px, -8px, 0) scale(1.035);
+  }
+}
+
+@keyframes contact-signal-lines {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.94;
+    transform: translate3d(18px, -6px, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-purple-glow-orbit,
+  .projects-showcase-card {
+    display: none;
+  }
+
+  .hero-light-drift-primary,
+  .hero-light-drift-secondary,
+  .hero-light-drift-vertical,
+  .projects-showcase-glow,
+  .projects-showcase-streak,
+  .stack-mesh-glow,
+  .stack-mesh-map,
+  .contact-ambient-glow,
+  .contact-signal-lines {
+    animation-duration: 42s;
+  }
+
+  @keyframes hero-light-drift-primary {
+    0%,
+    100% {
+      opacity: 0.78;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+      opacity: 0.9;
+      transform: translate3d(10px, -8px, 0) scale(1.02);
+    }
+  }
+
+  @keyframes projects-showcase-streak {
+    0%,
+    100% {
+      opacity: 0.36;
+      transform: translate3d(0, 0, 0) rotate(-12deg);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translate3d(14px, -5px, 0) rotate(-12deg);
+    }
+  }
+
+  @keyframes stack-mesh-map {
+    0%,
+    100% {
+      opacity: 0.58;
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      opacity: 0.72;
+      transform: translate3d(-4px, 3px, 0);
+    }
+  }
+
+  @keyframes contact-signal-lines {
+    0%,
+    100% {
+      opacity: 0.42;
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      opacity: 0.58;
+      transform: translate3d(8px, -3px, 0);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-padding-top: 5.75rem;
+  }
+
   .availability-badge,
-  .availability-dot-sonar {
+  .availability-dot-sonar,
+  .hero-light-drift-primary,
+  .hero-light-drift-secondary,
+  .hero-light-drift-vertical,
+  .hero-purple-glow-core,
+  .hero-purple-glow-orbit,
+  .about-system-glow-drift,
+  .about-system-sheen-drift,
+  .about-system-map-float,
+  .about-system-lines,
+  .about-system-nodes,
+  .about-system-orbits,
+  .projects-showcase-glow,
+  .projects-showcase-streak,
+  .projects-showcase-card,
+  .stack-mesh-glow,
+  .stack-mesh-map,
+  .stack-mesh-lines,
+  .stack-mesh-nodes,
+  .contact-ambient-glow,
+  .contact-signal-lines {
     animation: none;
+    transform: none;
+    will-change: auto;
   }
 }
