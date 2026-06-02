@@ -96,7 +96,6 @@ type TranslationContent = {
   projectsCta: string
   resume: string
   resumeCta: string
-  resumeUnavailable: string
   role: string
   heroTitleLead: string
   heroTitleAccent: string
@@ -145,7 +144,6 @@ export const translations = {
     navContact: 'Contact',
     resume: 'Resume',
     resumeCta: 'Download Resume',
-    resumeUnavailable: 'Resume download will be enabled when a resume file is provided.',
     role: 'Full Stack Developer',
     heroTitleLead: 'Full Stack Developer',
     heroTitleAccent: 'building reliable web\nproducts.',
@@ -586,7 +584,6 @@ export const translations = {
     navContact: 'Contato',
     resume: 'Currículo',
     resumeCta: 'Baixar currículo',
-    resumeUnavailable: 'O download do currículo será habilitado quando um arquivo for fornecido.',
     role: 'Full Stack Developer',
     heroTitleLead: 'Full Stack Developer',
     heroTitleAccent: 'construindo produtos\nweb confiáveis.',

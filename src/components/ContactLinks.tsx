@@ -134,7 +134,7 @@ export function ContactLinks({ language }: ContactLinksProps) {
                   aria-label={`${t[item.labelKey]}: ${item.value}`}
                   className="min-h-11 w-full gap-2 px-4 py-0"
                   href={item.href}
-                  rel="noreferrer"
+                  rel={item.key === 'email' ? undefined : 'noopener noreferrer'}
                   target={item.key === 'email' ? undefined : '_blank'}
                   variant={index === 0 ? 'primary' : 'secondary'}
                 >

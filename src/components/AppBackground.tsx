@@ -8,12 +8,12 @@ export function AppBackground({ children }: AppBackgroundProps) {
   return (
     <div className="relative min-h-svh overflow-x-hidden bg-light-bg text-dark-text transition-colors duration-300 dark:bg-[#070a18] dark:text-white">
       <div className="pointer-events-none absolute left-1/2 top-20 h-[44rem] w-[76rem] -translate-x-1/2 bg-[linear-gradient(rgba(108,43,217,0.065)_1px,transparent_1px),linear-gradient(90deg,rgba(108,43,217,0.065)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_0%,rgba(0,0,0,0.72)_34%,transparent_74%)] dark:bg-[linear-gradient(rgba(185,167,255,0.062)_1px,transparent_1px),linear-gradient(90deg,rgba(185,167,255,0.062)_1px,transparent_1px)]" />
-      <div className="pointer-events-none absolute left-1/2 top-28 h-[34rem] w-[34rem] -translate-x-1/2">
+      <div className="pointer-events-none absolute left-1/2 top-28 h-[24rem] w-[24rem] -translate-x-1/2 sm:h-[34rem] sm:w-[34rem]">
         <div className="hero-light-drift-primary relative h-full w-full rounded-full bg-violet/18 blur-3xl dark:bg-violet/24">
           <div className="hero-purple-glow-core absolute inset-10 rounded-full bg-violet/16 dark:bg-violet/20" />
         </div>
       </div>
-      <div className="pointer-events-none absolute right-[-8rem] top-20 h-80 w-80">
+      <div className="pointer-events-none absolute right-[-10rem] top-24 h-56 w-56 sm:right-[-8rem] sm:top-20 sm:h-80 sm:w-80">
         <div className="hero-light-drift-secondary h-full w-full rounded-full bg-soft-lavender/30 blur-3xl dark:bg-soft-lavender/10" />
       </div>
       <div className="pointer-events-none absolute left-[12%] top-72 hidden h-56 w-56 sm:block">

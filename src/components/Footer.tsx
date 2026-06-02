@@ -16,8 +16,9 @@ const footerCopy = {
 
 const footerLinks = [
   {
-    ariaLabel: 'LinkedIn',
+    ariaLabel: 'Open LinkedIn profile',
     href: profile.links.linkedin,
+    isExternal: true,
     icon: (
       <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M6.5 9.4H3.8V20h2.7V9.4ZM5.1 4a1.6 1.6 0 1 0 0 3.2A1.6 1.6 0 0 0 5.1 4Zm8.2 8.3c1.5 0 2.2 1 2.2 2.6V20h2.7v-5.6c0-3-1.6-4.7-4.1-4.7-1.7 0-2.7.9-3.1 1.7h-.1V9.4H8.4V20h2.7v-5.4c0-1.4.8-2.3 2.2-2.3Z" />
@@ -25,8 +26,9 @@ const footerLinks = [
     ),
   },
   {
-    ariaLabel: 'GitHub',
+    ariaLabel: 'Open GitHub profile',
     href: profile.links.github,
+    isExternal: true,
     icon: (
       <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -38,8 +40,9 @@ const footerLinks = [
     ),
   },
   {
-    ariaLabel: 'Email',
+    ariaLabel: 'Send email',
     href: `mailto:${profile.email}`,
+    isExternal: false,
     icon: (
       <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24">
         <path
@@ -75,8 +78,8 @@ export function Footer({ language }: FooterProps) {
                 aria-label={link.ariaLabel}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-violet/12 bg-white/55 text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-violet/26 hover:bg-violet/10 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-white/10 dark:bg-white/[0.055] dark:text-slate-300 dark:hover:border-soft-lavender/22 dark:hover:bg-soft-lavender/10 dark:hover:text-soft-lavender sm:h-9 sm:w-9"
                 href={link.href}
-                rel={link.ariaLabel === 'Email' ? undefined : 'noreferrer'}
-                target={link.ariaLabel === 'Email' ? undefined : '_blank'}
+                rel={link.isExternal ? 'noopener noreferrer' : undefined}
+                target={link.isExternal ? '_blank' : undefined}
               >
                 {link.icon}
               </a>

@@ -232,7 +232,7 @@ export function Projects({ language }: ProjectsProps) {
                     <a
                       className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-violet/15 bg-violet/10 px-3.5 py-2 text-sm font-semibold text-violet transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-violet/14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender"
                       href={projectHref}
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       target="_blank"
                     >
                       <LanguageTransitionText
