@@ -34,6 +34,47 @@ type TranslationContent = {
       type?: string
     }[]
   }
+  projects: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    stackLabel: string
+    highlightsLabel: string
+    linkLabel: string
+    placeholderLinkLabel: string
+    items: {
+      name: string
+      category: string
+      description: string
+      stack: string[]
+      highlights: string[]
+      href?: string
+    }[]
+  }
+  stack: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    categories: {
+      name: string
+      items: string[]
+    }[]
+  }
+  whyWorkWithMe: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    items: string[]
+  }
+  resumeSection: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    buttons: {
+      label: string
+      href: string
+    }[]
+  }
   availability: string
   contactTitle: string
   contactSubtitle: string
@@ -130,9 +171,9 @@ export const translations = {
     subheadline:
       'I build web applications for product, fintech, SaaS, and operations, connecting front-end, back-end, APIs, integrations, and business rules into systems that are clear, reliable, and easy to evolve.',
     projectsCta: 'View Projects',
-    contactTitle: 'Contact',
+    contactTitle: 'Let’s build something reliable.',
     contactSubtitle:
-      'Let’s talk about product, operations, integrations, and web systems.',
+      'If your company needs someone to build products, integrate systems, solve problems, and improve operational flows with reliable and well-structured software, let’s talk.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     contactCta: 'Contact Me',
@@ -329,6 +370,205 @@ export const translations = {
         },
       ],
     },
+    projects: {
+      eyebrow: 'Projects',
+      title: 'Selected product and operations work.',
+      subtitle:
+        'Project cards focused on scope, stack, technical highlights, and business context for recruiting conversations.',
+      stackLabel: 'Stack',
+      highlightsLabel: 'Highlights',
+      linkLabel: 'View project',
+      placeholderLinkLabel: 'Link coming soon',
+      items: [
+        {
+          name: 'Saiu Acordo',
+          category: 'Debt negotiation platform',
+          description:
+            'Financial platform built to help users negotiate debts through a guided, clear, and conversion-focused journey.',
+          stack: [
+            'React',
+            'TypeScript',
+            'Tailwind',
+            'Laravel',
+            'Twilio',
+            'Asaas',
+            'RD Station',
+            'Webhooks',
+            'Docker',
+            'GCP',
+          ],
+          highlights: [
+            'Guided negotiation flow',
+            'UX/conversion improvements',
+            'Integrations with payment and CRM tools',
+            'Responsive and accessible UI',
+          ],
+        },
+        {
+          name: 'Clube Fácil Administrative Platform',
+          category: 'Health benefits management system',
+          description:
+            'Administrative system for managing members, dependents, contracts, clinics, charges, invoices, digital signatures, and appointments.',
+          stack: [
+            'Python',
+            'Django',
+            'DRF',
+            'MySQL',
+            'PostgreSQL',
+            'Redis',
+            'Celery',
+            'GalaxPay',
+            'eNotas',
+            'DocuSign',
+            'Webhooks',
+            'Heroku',
+          ],
+          highlights: [
+            'Financial integrations',
+            'NFS-e and digital signature workflows',
+            'Analytical dashboards',
+            'Asynchronous processing',
+          ],
+        },
+        {
+          name: 'SmartBarber System',
+          category: 'SaaS for barbershops',
+          description:
+            'SaaS platform with online scheduling, digital orders, real-time dashboards, and operational control.',
+          stack: [
+            'Next.js',
+            'TypeScript',
+            'Prisma',
+            'styled-components',
+            'SWR',
+            'Recharts',
+          ],
+          highlights: [
+            'Scheduling flow',
+            'Role-based experience',
+            'Dashboard and operational metrics',
+          ],
+        },
+        {
+          name: 'Cimtia Ads',
+          category: 'TV media buying web app',
+          description:
+            'Web app for exploring inventory and requesting TV advertising placements, later sold to Record TV.',
+          stack: ['React', 'TypeScript', 'Node.js', 'Firebase'],
+          highlights: [
+            'Responsive interface',
+            'Advertiser area',
+            'Operational workflow',
+          ],
+        },
+        {
+          name: 'Landing Pages & Sales Pages',
+          category: 'Conversion-focused front-end',
+          description:
+            'Collection of modern landing pages and sales pages for clinics, SaaS products, digital products, and local businesses.',
+          stack: [
+            'Next.js',
+            'TypeScript',
+            'Tailwind',
+            'Framer Motion',
+            'React Hook Form',
+            'Zod',
+          ],
+          highlights: [
+            'Responsive design',
+            'Conversion-oriented sections',
+            'Light/dark theme examples',
+          ],
+        },
+      ],
+    },
+    stack: {
+      eyebrow: 'Stack',
+      title: 'Technologies I use to build full stack products.',
+      subtitle:
+        'A practical stack for web products, APIs, integrations, data routines, and operational systems.',
+      categories: [
+        {
+          name: 'Front-end',
+          items: [
+            'React',
+            'Next.js',
+            'TypeScript',
+            'JavaScript',
+            'Tailwind',
+            'shadcn/ui',
+            'HTML',
+            'CSS',
+          ],
+        },
+        {
+          name: 'Back-end',
+          items: [
+            'Python',
+            'Django',
+            'Django REST Framework',
+            'Node.js',
+            'Laravel',
+            'REST APIs',
+          ],
+        },
+        {
+          name: 'Data & Async',
+          items: ['PostgreSQL', 'MySQL', 'Redis', 'Celery', 'Pandas'],
+        },
+        {
+          name: 'DevOps',
+          items: ['Docker', 'GitHub Actions', 'CI/CD', 'Heroku', 'GCP'],
+        },
+        {
+          name: 'Integrations',
+          items: [
+            'GalaxPay',
+            'Asaas',
+            'eNotas/NFS-e',
+            'DocuSign',
+            'Z-API',
+            'Twilio',
+            'RD Station',
+            'CRMs',
+            'Webhooks',
+          ],
+        },
+      ],
+    },
+    whyWorkWithMe: {
+      eyebrow: 'Why work with me',
+      title: 'I connect product, code, and operations.',
+      subtitle:
+        'I work well where business rules, integrations, user experience, and technical reliability need to move together.',
+      items: [
+        'Product mindset',
+        'Full stack execution',
+        'Business rules and integrations',
+        'Operational systems',
+        'Reliable and maintainable code',
+      ],
+    },
+    resumeSection: {
+      eyebrow: 'Resume',
+      title: 'Download the resume version that fits your role.',
+      subtitle:
+        'Placeholder files are prepared for Full Stack, Front-End, and Back-End resume versions.',
+      buttons: [
+        {
+          label: 'Download Full Stack Resume',
+          href: '/resumes/thales-felippe-full-stack.pdf',
+        },
+        {
+          label: 'Download Front-End Resume',
+          href: '/resumes/thales-felippe-front-end.pdf',
+        },
+        {
+          label: 'Download Back-End Resume',
+          href: '/resumes/thales-felippe-back-end.pdf',
+        },
+      ],
+    },
   },
   pt: {
     languageName: 'Português',
@@ -372,9 +612,9 @@ export const translations = {
     subheadline:
       'Construo aplicações web para ambientes de produto, fintech, SaaS e operação, conectando front-end, back-end, APIs, integrações e regras de negócio em sistemas claros, confiáveis e fáceis de evoluir.',
     projectsCta: 'Ver projetos',
-    contactTitle: 'Contato',
+    contactTitle: 'Vamos construir algo confiável.',
     contactSubtitle:
-      'Vamos conversar sobre produto, operação, integrações e sistemas web.',
+      'Se sua empresa precisa de alguém para construir produto, integrar sistemas, resolver problemas e melhorar fluxos operacionais com software confiável e bem estruturado, vamos conversar.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     contactCta: 'Fale comigo',
@@ -568,6 +808,205 @@ export const translations = {
             'Web Apps',
           ],
           type: 'Autônomo',
+        },
+      ],
+    },
+    projects: {
+      eyebrow: 'Projetos',
+      title: 'Projetos selecionados de produto e operação.',
+      subtitle:
+        'Cards focados em escopo, stack, destaques técnicos e contexto de negócio para conversas com recrutadores.',
+      stackLabel: 'Stack',
+      highlightsLabel: 'Destaques',
+      linkLabel: 'Ver projeto',
+      placeholderLinkLabel: 'Link em breve',
+      items: [
+        {
+          name: 'Saiu Acordo',
+          category: 'Plataforma de negociação de dívidas',
+          description:
+            'Plataforma financeira criada para ajudar usuários a negociar dívidas por meio de uma jornada guiada, clara e focada em conversão.',
+          stack: [
+            'React',
+            'TypeScript',
+            'Tailwind',
+            'Laravel',
+            'Twilio',
+            'Asaas',
+            'RD Station',
+            'Webhooks',
+            'Docker',
+            'GCP',
+          ],
+          highlights: [
+            'Fluxo guiado de negociação',
+            'Melhorias de UX/conversão',
+            'Integrações com ferramentas de pagamento e CRM',
+            'UI responsiva e acessível',
+          ],
+        },
+        {
+          name: 'Plataforma Administrativa Clube Fácil',
+          category: 'Sistema de gestão de benefícios de saúde',
+          description:
+            'Sistema administrativo para gerenciar associados, dependentes, contratos, clínicas, cobranças, notas fiscais, assinaturas digitais e atendimentos.',
+          stack: [
+            'Python',
+            'Django',
+            'DRF',
+            'MySQL',
+            'PostgreSQL',
+            'Redis',
+            'Celery',
+            'GalaxPay',
+            'eNotas',
+            'DocuSign',
+            'Webhooks',
+            'Heroku',
+          ],
+          highlights: [
+            'Integrações financeiras',
+            'Fluxos de NFS-e e assinatura digital',
+            'Dashboards analíticos',
+            'Processamento assíncrono',
+          ],
+        },
+        {
+          name: 'SmartBarber System',
+          category: 'SaaS para barbearias',
+          description:
+            'Plataforma SaaS com agendamento online, comandas digitais, dashboards em tempo real e controle operacional.',
+          stack: [
+            'Next.js',
+            'TypeScript',
+            'Prisma',
+            'styled-components',
+            'SWR',
+            'Recharts',
+          ],
+          highlights: [
+            'Fluxo de agendamento',
+            'Experiência baseada em papéis',
+            'Dashboard e métricas operacionais',
+          ],
+        },
+        {
+          name: 'Cimtia Ads',
+          category: 'Web app para compra de mídia em TV',
+          description:
+            'Web app para explorar inventário e solicitar veiculações de publicidade em TV, posteriormente vendido à Record TV.',
+          stack: ['React', 'TypeScript', 'Node.js', 'Firebase'],
+          highlights: [
+            'Interface responsiva',
+            'Área para anunciantes',
+            'Fluxo operacional',
+          ],
+        },
+        {
+          name: 'Landing Pages & Sales Pages',
+          category: 'Front-end focado em conversão',
+          description:
+            'Coleção de landing pages e páginas de venda modernas para clínicas, produtos SaaS, produtos digitais e negócios locais.',
+          stack: [
+            'Next.js',
+            'TypeScript',
+            'Tailwind',
+            'Framer Motion',
+            'React Hook Form',
+            'Zod',
+          ],
+          highlights: [
+            'Design responsivo',
+            'Seções orientadas à conversão',
+            'Exemplos com tema claro/escuro',
+          ],
+        },
+      ],
+    },
+    stack: {
+      eyebrow: 'Stack',
+      title: 'Tecnologias que uso para construir produtos full stack.',
+      subtitle:
+        'Uma stack prática para produtos web, APIs, integrações, rotinas de dados e sistemas operacionais.',
+      categories: [
+        {
+          name: 'Front-end',
+          items: [
+            'React',
+            'Next.js',
+            'TypeScript',
+            'JavaScript',
+            'Tailwind',
+            'shadcn/ui',
+            'HTML',
+            'CSS',
+          ],
+        },
+        {
+          name: 'Back-end',
+          items: [
+            'Python',
+            'Django',
+            'Django REST Framework',
+            'Node.js',
+            'Laravel',
+            'REST APIs',
+          ],
+        },
+        {
+          name: 'Dados & Async',
+          items: ['PostgreSQL', 'MySQL', 'Redis', 'Celery', 'Pandas'],
+        },
+        {
+          name: 'DevOps',
+          items: ['Docker', 'GitHub Actions', 'CI/CD', 'Heroku', 'GCP'],
+        },
+        {
+          name: 'Integrações',
+          items: [
+            'GalaxPay',
+            'Asaas',
+            'eNotas/NFS-e',
+            'DocuSign',
+            'Z-API',
+            'Twilio',
+            'RD Station',
+            'CRMs',
+            'Webhooks',
+          ],
+        },
+      ],
+    },
+    whyWorkWithMe: {
+      eyebrow: 'Por que trabalhar comigo',
+      title: 'Conecto produto, código e operação.',
+      subtitle:
+        'Trabalho bem onde regras de negócio, integrações, experiência do usuário e confiabilidade técnica precisam evoluir juntas.',
+      items: [
+        'Visão de produto',
+        'Execução full stack',
+        'Regras de negócio e integrações',
+        'Sistemas operacionais',
+        'Código confiável e manutenível',
+      ],
+    },
+    resumeSection: {
+      eyebrow: 'Currículo',
+      title: 'Baixe a versão do currículo mais alinhada à vaga.',
+      subtitle:
+        'Arquivos placeholder preparados para versões Full Stack, Front-End e Back-End do currículo.',
+      buttons: [
+        {
+          label: 'Baixar currículo Full Stack',
+          href: '/resumes/thales-felippe-full-stack.pdf',
+        },
+        {
+          label: 'Baixar currículo Front-End',
+          href: '/resumes/thales-felippe-front-end.pdf',
+        },
+        {
+          label: 'Baixar currículo Back-End',
+          href: '/resumes/thales-felippe-back-end.pdf',
         },
       ],
     },

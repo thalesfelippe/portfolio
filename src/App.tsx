@@ -2,9 +2,14 @@ import { useEffect, useState } from 'react'
 import { About } from './components/About'
 import { ContactLinks } from './components/ContactLinks'
 import { Experience } from './components/Experience'
+import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Layout } from './components/Layout'
+import { Projects } from './components/Projects'
+import { ResumeSection } from './components/ResumeSection'
 import { SiteHeader } from './components/SiteHeader'
+import { StackSection } from './components/StackSection'
+import { WhyWorkWithMe } from './components/WhyWorkWithMe'
 import {
   defaultLanguage,
   getSavedLanguage,
@@ -94,7 +99,12 @@ function App() {
       <div className="grid gap-8 pb-12 lg:pb-16">
         <About language={language} />
         <Experience language={language} />
+        <Projects language={language} />
+        <StackSection language={language} />
+        <WhyWorkWithMe language={language} />
+        <ResumeSection language={language} />
         <ContactLinks language={language} />
+        <Footer language={language} />
       </div>
     </Layout>
   )
