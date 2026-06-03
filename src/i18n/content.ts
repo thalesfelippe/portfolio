@@ -535,14 +535,6 @@ export const translations = {
           ],
         },
         {
-          name: 'Data & Async',
-          items: ['PostgreSQL', 'MySQL', 'Redis', 'Celery', 'Pandas'],
-        },
-        {
-          name: 'DevOps',
-          items: ['Docker', 'GitHub Actions', 'CI/CD', 'Heroku', 'GCP'],
-        },
-        {
           name: 'Integrations',
           items: [
             'GalaxPay',
@@ -555,6 +547,14 @@ export const translations = {
             'CRMs',
             'Webhooks',
           ],
+        },
+        {
+          name: 'Data & Async',
+          items: ['PostgreSQL', 'MySQL', 'Redis', 'Celery', 'Pandas'],
+        },
+        {
+          name: 'DevOps',
+          items: ['Docker', 'GitHub Actions', 'CI/CD', 'Heroku', 'GCP'],
         },
       ],
     },
@@ -1020,14 +1020,6 @@ export const translations = {
           ],
         },
         {
-          name: 'Dados & Async',
-          items: ['PostgreSQL', 'MySQL', 'Redis', 'Celery', 'Pandas'],
-        },
-        {
-          name: 'DevOps',
-          items: ['Docker', 'GitHub Actions', 'CI/CD', 'Heroku', 'GCP'],
-        },
-        {
           name: 'Integrações',
           items: [
             'GalaxPay',
@@ -1040,6 +1032,14 @@ export const translations = {
             'CRMs',
             'Webhooks',
           ],
+        },
+        {
+          name: 'Dados & Async',
+          items: ['PostgreSQL', 'MySQL', 'Redis', 'Celery', 'Pandas'],
+        },
+        {
+          name: 'DevOps',
+          items: ['Docker', 'GitHub Actions', 'CI/CD', 'Heroku', 'GCP'],
         },
       ],
     },
