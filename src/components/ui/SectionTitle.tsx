@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { ScrollReveal } from '../ScrollReveal'
 
 type SectionTitleProps = {
   eyebrow?: ReactNode
@@ -9,7 +10,7 @@ type SectionTitleProps = {
 
 export function SectionTitle({ eyebrow, id, subtitle, title }: SectionTitleProps) {
   return (
-    <div className="grid max-w-2xl gap-2.5 sm:gap-3">
+    <ScrollReveal className="grid max-w-2xl gap-2.5 sm:gap-3">
       {eyebrow ? (
         <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-violet dark:text-soft-lavender sm:text-xs sm:tracking-[0.2em]">
           {eyebrow}
@@ -26,6 +27,6 @@ export function SectionTitle({ eyebrow, id, subtitle, title }: SectionTitleProps
           {subtitle}
         </p>
       ) : null}
-    </div>
+    </ScrollReveal>
   )
 }

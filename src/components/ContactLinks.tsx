@@ -2,6 +2,7 @@ import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
+import { ScrollReveal } from './ScrollReveal'
 import { Button, Card } from './ui'
 
 type ContactLinksProps = {
@@ -164,7 +165,7 @@ export function ContactLinks({ language }: ContactLinksProps) {
       <ContactBackground />
 
       <div className="relative grid gap-6">
-        <div className="grid max-w-2xl gap-3">
+        <ScrollReveal className="grid max-w-2xl gap-3">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet dark:text-soft-lavender">
             <LanguageTransitionText
               as="span"
@@ -187,8 +188,9 @@ export function ContactLinks({ language }: ContactLinksProps) {
               text={t.contactTitle}
             />
           </h2>
-        </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={100}>
         <Card className="relative overflow-hidden border-violet/14 bg-white/78 p-0 shadow-[0_22px_80px_rgba(31,17,71,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.055] dark:shadow-[0_24px_90px_rgba(0,0,0,0.22)]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_86%_4%,rgba(108,43,217,0.13),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.055),transparent_46%)] dark:bg-[radial-gradient(circle_at_84%_6%,rgba(185,167,255,0.11),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.09),transparent_48%)]" />
           <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-violet/34 to-transparent dark:via-soft-lavender/28" />
@@ -240,6 +242,7 @@ export function ContactLinks({ language }: ContactLinksProps) {
             </ul>
           </div>
         </Card>
+        </ScrollReveal>
       </div>
     </section>
   )

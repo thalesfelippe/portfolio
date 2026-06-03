@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
+import { ScrollReveal } from './ScrollReveal'
 import { TechBadgeIcon } from './TechBadgeIcon'
 import { Card, SectionTitle } from './ui'
 
@@ -203,7 +204,12 @@ export function Experience({ language }: ExperienceProps) {
           const hiddenHighlightCount = item.highlights.length - visibleHighlights.length
 
           return (
-            <li className="relative pl-7 sm:pl-11" key={index}>
+            <ScrollReveal
+              as="li"
+              className="relative pl-7 sm:pl-11"
+              delay={Math.min(index * 70, 280)}
+              key={index}
+            >
               <span className="absolute left-0 top-4 grid h-6 w-6 place-items-center rounded-[10px] border border-violet/20 bg-white text-violet shadow-[0_14px_34px_rgba(108,43,217,0.12)] dark:border-soft-lavender/20 dark:bg-deep-navy dark:text-soft-lavender sm:top-5 sm:h-8 sm:w-8 sm:rounded-xl">
                 <BriefcaseIcon />
               </span>
@@ -440,7 +446,7 @@ export function Experience({ language }: ExperienceProps) {
                 </div>
                 </div>
               </Card>
-            </li>
+            </ScrollReveal>
           )
         })}
       </ol>

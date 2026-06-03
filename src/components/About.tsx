@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
+import { ScrollReveal } from './ScrollReveal'
 import { SectionTitle } from './ui'
 
 type AboutProps = {
@@ -277,7 +278,10 @@ export function About({ language }: AboutProps) {
           }
         />
 
-        <div className="grid gap-2.5 text-[0.95rem] leading-[1.62] text-muted-text dark:text-slate-300 sm:text-base sm:leading-[1.68]">
+        <ScrollReveal
+          className="grid gap-2.5 text-[0.95rem] leading-[1.62] text-muted-text dark:text-slate-300 sm:text-base sm:leading-[1.68]"
+          delay={80}
+        >
           {t.about.paragraphs.map((paragraph, index) => (
             <p key={paragraph}>
               <LanguageTransitionText
@@ -291,12 +295,16 @@ export function About({ language }: AboutProps) {
               />
             </p>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
 
       <aside className="relative z-10 grid min-w-0 gap-2.5">
-        <AboutSnapshotCard language={language} />
-        <AboutSolveCard language={language} />
+        <ScrollReveal delay={120} direction="right">
+          <AboutSnapshotCard language={language} />
+        </ScrollReveal>
+        <ScrollReveal delay={190} direction="right">
+          <AboutSolveCard language={language} />
+        </ScrollReveal>
       </aside>
     </section>
   )

@@ -1,6 +1,7 @@
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
+import { ScrollReveal } from './ScrollReveal'
 import { TechBadgeIcon } from './TechBadgeIcon'
 import { Card, SectionTitle } from './ui'
 
@@ -115,7 +116,7 @@ export function Projects({ language }: ProjectsProps) {
         }
       />
 
-      <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
+      <div className="grid items-stretch gap-4 sm:gap-5 lg:grid-cols-2">
         {t.projects.items.map((project, index) => {
           const enProject = translations.en.projects.items[index]
           const projectCover: ProjectCover | undefined = project.cover
@@ -123,34 +124,38 @@ export function Projects({ language }: ProjectsProps) {
           const ptProject = translations.pt.projects.items[index]
 
           return (
-            <Card
-              className="group relative grid overflow-hidden p-0 transition duration-300 hover:-translate-y-1 hover:border-violet/25 hover:shadow-[0_28px_80px_rgba(108,43,217,0.14)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/20"
+            <ScrollReveal
+              className="h-full"
+              delay={Math.min(index * 80, 260)}
               key={project.name}
             >
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet/35 to-transparent dark:via-soft-lavender/28" />
-              <div className="pointer-events-none absolute right-[-5rem] top-[-5rem] h-44 w-44 rounded-full bg-violet/10 blur-3xl dark:bg-soft-lavender/8" />
+              <Card
+                className="group relative grid h-full overflow-hidden p-0 transition duration-300 hover:-translate-y-1 hover:border-violet/25 hover:shadow-[0_28px_80px_rgba(108,43,217,0.14)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/20"
+              >
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet/35 to-transparent dark:via-soft-lavender/28" />
+                <div className="pointer-events-none absolute right-[-5rem] top-[-5rem] h-44 w-44 rounded-full bg-violet/10 blur-3xl dark:bg-soft-lavender/8" />
 
-              <div className="relative overflow-hidden border-b border-violet/8 bg-violet/7 dark:border-white/8 dark:bg-white/[0.035]">
-                {projectCover?.src ? (
-                  <img
-                    alt={projectCover.alt}
-                    className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:h-44"
-                    loading="lazy"
-                    src={projectCover.src}
-                  />
-                ) : (
-                  <div
-                    aria-hidden="true"
-                    className="relative grid h-40 place-items-center overflow-hidden sm:h-44"
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,rgba(185,167,255,0.34),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.18),rgba(248,247,255,0.5)_46%,rgba(31,17,71,0.16))] dark:bg-[radial-gradient(circle_at_24%_20%,rgba(185,167,255,0.22),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.24),rgba(31,17,71,0.38)_48%,rgba(11,16,32,0.72))]" />
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(108,43,217,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(108,43,217,0.08)_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 [mask-image:radial-gradient(ellipse_at_center,black_0%,transparent_76%)] dark:bg-[linear-gradient(rgba(185,167,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(185,167,255,0.07)_1px,transparent_1px)]" />
-                    <span className="relative rounded-full border border-white/30 bg-white/35 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-violet shadow-[0_16px_45px_rgba(31,17,71,0.12)] backdrop-blur-md dark:border-soft-lavender/18 dark:bg-white/[0.06] dark:text-soft-lavender">
-                      {project.name}
-                    </span>
-                  </div>
-                )}
-              </div>
+                <div className="relative overflow-hidden border-b border-violet/8 bg-violet/7 dark:border-white/8 dark:bg-white/[0.035]">
+                  {projectCover?.src ? (
+                    <img
+                      alt={projectCover.alt}
+                      className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:h-44"
+                      loading="lazy"
+                      src={projectCover.src}
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="relative grid h-40 place-items-center overflow-hidden sm:h-44"
+                    >
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,rgba(185,167,255,0.34),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.18),rgba(248,247,255,0.5)_46%,rgba(31,17,71,0.16))] dark:bg-[radial-gradient(circle_at_24%_20%,rgba(185,167,255,0.22),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.24),rgba(31,17,71,0.38)_48%,rgba(11,16,32,0.72))]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(rgba(108,43,217,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(108,43,217,0.08)_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 [mask-image:radial-gradient(ellipse_at_center,black_0%,transparent_76%)] dark:bg-[linear-gradient(rgba(185,167,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(185,167,255,0.07)_1px,transparent_1px)]" />
+                      <span className="relative rounded-full border border-white/30 bg-white/35 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-violet shadow-[0_16px_45px_rgba(31,17,71,0.12)] backdrop-blur-md dark:border-soft-lavender/18 dark:bg-white/[0.06] dark:text-soft-lavender">
+                        {project.name}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
               <div className="relative grid h-full gap-4 p-4 sm:gap-5 sm:p-6">
                 <div className="grid gap-3">
@@ -291,7 +296,8 @@ export function Projects({ language }: ProjectsProps) {
                   )}
                 </div>
               </div>
-            </Card>
+              </Card>
+            </ScrollReveal>
           )
         })}
       </div>

@@ -1,6 +1,7 @@
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
+import { ScrollReveal } from './ScrollReveal'
 import { Card, SectionTitle } from './ui'
 
 type WhyWorkWithMeProps = {
@@ -172,10 +173,12 @@ export function WhyWorkWithMe({ language }: WhyWorkWithMeProps) {
 
       <ul className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-6">
         {t.whyWorkWithMe.items.map((item, index) => (
-          <li
+          <ScrollReveal
+            as="li"
             className={`lg:col-span-2 ${
               index === 3 ? 'lg:col-start-2' : ''
             }`}
+            delay={Math.min(index * 70, 260)}
             key={item.title}
           >
             <Card className="group h-full overflow-hidden p-4 transition duration-300 hover:-translate-y-0.5 hover:border-violet/25 hover:shadow-[0_24px_70px_rgba(108,43,217,0.11)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/20 sm:p-5">
@@ -211,7 +214,7 @@ export function WhyWorkWithMe({ language }: WhyWorkWithMeProps) {
                 </div>
               </div>
             </Card>
-          </li>
+          </ScrollReveal>
         ))}
       </ul>
     </section>
