@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { About } from './components/About'
 import { ContactLinks } from './components/ContactLinks'
+import { CustomCursor } from './components/CustomCursor'
 import { Experience } from './components/Experience'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Layout } from './components/Layout'
+import { PortfolioLoader } from './components/PortfolioLoader'
 import { Projects } from './components/Projects'
 import { SiteHeader } from './components/SiteHeader'
 import { StackArea } from './components/StackArea'
@@ -44,12 +46,15 @@ function getSavedTheme(): Theme | null {
 }
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true)
+  const [hasIntroFinished, setHasIntroFinished] = useState(false)
   const [language, setLanguage] = useState<Language>(
     () => getSavedLanguage() ?? defaultLanguage,
   )
   const [systemTheme, setSystemTheme] = useState<Theme>(getSystemTheme)
   const [themeOverride, setThemeOverride] = useState<Theme | null>(getSavedTheme)
   const theme = themeOverride ?? systemTheme
+  const isHeroIntroReady = hasIntroFinished || !showLoader
 
   useEffect(() => {
     document.documentElement.lang = htmlLanguageByCode[language]
@@ -77,32 +82,47 @@ function App() {
   }, [theme])
 
   return (
-    <Layout
-      header={
-        <SiteHeader
+    <>
+      <CustomCursor />
+
+      {showLoader ? (
+        <PortfolioLoader
           language={language}
-          onLanguageChange={() =>
-            setLanguage((current) => (current === 'en' ? 'pt' : 'en'))
-          }
-          onThemeChange={() => {
-            const nextTheme = theme === 'light' ? 'dark' : 'light'
-            window.localStorage.setItem(themeStorageKey, nextTheme)
-            setThemeOverride(nextTheme)
+          onFinish={() => {
+            setHasIntroFinished(true)
+            setShowLoader(false)
           }}
           theme={theme}
         />
-      }
-    >
-      <Hero language={language} />
-      <div className="grid gap-8 pb-12 lg:pb-16">
-        <About language={language} />
-        <Experience language={language} />
-        <Projects language={language} />
-        <StackArea language={language} />
-        <ContactLinks language={language} />
-        <Footer language={language} />
-      </div>
-    </Layout>
+      ) : null}
+
+      <Layout
+        header={
+          <SiteHeader
+            language={language}
+            onLanguageChange={() =>
+              setLanguage((current) => (current === 'en' ? 'pt' : 'en'))
+            }
+            onThemeChange={() => {
+              const nextTheme = theme === 'light' ? 'dark' : 'light'
+              window.localStorage.setItem(themeStorageKey, nextTheme)
+              setThemeOverride(nextTheme)
+            }}
+            theme={theme}
+          />
+        }
+      >
+        <Hero introReady={isHeroIntroReady} language={language} />
+        <div className="grid gap-8 pb-12 lg:pb-16">
+          <About language={language} />
+          <Experience language={language} />
+          <Projects language={language} />
+          <StackArea language={language} />
+          <ContactLinks language={language} />
+          <Footer language={language} />
+        </div>
+      </Layout>
+    </>
   )
 }
 
