@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { profile } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
+import { coreTranslations } from '../i18n/core'
 import type { Language } from '../i18n/translations'
-import { translations } from '../i18n/translations'
 import { LanguageToggle } from './LanguageToggle'
 import { LanguageTransitionText } from './LanguageTransitionText'
 import { ThemeToggle } from './ThemeToggle'
@@ -82,46 +82,46 @@ export function SiteHeader({
   const [isScrolled, setIsScrolled] = useState(false)
   const headerRef = useRef<HTMLElement | null>(null)
   const activeSection = useActiveSection(navSectionIds)
-  const t = translations[language]
+  const t = coreTranslations[language]
   const navItems = [
     {
       id: 'home',
       href: '#home',
       label: t.navHome,
-      reserveText: [translations.en.navHome, translations.pt.navHome],
+      reserveText: [coreTranslations.en.navHome, coreTranslations.pt.navHome],
     },
     {
       id: 'about',
       href: '#about',
       label: t.navAbout,
-      reserveText: [translations.en.navAbout, translations.pt.navAbout],
+      reserveText: [coreTranslations.en.navAbout, coreTranslations.pt.navAbout],
     },
     {
       id: 'experience',
       href: '#experience',
       label: t.navExperience,
       reserveText: [
-        translations.en.navExperience,
-        translations.pt.navExperience,
+        coreTranslations.en.navExperience,
+        coreTranslations.pt.navExperience,
       ],
     },
     {
       id: 'projects',
       href: '#projects',
       label: t.navProjects,
-      reserveText: [translations.en.navProjects, translations.pt.navProjects],
+      reserveText: [coreTranslations.en.navProjects, coreTranslations.pt.navProjects],
     },
     {
       id: 'stack',
       href: '#stack',
       label: t.navStack,
-      reserveText: [translations.en.navStack, translations.pt.navStack],
+      reserveText: [coreTranslations.en.navStack, coreTranslations.pt.navStack],
     },
     {
       id: 'contact',
       href: '#contact',
       label: t.navContact,
-      reserveText: [translations.en.navContact, translations.pt.navContact],
+      reserveText: [coreTranslations.en.navContact, coreTranslations.pt.navContact],
     },
   ]
 

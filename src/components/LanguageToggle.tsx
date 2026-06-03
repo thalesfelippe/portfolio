@@ -1,5 +1,5 @@
+import { coreTranslations } from '../i18n/core'
 import type { Language } from '../i18n/translations'
-import { translations } from '../i18n/translations'
 
 type LanguageToggleProps = {
   language: Language
@@ -29,7 +29,7 @@ export function LanguageToggle({
   language,
   onLanguageChange,
 }: LanguageToggleProps) {
-  const t = translations[language]
+  const t = coreTranslations[language]
   const currentLanguageLabel = language.toUpperCase()
 
   return (

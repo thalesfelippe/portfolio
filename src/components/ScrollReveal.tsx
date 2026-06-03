@@ -33,6 +33,16 @@ function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
+function getRevealDelay(delay: number) {
+  if (typeof window === 'undefined') {
+    return delay
+  }
+
+  return window.matchMedia('(max-width: 640px)').matches
+    ? Math.min(delay, 80)
+    : delay
+}
+
 function getRevealObserver() {
   if (revealObserver) {
     return revealObserver
@@ -80,7 +90,7 @@ export function ScrollReveal({
   }, [])
   const revealStyle = {
     ...style,
-    '--reveal-delay': `${delay}ms`,
+    '--reveal-delay': `${getRevealDelay(delay)}ms`,
   } as CSSProperties
 
   useEffect(() => {

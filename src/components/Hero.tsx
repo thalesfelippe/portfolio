@@ -1,7 +1,6 @@
 import { profile } from '../data/profile'
-import { stackBadges } from '../i18n/content'
+import { coreTranslations, stackBadges } from '../i18n/core'
 import type { Language } from '../i18n/translations'
-import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
 import { ScrollReveal } from './ScrollReveal'
 import { TechBadgeIcon } from './TechBadgeIcon'
@@ -93,7 +92,7 @@ function LocationIcon() {
 }
 
 export function Hero({ introReady = true, language }: HeroProps) {
-  const t = translations[language]
+  const t = coreTranslations[language]
   const otherLanguage = language === 'en' ? 'pt' : 'en'
 
   return (
@@ -116,8 +115,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
                 as="span"
                 className="block text-violet dark:text-soft-lavender"
                 reserveText={[
-                  translations.en.heroTitleAccent,
-                  translations.pt.heroTitleAccent,
+                  coreTranslations.en.heroTitleAccent,
+                  coreTranslations.pt.heroTitleAccent,
                 ]}
                 showCursor
                 speed={14}
@@ -131,8 +130,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
               className="max-w-2xl text-[0.95rem] font-medium leading-6 text-muted-text dark:text-slate-200 sm:text-lg sm:leading-8"
               mode="fade"
               reserveText={[
-                translations.en.subheadline,
-                translations.pt.subheadline,
+                coreTranslations.en.subheadline,
+                coreTranslations.pt.subheadline,
               ]}
               text={t.subheadline}
             />
@@ -214,8 +213,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
               as="p"
               className="text-xs font-medium text-soft-lavender/75"
               reserveText={[
-                translations.en.heroProfileCard.title,
-                translations.pt.heroProfileCard.title,
+                coreTranslations.en.heroProfileCard.title,
+                coreTranslations.pt.heroProfileCard.title,
               ]}
               speed={11}
               text={t.heroProfileCard.title}
@@ -232,8 +231,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
                   as="p"
                   className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-soft-lavender/70"
                   reserveText={[
-                    translations.en.heroProfileCard.cards[index]?.label ?? card.label,
-                    translations.pt.heroProfileCard.cards[index]?.label ?? card.label,
+                    coreTranslations.en.heroProfileCard.cards[index]?.label ?? card.label,
+                    coreTranslations.pt.heroProfileCard.cards[index]?.label ?? card.label,
                   ]}
                   speed={10}
                   text={card.label}
@@ -242,8 +241,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
                   as="p"
                   className="mt-1.5 break-words text-sm font-semibold text-white sm:mt-2 sm:text-base"
                   reserveText={[
-                    translations.en.heroProfileCard.cards[index]?.value ?? card.value,
-                    translations.pt.heroProfileCard.cards[index]?.value ?? card.value,
+                    coreTranslations.en.heroProfileCard.cards[index]?.value ?? card.value,
+                    coreTranslations.pt.heroProfileCard.cards[index]?.value ?? card.value,
                   ]}
                   speed={10}
                   text={card.value}
@@ -266,7 +265,7 @@ export function Hero({ introReady = true, language }: HeroProps) {
                 </span>
                 <LanguageTransitionText
                   reserveText={[
-                    translations[otherLanguage].heroProfileCard.logs[index]?.slice(1) ??
+                    coreTranslations[otherLanguage].heroProfileCard.logs[index]?.slice(1) ??
                       log.slice(1),
                     log.slice(1),
                   ]}

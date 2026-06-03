@@ -38,6 +38,14 @@ function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
+function isMobileViewport() {
+  if (typeof window === 'undefined') {
+    return false
+  }
+
+  return window.matchMedia('(max-width: 640px)').matches
+}
+
 export function PortfolioLoader({
   language,
   onFinish,
@@ -50,8 +58,9 @@ export function PortfolioLoader({
 
   useEffect(() => {
     const reducedMotion = prefersReducedMotion()
-    const exitDelay = reducedMotion ? 180 : 1180
-    const removeDelay = reducedMotion ? 60 : 260
+    const isMobile = isMobileViewport()
+    const exitDelay = reducedMotion ? 120 : isMobile ? 620 : 1180
+    const removeDelay = reducedMotion ? 40 : isMobile ? 160 : 260
 
     const exitTimer = window.setTimeout(() => {
       setIsLeaving(true)
@@ -72,7 +81,7 @@ export function PortfolioLoader({
       setActiveStatus((current) =>
         current >= copy.status.length - 1 ? current : current + 1,
       )
-    }, 300)
+    }, isMobile ? 220 : 300)
 
     return () => {
       window.clearInterval(statusTimer)
@@ -107,13 +116,13 @@ export function PortfolioLoader({
       />
       <div
         aria-hidden="true"
-        className={`portfolio-loader-glow absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
+        className={`portfolio-loader-glow absolute left-1/2 top-1/2 h-[20rem] w-[20rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl sm:h-[30rem] sm:w-[30rem] sm:blur-3xl ${
           isDark ? 'bg-violet/18' : 'bg-violet/10'
         }`}
       />
       <svg
         aria-hidden="true"
-        className={`portfolio-loader-map absolute inset-0 h-full w-full ${
+        className={`portfolio-loader-map absolute inset-0 hidden h-full w-full sm:block ${
           isDark ? 'text-soft-lavender/24' : 'text-violet/18'
         }`}
         fill="none"

@@ -90,6 +90,7 @@ export function useActiveSection(
     window.addEventListener('resize', handleViewportChange)
     window.addEventListener('hashchange', handleViewportChange)
     window.addEventListener('load', handleViewportChange)
+    window.addEventListener('portfolio:sections-mounted', handleViewportChange)
 
     function handleViewportChange() {
       requestUpdateActiveSection(true)
@@ -104,6 +105,7 @@ export function useActiveSection(
       window.removeEventListener('resize', handleViewportChange)
       window.removeEventListener('hashchange', handleViewportChange)
       window.removeEventListener('load', handleViewportChange)
+      window.removeEventListener('portfolio:sections-mounted', handleViewportChange)
     }
   }, [fallbackHeaderOffset, sectionIdsKey])
 

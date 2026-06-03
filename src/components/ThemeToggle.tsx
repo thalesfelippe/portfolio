@@ -1,4 +1,5 @@
-import { translations, type Language } from '../i18n/translations'
+import { coreTranslations } from '../i18n/core'
+import type { Language } from '../i18n/translations'
 
 type Theme = 'light' | 'dark'
 
@@ -51,7 +52,7 @@ export function ThemeToggle({
   onThemeChange,
   theme,
 }: ThemeToggleProps) {
-  const t = translations[language]
+  const t = coreTranslations[language]
   const isDark = theme === 'dark'
   const label = isDark ? t.themeSwitchToLight : t.themeSwitchToDark
 
