@@ -46,6 +46,10 @@ type TranslationContent = {
       name: string
       category: string
       description: string
+      cover?: {
+        alt: string
+        src?: string
+      }
       stack: string[]
       highlights: string[]
       href?: string
@@ -64,15 +68,21 @@ type TranslationContent = {
     eyebrow: string
     title: string
     subtitle: string
-    items: string[]
+    items: {
+      description: string
+      title: string
+    }[]
   }
   resumeSection: {
     eyebrow: string
     title: string
     subtitle: string
     buttons: {
+      description: string
       label: string
       href: string
+      tags: string[]
+      title: string
     }[]
   }
   availability: string
@@ -169,9 +179,9 @@ export const translations = {
     subheadline:
       'I build web applications for product, fintech, SaaS, and operations, connecting front-end, back-end, APIs, integrations, and business rules into systems that are clear, reliable, and easy to evolve.',
     projectsCta: 'View Projects',
-    contactTitle: 'Let’s build something reliable.',
+    contactTitle: 'Let’s build something?',
     contactSubtitle:
-      'If your company needs someone to build products, integrate systems, solve problems, and improve operational flows with reliable and well-structured software, let’s talk.',
+      'I’m open to full stack opportunities, web products, APIs, integrations, and operational systems that need clear, reliable, and well-structured software.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     contactCta: 'Contact Me',
@@ -370,9 +380,8 @@ export const translations = {
     },
     projects: {
       eyebrow: 'Projects',
-      title: 'Selected product and operations work.',
-      subtitle:
-        'Project cards focused on scope, stack, technical highlights, and business context for recruiting conversations.',
+      title: 'Delivered work.',
+      subtitle: '',
       stackLabel: 'Stack',
       highlightsLabel: 'Highlights',
       linkLabel: 'View project',
@@ -383,6 +392,9 @@ export const translations = {
           category: 'Debt negotiation platform',
           description:
             'Financial platform built to help users negotiate debts through a guided, clear, and conversion-focused journey.',
+          cover: {
+            alt: 'Saiu Acordo project cover',
+          },
           stack: [
             'React',
             'TypeScript',
@@ -407,6 +419,9 @@ export const translations = {
           category: 'Health benefits management system',
           description:
             'Administrative system for managing members, dependents, contracts, clinics, charges, invoices, digital signatures, and appointments.',
+          cover: {
+            alt: 'Clube Fácil Administrative Platform project cover',
+          },
           stack: [
             'Python',
             'Django',
@@ -433,6 +448,9 @@ export const translations = {
           category: 'SaaS for barbershops',
           description:
             'SaaS platform with online scheduling, digital orders, real-time dashboards, and operational control.',
+          cover: {
+            alt: 'SmartBarber System project cover',
+          },
           stack: [
             'Next.js',
             'TypeScript',
@@ -452,6 +470,9 @@ export const translations = {
           category: 'TV media buying web app',
           description:
             'Web app for exploring inventory and requesting TV advertising placements, later sold to Record TV.',
+          cover: {
+            alt: 'Cimtia Ads project cover',
+          },
           stack: ['React', 'TypeScript', 'Node.js', 'Firebase'],
           highlights: [
             'Responsive interface',
@@ -464,6 +485,9 @@ export const translations = {
           category: 'Conversion-focused front-end',
           description:
             'Collection of modern landing pages and sales pages for clinics, SaaS products, digital products, and local businesses.',
+          cover: {
+            alt: 'Landing Pages and Sales Pages project cover',
+          },
           stack: [
             'Next.js',
             'TypeScript',
@@ -482,9 +506,8 @@ export const translations = {
     },
     stack: {
       eyebrow: 'Stack',
-      title: 'Technologies I use to build full stack products.',
-      subtitle:
-        'A practical stack for web products, APIs, integrations, data routines, and operational systems.',
+      title: 'Technologies I use for development.',
+      subtitle: '',
       categories: [
         {
           name: 'Front-end',
@@ -535,35 +558,65 @@ export const translations = {
       ],
     },
     whyWorkWithMe: {
-      eyebrow: 'Why work with me',
-      title: 'I connect product, code, and operations.',
-      subtitle:
-        'I work well where business rules, integrations, user experience, and technical reliability need to move together.',
+      eyebrow: 'What I deliver',
+      title: 'Why work with me?',
+      subtitle: '',
       items: [
-        'Product mindset',
-        'Full stack execution',
-        'Business rules and integrations',
-        'Operational systems',
-        'Reliable and maintainable code',
+        {
+          title: 'Product mindset',
+          description:
+            'I understand the context behind each delivery to build solutions that make sense for the product and user experience.',
+        },
+        {
+          title: 'Full stack execution',
+          description:
+            'I connect front-end, back-end, APIs, and business rules into clear, consistent, and well-structured systems.',
+        },
+        {
+          title: 'Business rules & integrations',
+          description:
+            'I work well in scenarios involving payments, fiscal workflows, CRMs, electronic signatures, WhatsApp, and webhooks.',
+        },
+        {
+          title: 'Operational systems',
+          description:
+            'I build dashboards, automations, and internal workflows that improve team routines and operational reliability.',
+        },
+        {
+          title: 'Reliable and maintainable code',
+          description:
+            'I write organized, stable code prepared for maintenance, evolution, and scale.',
+        },
       ],
     },
     resumeSection: {
       eyebrow: 'Resume',
-      title: 'Download the resume version that fits your role.',
-      subtitle:
-        'Placeholder files are prepared for Full Stack, Front-End, and Back-End resume versions.',
+      title: 'Resume versions for different roles',
+      subtitle: '',
       buttons: [
         {
+          description:
+            'Complete profile focused on product, APIs, integrations, dashboards, and operational systems.',
           label: 'Download Full Stack Resume',
           href: '/resumes/thales-felippe-full-stack.pdf',
+          tags: ['Product', 'APIs', 'Operations'],
+          title: 'Full Stack',
         },
         {
+          description:
+            'Focused on React, Next.js, TypeScript, responsive interfaces, UX, performance, and product flows.',
           label: 'Download Front-End Resume',
           href: '/resumes/thales-felippe-front-end.pdf',
+          tags: ['React', 'Next.js', 'UX'],
+          title: 'Front-End',
         },
         {
+          description:
+            'Focused on Python, Django/DRF, APIs, integrations, databases, webhooks, and asynchronous routines.',
           label: 'Download Back-End Resume',
           href: '/resumes/thales-felippe-back-end.pdf',
+          tags: ['Python', 'Django', 'APIs'],
+          title: 'Back-End',
         },
       ],
     },
@@ -609,9 +662,9 @@ export const translations = {
     subheadline:
       'Construo aplicações web para ambientes de produto, fintech, SaaS e operação, conectando front-end, back-end, APIs, integrações e regras de negócio em sistemas claros, confiáveis e fáceis de evoluir.',
     projectsCta: 'Ver projetos',
-    contactTitle: 'Vamos construir algo confiável.',
+    contactTitle: 'Vamos construir algo?',
     contactSubtitle:
-      'Se sua empresa precisa de alguém para construir produto, integrar sistemas, resolver problemas e melhorar fluxos operacionais com software confiável e bem estruturado, vamos conversar.',
+      'Estou aberto a oportunidades full stack, projetos web, APIs, integrações e sistemas operacionais que precisam de software claro, confiável e bem estruturado.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     contactCta: 'Fale comigo',
@@ -810,9 +863,8 @@ export const translations = {
     },
     projects: {
       eyebrow: 'Projetos',
-      title: 'Projetos selecionados de produto e operação.',
-      subtitle:
-        'Cards focados em escopo, stack, destaques técnicos e contexto de negócio para conversas com recrutadores.',
+      title: 'Trabalhos entregues.',
+      subtitle: '',
       stackLabel: 'Stack',
       highlightsLabel: 'Destaques',
       linkLabel: 'Ver projeto',
@@ -823,6 +875,9 @@ export const translations = {
           category: 'Plataforma de negociação de dívidas',
           description:
             'Plataforma financeira criada para ajudar usuários a negociar dívidas por meio de uma jornada guiada, clara e focada em conversão.',
+          cover: {
+            alt: 'Capa do projeto Saiu Acordo',
+          },
           stack: [
             'React',
             'TypeScript',
@@ -847,6 +902,9 @@ export const translations = {
           category: 'Sistema de gestão de benefícios de saúde',
           description:
             'Sistema administrativo para gerenciar associados, dependentes, contratos, clínicas, cobranças, notas fiscais, assinaturas digitais e atendimentos.',
+          cover: {
+            alt: 'Capa do projeto Plataforma Administrativa Clube Fácil',
+          },
           stack: [
             'Python',
             'Django',
@@ -873,6 +931,9 @@ export const translations = {
           category: 'SaaS para barbearias',
           description:
             'Plataforma SaaS com agendamento online, comandas digitais, dashboards em tempo real e controle operacional.',
+          cover: {
+            alt: 'Capa do projeto SmartBarber System',
+          },
           stack: [
             'Next.js',
             'TypeScript',
@@ -892,6 +953,9 @@ export const translations = {
           category: 'Web app para compra de mídia em TV',
           description:
             'Web app para explorar inventário e solicitar veiculações de publicidade em TV, posteriormente vendido à Record TV.',
+          cover: {
+            alt: 'Capa do projeto Cimtia Ads',
+          },
           stack: ['React', 'TypeScript', 'Node.js', 'Firebase'],
           highlights: [
             'Interface responsiva',
@@ -904,6 +968,9 @@ export const translations = {
           category: 'Front-end focado em conversão',
           description:
             'Coleção de landing pages e páginas de venda modernas para clínicas, produtos SaaS, produtos digitais e negócios locais.',
+          cover: {
+            alt: 'Capa do projeto Landing Pages & Sales Pages',
+          },
           stack: [
             'Next.js',
             'TypeScript',
@@ -922,9 +989,8 @@ export const translations = {
     },
     stack: {
       eyebrow: 'Stack',
-      title: 'Tecnologias que uso para construir produtos full stack.',
-      subtitle:
-        'Uma stack prática para produtos web, APIs, integrações, rotinas de dados e sistemas operacionais.',
+      title: 'Tecnologias que uso para desenvolvimento.',
+      subtitle: '',
       categories: [
         {
           name: 'Front-end',
@@ -975,35 +1041,65 @@ export const translations = {
       ],
     },
     whyWorkWithMe: {
-      eyebrow: 'Por que trabalhar comigo',
-      title: 'Conecto produto, código e operação.',
-      subtitle:
-        'Trabalho bem onde regras de negócio, integrações, experiência do usuário e confiabilidade técnica precisam evoluir juntas.',
+      eyebrow: 'O que eu entrego',
+      title: 'Por que trabalhar comigo?',
+      subtitle: '',
       items: [
-        'Visão de produto',
-        'Execução full stack',
-        'Regras de negócio e integrações',
-        'Sistemas operacionais',
-        'Código confiável e manutenível',
+        {
+          title: 'Visão de produto',
+          description:
+            'Entendo o contexto da entrega para construir soluções que façam sentido no produto e na experiência do usuário.',
+        },
+        {
+          title: 'Execução full stack',
+          description:
+            'Conecto front-end, back-end, APIs e regras de negócio em sistemas claros, consistentes e bem estruturados.',
+        },
+        {
+          title: 'Regras de negócio & integrações',
+          description:
+            'Atuo bem em cenários com pagamentos, emissão fiscal, CRMs, assinatura eletrônica, WhatsApp e webhooks.',
+        },
+        {
+          title: 'Sistemas operacionais',
+          description:
+            'Crio dashboards, automações e fluxos internos que melhoram a rotina dos times e a confiabilidade da operação.',
+        },
+        {
+          title: 'Código confiável e manutenível',
+          description:
+            'Escrevo código organizado, estável e preparado para manutenção, evolução e escala.',
+        },
       ],
     },
     resumeSection: {
       eyebrow: 'Currículo',
-      title: 'Baixe a versão do currículo mais alinhada à vaga.',
-      subtitle:
-        'Arquivos placeholder preparados para versões Full Stack, Front-End e Back-End do currículo.',
+      title: 'Currículos direcionados por área',
+      subtitle: '',
       buttons: [
         {
+          description:
+            'Perfil completo com foco em produto, APIs, integrações, dashboards e sistemas operacionais.',
           label: 'Baixar currículo Full Stack',
           href: '/resumes/thales-felippe-full-stack.pdf',
+          tags: ['Produto', 'APIs', 'Operação'],
+          title: 'Full Stack',
         },
         {
+          description:
+            'Foco em React, Next.js, TypeScript, interfaces responsivas, UX, performance e fluxos de produto.',
           label: 'Baixar currículo Front-End',
           href: '/resumes/thales-felippe-front-end.pdf',
+          tags: ['React', 'Next.js', 'UX'],
+          title: 'Front-End',
         },
         {
+          description:
+            'Foco em Python, Django/DRF, APIs, integrações, bancos de dados, webhooks e rotinas assíncronas.',
           label: 'Baixar currículo Back-End',
           href: '/resumes/thales-felippe-back-end.pdf',
+          tags: ['Python', 'Django', 'APIs'],
+          title: 'Back-End',
         },
       ],
     },
