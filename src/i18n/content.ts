@@ -156,7 +156,7 @@ export const translations = {
     resumeCta: 'Download Resume',
     role: 'Full Stack Developer',
     heroTitleLead: 'Full Stack Developer',
-    heroTitleAccent: 'building reliable web\nproducts.',
+    heroTitleAccent: 'for products, APIs\nand digital operations.',
     heroProfileCard: {
       title: 'thales.dev - engineering profile',
       cards: [
@@ -175,13 +175,13 @@ export const translations = {
     },
     availability: 'Open to remote opportunities',
     introLabel: 'Professional portfolio',
-    headline: 'Full Stack Developer building reliable web products.',
+    headline: 'Full Stack Developer for products, APIs and digital operations.',
     subheadline:
-      'I build web applications for product, fintech, SaaS, and operations, connecting front-end, back-end, APIs, integrations, and business rules into systems that are clear, reliable, and easy to evolve.',
+      'I build web applications that connect interfaces, back-end services, integrations and business rules into reliable systems for product and operations.',
     projectsCta: 'View Projects',
     contactTitle: 'Let’s build something?',
     contactSubtitle:
-      'I’m open to full stack opportunities, web products, APIs, integrations, and operational systems that need clear, reliable, and well-structured software.',
+      'I’m open to full stack opportunities, product work, integrations and web systems that need clear execution and reliable engineering.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     contactCta: 'Contact Me',
@@ -191,11 +191,11 @@ export const translations = {
     onlineLabel: 'Online',
     about: {
       eyebrow: 'About me',
-      title: 'I build products that connect code, business, and operation.',
+      title: 'I turn business flows into reliable web systems.',
       paragraphs: [
-        'I’m a Full Stack Developer with experience since 2021 building web applications for product, fintech, SaaS, and operations. I work with React, Next.js, TypeScript, Python, Django/DRF, and APIs, connecting front-end, back-end, integrations, and business rules to deliver systems that are stable, clear, and easy to evolve.',
-        'In recent years, I have worked on financial platforms and management systems, building negotiation journeys, operational dashboards, real-time chats, WhatsApp/CRM integrations, payment gateways, fiscal invoicing, electronic signatures, webhooks, asynchronous routines, and observability improvements.',
-        'I like building solutions in collaboration with product and operations, connecting business rules, integrations, and user experience into systems that are clear, reliable, and easy to maintain.',
+        'I’m a Full Stack Developer with experience since 2021 building web applications for product, fintech, SaaS and operational environments.',
+        'My work usually sits between interface, back-end, APIs and business rules. I’ve built negotiation journeys, operational dashboards, real-time chats, WhatsApp/CRM integrations, payment flows, fiscal workflows, electronic signatures, webhooks and asynchronous routines.',
+        'I like working close to the problem: understanding how the operation works, simplifying complex flows and delivering software that is useful for users, reliable for teams and easier to maintain over time.',
       ],
       snapshotTitle: 'Profile snapshot',
       snapshot: [
@@ -506,8 +506,9 @@ export const translations = {
     },
     stack: {
       eyebrow: 'Stack',
-      title: 'Technologies I use for development.',
-      subtitle: '',
+      title: 'Tools I use to build and evolve web products.',
+      subtitle:
+        'A practical stack for interfaces, APIs, integrations, data routines and operational systems.',
       categories: [
         {
           name: 'Front-end',
@@ -558,45 +559,46 @@ export const translations = {
       ],
     },
     whyWorkWithMe: {
-      eyebrow: 'What I deliver',
-      title: 'Why work with me?',
+      eyebrow: 'What I bring to the table',
+      title: 'How I usually help teams',
       subtitle: '',
       items: [
         {
-          title: 'Product mindset',
+          title: 'Product clarity',
           description:
-            'I understand the context behind each delivery to build solutions that make sense for the product and user experience.',
+            'I try to understand the goal behind each feature before writing code, so the solution makes sense for users and for the business.',
         },
         {
-          title: 'Full stack execution',
+          title: 'End-to-end execution',
           description:
-            'I connect front-end, back-end, APIs, and business rules into clear, consistent, and well-structured systems.',
+            'I can move across front-end, back-end, APIs and integrations without losing sight of the full product flow.',
         },
         {
-          title: 'Business rules & integrations',
+          title: 'Complex flows made simpler',
           description:
-            'I work well in scenarios involving payments, fiscal workflows, CRMs, electronic signatures, WhatsApp, and webhooks.',
+            'I’m comfortable working with business rules, payments, fiscal workflows, CRMs, WhatsApp, webhooks and operational processes.',
         },
         {
-          title: 'Operational systems',
+          title: 'Operation-aware development',
           description:
-            'I build dashboards, automations, and internal workflows that improve team routines and operational reliability.',
+            'I build dashboards, automations and internal tools with attention to how teams will use and maintain them day to day.',
         },
         {
-          title: 'Reliable and maintainable code',
+          title: 'Maintainable delivery',
           description:
-            'I write organized, stable code prepared for maintenance, evolution, and scale.',
+            'I care about clear structure, readable code and decisions that make the system easier to evolve after the first release.',
         },
       ],
     },
     resumeSection: {
       eyebrow: 'Resume',
-      title: 'Resume versions for different roles',
-      subtitle: '',
+      title: 'Choose the resume that fits the role.',
+      subtitle:
+        'I keep different versions focused on full stack, front-end and back-end opportunities.',
       buttons: [
         {
           description:
-            'Complete profile focused on product, APIs, integrations, dashboards, and operational systems.',
+            'Broader profile focused on product flows, APIs, integrations, dashboards and operational systems.',
           label: 'Download Full Stack Resume',
           href: '/resumes/thales-felippe-full-stack.pdf',
           tags: ['Product', 'APIs', 'Operations'],
@@ -604,7 +606,7 @@ export const translations = {
         },
         {
           description:
-            'Focused on React, Next.js, TypeScript, responsive interfaces, UX, performance, and product flows.',
+            'Focused on React, Next.js, TypeScript, responsive interfaces, UX, performance and product journeys.',
           label: 'Download Front-End Resume',
           href: '/resumes/thales-felippe-front-end.pdf',
           tags: ['React', 'Next.js', 'UX'],
@@ -612,7 +614,7 @@ export const translations = {
         },
         {
           description:
-            'Focused on Python, Django/DRF, APIs, integrations, databases, webhooks, and asynchronous routines.',
+            'Focused on Python, Django/DRF, APIs, databases, webhooks, integrations and asynchronous routines.',
           label: 'Download Back-End Resume',
           href: '/resumes/thales-felippe-back-end.pdf',
           tags: ['Python', 'Django', 'APIs'],
@@ -639,7 +641,7 @@ export const translations = {
     resumeCta: 'Baixar currículo',
     role: 'Full Stack Developer',
     heroTitleLead: 'Full Stack Developer',
-    heroTitleAccent: 'construindo produtos\nweb confiáveis.',
+    heroTitleAccent: 'para produtos, APIs\ne operações digitais.',
     heroProfileCard: {
       title: 'thales.dev - perfil de engenharia',
       cards: [
@@ -658,13 +660,13 @@ export const translations = {
     },
     availability: 'Aberto a oportunidades remotas',
     introLabel: 'Portfólio profissional',
-    headline: 'Full Stack Developer construindo produtos web confiáveis.',
+    headline: 'Full Stack Developer para produtos, APIs e operações digitais.',
     subheadline:
-      'Construo aplicações web para ambientes de produto, fintech, SaaS e operação, conectando front-end, back-end, APIs, integrações e regras de negócio em sistemas claros, confiáveis e fáceis de evoluir.',
+      'Desenvolvo aplicações web que conectam interfaces, back-end, integrações e regras de negócio em sistemas confiáveis para produto e operação.',
     projectsCta: 'Ver projetos',
     contactTitle: 'Vamos construir algo?',
     contactSubtitle:
-      'Estou aberto a oportunidades full stack, projetos web, APIs, integrações e sistemas operacionais que precisam de software claro, confiável e bem estruturado.',
+      'Estou aberto a oportunidades full stack, projetos de produto, integrações e sistemas web que precisam de execução clara e engenharia confiável.',
     github: 'GitHub',
     linkedin: 'LinkedIn',
     contactCta: 'Fale comigo',
@@ -674,11 +676,11 @@ export const translations = {
     onlineLabel: 'Online',
     about: {
       eyebrow: 'Sobre mim',
-      title: 'Construo produtos que conectam código, negócio e operação.',
+      title: 'Transformo fluxos de negócio em sistemas web confiáveis.',
       paragraphs: [
-        'Sou Full Stack Developer com experiência desde 2021 construindo aplicações web para ambientes de produto, fintech, SaaS e operação. Trabalho com React, Next.js, TypeScript, Python, Django/DRF e APIs, conectando front-end, back-end, integrações e regras de negócio para entregar sistemas estáveis, claros e fáceis de evoluir.',
-        'Nos últimos anos, atuei em plataformas financeiras e sistemas de gestão, desenvolvendo jornadas de negociação, dashboards operacionais, chats em tempo real, integrações com WhatsApp/CRM, gateways de pagamento, emissão fiscal, assinatura eletrônica, webhooks, rotinas assíncronas e melhorias de observabilidade.',
-        'Gosto de construir soluções em colaboração com produto e operação, conectando regras de negócio, integrações e experiência do usuário em sistemas claros, confiáveis e fáceis de manter.',
+        'Sou Full Stack Developer com experiência desde 2021 construindo aplicações web para ambientes de produto, fintech, SaaS e operação.',
+        'Minha atuação costuma ficar entre interface, back-end, APIs e regras de negócio. Já desenvolvi jornadas de negociação, dashboards operacionais, chats em tempo real, integrações com WhatsApp/CRM, fluxos de pagamento, emissão fiscal, assinatura eletrônica, webhooks e rotinas assíncronas.',
+        'Gosto de trabalhar perto do problema: entender como a operação funciona, simplificar fluxos complexos e entregar software útil para quem usa, confiável para quem opera e mais fácil de manter ao longo do tempo.',
       ],
       snapshotTitle: 'Resumo do perfil',
       snapshot: [
@@ -989,8 +991,9 @@ export const translations = {
     },
     stack: {
       eyebrow: 'Stack',
-      title: 'Tecnologias que uso para desenvolvimento.',
-      subtitle: '',
+      title: 'Ferramentas que uso para construir e evoluir produtos web.',
+      subtitle:
+        'Uma stack prática para interfaces, APIs, integrações, rotinas de dados e sistemas operacionais.',
       categories: [
         {
           name: 'Front-end',
@@ -1041,45 +1044,46 @@ export const translations = {
       ],
     },
     whyWorkWithMe: {
-      eyebrow: 'O que eu entrego',
-      title: 'Por que trabalhar comigo?',
+      eyebrow: 'O que eu levo para o time',
+      title: 'Como costumo ajudar',
       subtitle: '',
       items: [
         {
-          title: 'Visão de produto',
+          title: 'Clareza de produto',
           description:
-            'Entendo o contexto da entrega para construir soluções que façam sentido no produto e na experiência do usuário.',
+            'Busco entender o objetivo por trás de cada entrega antes de escrever código, para que a solução faça sentido para o usuário e para o negócio.',
         },
         {
-          title: 'Execução full stack',
+          title: 'Execução de ponta a ponta',
           description:
-            'Conecto front-end, back-end, APIs e regras de negócio em sistemas claros, consistentes e bem estruturados.',
+            'Consigo atuar entre front-end, back-end, APIs e integrações sem perder a visão do fluxo completo do produto.',
         },
         {
-          title: 'Regras de negócio & integrações',
+          title: 'Fluxos complexos mais simples',
           description:
-            'Atuo bem em cenários com pagamentos, emissão fiscal, CRMs, assinatura eletrônica, WhatsApp e webhooks.',
+            'Tenho facilidade em trabalhar com regras de negócio, pagamentos, emissão fiscal, CRMs, WhatsApp, webhooks e processos operacionais.',
         },
         {
-          title: 'Sistemas operacionais',
+          title: 'Desenvolvimento olhando para a operação',
           description:
-            'Crio dashboards, automações e fluxos internos que melhoram a rotina dos times e a confiabilidade da operação.',
+            'Construo dashboards, automações e ferramentas internas pensando em como os times vão usar e manter aquilo no dia a dia.',
         },
         {
-          title: 'Código confiável e manutenível',
+          title: 'Entrega fácil de evoluir',
           description:
-            'Escrevo código organizado, estável e preparado para manutenção, evolução e escala.',
+            'Valorizo estrutura clara, código legível e decisões que tornam o sistema mais simples de manter depois da primeira entrega.',
         },
       ],
     },
     resumeSection: {
       eyebrow: 'Currículo',
-      title: 'Currículos direcionados por área',
-      subtitle: '',
+      title: 'Escolha o currículo mais alinhado à vaga.',
+      subtitle:
+        'Mantenho versões direcionadas para oportunidades full stack, front-end e back-end.',
       buttons: [
         {
           description:
-            'Perfil completo com foco em produto, APIs, integrações, dashboards e sistemas operacionais.',
+            'Perfil mais amplo, com foco em fluxos de produto, APIs, integrações, dashboards e sistemas operacionais.',
           label: 'Baixar currículo Full Stack',
           href: '/resumes/thales-felippe-full-stack.pdf',
           tags: ['Produto', 'APIs', 'Operação'],
@@ -1087,7 +1091,7 @@ export const translations = {
         },
         {
           description:
-            'Foco em React, Next.js, TypeScript, interfaces responsivas, UX, performance e fluxos de produto.',
+            'Foco em React, Next.js, TypeScript, interfaces responsivas, UX, performance e jornadas de produto.',
           label: 'Baixar currículo Front-End',
           href: '/resumes/thales-felippe-front-end.pdf',
           tags: ['React', 'Next.js', 'UX'],
@@ -1095,7 +1099,7 @@ export const translations = {
         },
         {
           description:
-            'Foco em Python, Django/DRF, APIs, integrações, bancos de dados, webhooks e rotinas assíncronas.',
+            'Foco em Python, Django/DRF, APIs, bancos de dados, webhooks, integrações e rotinas assíncronas.',
           label: 'Baixar currículo Back-End',
           href: '/resumes/thales-felippe-back-end.pdf',
           tags: ['Python', 'Django', 'APIs'],
