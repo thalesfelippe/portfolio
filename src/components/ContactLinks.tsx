@@ -2,7 +2,7 @@ import { profile } from '../data/profile'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
-import { Button, Card, SectionTitle } from './ui'
+import { Button, Card } from './ui'
 
 type ContactLinksProps = {
   language: Language
@@ -14,18 +14,21 @@ const contactItems = [
     labelKey: 'linkedin',
     href: profile.links.linkedin,
     value: 'linkedin.com/in/thales-felippe',
+    variant: 'primary',
   },
   {
     key: 'email',
     labelKey: 'email',
     href: `mailto:${profile.email}`,
     value: profile.email,
+    variant: 'secondary',
   },
   {
     key: 'github',
     labelKey: 'github',
     href: profile.links.github,
     value: 'github.com/thalesfelippe',
+    variant: 'secondary',
   },
 ] as const
 
@@ -46,6 +49,67 @@ function ArrowRightIcon() {
       />
     </svg>
   )
+}
+
+function LinkedInIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-4 w-4"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M6.5 9.4H3.8V20h2.7V9.4ZM5.1 4a1.6 1.6 0 1 0 0 3.2A1.6 1.6 0 0 0 5.1 4Zm8.2 8.3c1.5 0 2.2 1 2.2 2.6V20h2.7v-5.6c0-3-1.6-4.7-4.1-4.7-1.7 0-2.7.9-3.1 1.7h-.1V9.4H8.4V20h2.7v-5.4c0-1.4.8-2.3 2.2-2.3Z" />
+    </svg>
+  )
+}
+
+function MailIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M4.5 7.5 12 13l7.5-5.5M6 19h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  )
+}
+
+function GitHubIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-4 w-4"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        clipRule="evenodd"
+        d="M12 2.8a9.7 9.7 0 0 0-3.1 18.9c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.2-3.5-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.4-2.3-.3-4.7-1.1-4.7-5 0-1.1.4-2 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.3 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.8 1.1 1.7 1.1 2.8 0 3.9-2.4 4.7-4.7 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A9.7 9.7 0 0 0 12 2.8Z"
+        fillRule="evenodd"
+      />
+    </svg>
+  )
+}
+
+function ContactIcon({ name }: { name: (typeof contactItems)[number]['key'] }) {
+  if (name === 'linkedin') {
+    return <LinkedInIcon />
+  }
+
+  if (name === 'email') {
+    return <MailIcon />
+  }
+
+  return <GitHubIcon />
 }
 
 function ContactBackground() {
@@ -89,6 +153,7 @@ function ContactBackground() {
 
 export function ContactLinks({ language }: ContactLinksProps) {
   const t = translations[language]
+  const eyebrow = language === 'pt' ? 'Contato' : 'Contact'
 
   return (
     <section
@@ -98,12 +163,38 @@ export function ContactLinks({ language }: ContactLinksProps) {
     >
       <ContactBackground />
 
-      <Card className="relative overflow-hidden p-0">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(108,43,217,0.14),transparent_36%),linear-gradient(135deg,rgba(108,43,217,0.07),transparent_42%)] dark:bg-[radial-gradient(circle_at_80%_0%,rgba(185,167,255,0.12),transparent_36%),linear-gradient(135deg,rgba(108,43,217,0.12),transparent_46%)]" />
-        <div className="relative grid gap-6 p-4 sm:p-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-10">
-          <SectionTitle
+      <div className="relative grid gap-6">
+        <div className="grid max-w-2xl gap-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet dark:text-soft-lavender">
+            <LanguageTransitionText
+              as="span"
+              reserveText={['Contact', 'Contato']}
+              speed={12}
+              text={eyebrow}
+            />
+          </p>
+          <h2
+            className="text-3xl font-bold tracking-tight text-dark-text dark:text-white sm:text-4xl lg:text-5xl"
             id="contact-title"
-            subtitle={
+          >
+            <LanguageTransitionText
+              as="span"
+              reserveText={[
+                translations.en.contactTitle,
+                translations.pt.contactTitle,
+              ]}
+              speed={12}
+              text={t.contactTitle}
+            />
+          </h2>
+        </div>
+
+        <Card className="relative overflow-hidden border-violet/14 bg-white/78 p-0 shadow-[0_22px_80px_rgba(31,17,71,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.055] dark:shadow-[0_24px_90px_rgba(0,0,0,0.22)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_86%_4%,rgba(108,43,217,0.13),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.055),transparent_46%)] dark:bg-[radial-gradient(circle_at_84%_6%,rgba(185,167,255,0.11),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.09),transparent_48%)]" />
+          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-violet/34 to-transparent dark:via-soft-lavender/28" />
+
+          <div className="relative grid gap-5 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-8">
+            <p className="max-w-2xl text-base font-medium leading-7 text-muted-text dark:text-slate-300 sm:text-lg sm:leading-8">
               <LanguageTransitionText
                 as="span"
                 mode="fade"
@@ -113,47 +204,43 @@ export function ContactLinks({ language }: ContactLinksProps) {
                 ]}
                 text={t.contactSubtitle}
               />
-            }
-            title={
-              <LanguageTransitionText
-                as="span"
-                reserveText={[
-                  translations.en.contactTitle,
-                  translations.pt.contactTitle,
-                ]}
-                speed={12}
-                text={t.contactTitle}
-              />
-            }
-          />
+            </p>
 
-          <ul className="grid gap-3 sm:grid-cols-3 lg:min-w-[28rem]">
-            {contactItems.map((item, index) => (
-              <li key={item.key}>
-                <Button
-                  aria-label={`${t[item.labelKey]}: ${item.value}`}
-                  className="min-h-11 w-full gap-2 px-4 py-0"
-                  href={item.href}
-                  rel={item.key === 'email' ? undefined : 'noopener noreferrer'}
-                  target={item.key === 'email' ? undefined : '_blank'}
-                  variant={index === 0 ? 'primary' : 'secondary'}
-                >
-                  <LanguageTransitionText
-                    as="span"
-                    reserveText={[
-                      translations.en[item.labelKey],
-                      translations.pt[item.labelKey],
-                    ]}
-                    speed={12}
-                    text={t[item.labelKey]}
-                  />
-                  <ArrowRightIcon />
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Card>
+            <ul className="grid gap-3 sm:grid-cols-3 lg:min-w-[30rem]">
+              {contactItems.map((item, index) => (
+                <li key={item.key}>
+                  <Button
+                    aria-label={`${t[item.labelKey]}: ${item.value}`}
+                    className={`min-h-11 w-full gap-2.5 px-4 py-0 ${
+                      index === 0
+                        ? ''
+                        : 'hover:border-violet/35 dark:hover:border-soft-lavender/28'
+                    }`}
+                    href={item.href}
+                    rel={
+                      item.key === 'email' ? undefined : 'noopener noreferrer'
+                    }
+                    target={item.key === 'email' ? undefined : '_blank'}
+                    variant={item.variant}
+                  >
+                    <ContactIcon name={item.key} />
+                    <LanguageTransitionText
+                      as="span"
+                      reserveText={[
+                        translations.en[item.labelKey],
+                        translations.pt[item.labelKey],
+                      ]}
+                      speed={12}
+                      text={t[item.labelKey]}
+                    />
+                    <ArrowRightIcon />
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Card>
+      </div>
     </section>
   )
 }
