@@ -147,13 +147,17 @@ export function Hero({ language }: HeroProps) {
             <DownloadIcon />
             {t.resumeCta}
           </Button>
-          <a
-            className="inline-flex min-h-11 w-full min-w-32 items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold text-muted-text transition hover:-translate-y-0.5 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:text-slate-300 dark:hover:text-white sm:h-10 sm:w-auto"
+          <Button
+            aria-label={`${t.contactCta}: ${profile.email}`}
+            className="group min-h-11 w-full min-w-36 gap-2 border-violet/12 bg-white/45 px-5 py-0 text-muted-text shadow-[0_10px_30px_rgba(31,17,71,0.045)] backdrop-blur-md hover:border-violet/28 hover:bg-violet/8 hover:text-violet hover:shadow-[0_16px_40px_rgba(108,43,217,0.09)] dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-300 dark:hover:border-soft-lavender/24 dark:hover:bg-white/[0.08] dark:hover:text-white sm:h-10 sm:w-auto"
             href={`mailto:${profile.email}`}
+            variant="ghost"
           >
-            <MailIcon />
+            <span className="text-violet transition group-hover:text-violet dark:text-soft-lavender">
+              <MailIcon />
+            </span>
             {t.contactCta}
-          </a>
+          </Button>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 text-sm text-muted-text dark:text-slate-400">
