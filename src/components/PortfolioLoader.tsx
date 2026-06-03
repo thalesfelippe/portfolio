@@ -50,8 +50,8 @@ export function PortfolioLoader({
 
   useEffect(() => {
     const reducedMotion = prefersReducedMotion()
-    const exitDelay = reducedMotion ? 220 : 1450
-    const removeDelay = reducedMotion ? 80 : 360
+    const exitDelay = reducedMotion ? 180 : 1180
+    const removeDelay = reducedMotion ? 60 : 260
 
     const exitTimer = window.setTimeout(() => {
       setIsLeaving(true)
@@ -72,7 +72,7 @@ export function PortfolioLoader({
       setActiveStatus((current) =>
         current >= copy.status.length - 1 ? current : current + 1,
       )
-    }, 360)
+    }, 300)
 
     return () => {
       window.clearInterval(statusTimer)
@@ -86,13 +86,13 @@ export function PortfolioLoader({
       aria-label={copy.label}
       className={`fixed inset-0 z-[100] grid place-items-center overflow-hidden transition duration-300 ease-out ${
         isLeaving
-          ? 'scale-[1.015] opacity-0 blur-sm'
-          : 'scale-100 opacity-100 blur-0'
+          ? 'scale-[1.01] opacity-0'
+          : 'scale-100 opacity-100'
       } ${
         isDark
           ? 'bg-deep-navy text-white'
           : 'bg-light-bg text-dark-text'
-      } motion-reduce:transition-none motion-reduce:blur-0`}
+      } motion-reduce:transition-none`}
       role="status"
     >
       <span className="sr-only">{copy.label}</span>

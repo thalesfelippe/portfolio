@@ -126,14 +126,30 @@ export function SiteHeader({
   ]
 
   useEffect(() => {
+    let frameId: number | null = null
+
     function handleScroll() {
-      setIsScrolled(window.scrollY > 12)
+      if (frameId !== null) {
+        return
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null
+        const nextIsScrolled = window.scrollY > 12
+        setIsScrolled((current) =>
+          current === nextIsScrolled ? current : nextIsScrolled,
+        )
+      })
     }
 
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId)
+      }
+
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])

@@ -9,15 +9,10 @@ export function useActiveSection(
 
   useEffect(() => {
     let frameId: number | null = null
+    let activationOffset = fallbackHeaderOffset + 140
+    let trackedSections: { id: string; top: number }[] = []
 
-    function getTrackedSections() {
-      return sectionIdsKey
-        .split('|')
-        .map((id) => document.getElementById(id))
-        .filter((section): section is HTMLElement => Boolean(section))
-    }
-
-    function getActivationOffset() {
+    function recalculateTrackedSections() {
       const header = document.querySelector('header')
       const headerHeight =
         header instanceof HTMLElement
@@ -25,22 +20,28 @@ export function useActiveSection(
           : fallbackHeaderOffset
       const readingOffset = Math.min(180, Math.max(120, window.innerHeight * 0.22))
 
-      return headerHeight + readingOffset
+      activationOffset = headerHeight + readingOffset
+      trackedSections = sectionIdsKey
+        .split('|')
+        .map((id) => document.getElementById(id))
+        .filter((section): section is HTMLElement => Boolean(section))
+        .map((section) => ({
+          id: section.id,
+          top: section.offsetTop,
+        }))
     }
 
     function updateActiveSection() {
       frameId = null
 
-      const sections = getTrackedSections()
-
-      if (!sections.length) {
+      if (!trackedSections.length) {
         return
       }
 
       const scrollTop = window.scrollY
 
       if (scrollTop <= 8) {
-        setActiveSection(sections[0].id)
+        setActiveSection(trackedSections[0].id)
         return
       }
 
@@ -48,15 +49,15 @@ export function useActiveSection(
       const viewportBottom = scrollTop + window.innerHeight
 
       if (viewportBottom >= documentHeight - 8) {
-        setActiveSection(sections[sections.length - 1].id)
+        setActiveSection(trackedSections[trackedSections.length - 1].id)
         return
       }
 
-      const scrollPosition = scrollTop + getActivationOffset()
-      let currentSection = sections[0].id
+      const scrollPosition = scrollTop + activationOffset
+      let currentSection = trackedSections[0].id
 
-      for (const section of sections) {
-        if (section.offsetTop <= scrollPosition) {
+      for (const section of trackedSections) {
+        if (section.top <= scrollPosition) {
           currentSection = section.id
         } else {
           break
@@ -66,7 +67,11 @@ export function useActiveSection(
       setActiveSection(currentSection)
     }
 
-    function requestUpdateActiveSection() {
+    function requestUpdateActiveSection(recalculate = false) {
+      if (recalculate) {
+        recalculateTrackedSections()
+      }
+
       if (frameId !== null) {
         return
       }
@@ -74,21 +79,31 @@ export function useActiveSection(
       frameId = window.requestAnimationFrame(updateActiveSection)
     }
 
-    requestUpdateActiveSection()
-    window.addEventListener('scroll', requestUpdateActiveSection, {
+    requestUpdateActiveSection(true)
+    function handleScroll() {
+      requestUpdateActiveSection()
+    }
+
+    window.addEventListener('scroll', handleScroll, {
       passive: true,
     })
-    window.addEventListener('resize', requestUpdateActiveSection)
-    window.addEventListener('hashchange', requestUpdateActiveSection)
+    window.addEventListener('resize', handleViewportChange)
+    window.addEventListener('hashchange', handleViewportChange)
+    window.addEventListener('load', handleViewportChange)
+
+    function handleViewportChange() {
+      requestUpdateActiveSection(true)
+    }
 
     return () => {
       if (frameId !== null) {
         window.cancelAnimationFrame(frameId)
       }
 
-      window.removeEventListener('scroll', requestUpdateActiveSection)
-      window.removeEventListener('resize', requestUpdateActiveSection)
-      window.removeEventListener('hashchange', requestUpdateActiveSection)
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleViewportChange)
+      window.removeEventListener('hashchange', handleViewportChange)
+      window.removeEventListener('load', handleViewportChange)
     }
   }, [fallbackHeaderOffset, sectionIdsKey])
 

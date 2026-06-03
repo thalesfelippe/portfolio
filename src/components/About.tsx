@@ -77,12 +77,12 @@ function AboutSnapshotCard({ language }: AboutProps) {
         />
       }
     >
-      <dl className="divide-y divide-violet/10 dark:divide-soft-lavender/10">
+      <ul className="divide-y divide-violet/10 dark:divide-soft-lavender/10">
         {t.about.snapshot.map((item, index) => (
-          <div className="flex gap-2 py-2 first:pt-0 last:pb-0" key={item.label}>
+          <li className="flex gap-2 py-2 first:pt-0 last:pb-0" key={item.label}>
             <ProfileMarker />
             <div className="min-w-0">
-              <dt className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted-text dark:text-slate-400">
+              <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-muted-text dark:text-slate-400">
                 <LanguageTransitionText
                   as="span"
                   mode="fade"
@@ -92,8 +92,8 @@ function AboutSnapshotCard({ language }: AboutProps) {
                   ]}
                   text={item.label}
                 />
-              </dt>
-              <dd className="mt-0.5 text-[0.84rem] font-bold leading-snug text-dark-text dark:text-white">
+              </p>
+              <p className="mt-0.5 text-[0.84rem] font-bold leading-snug text-dark-text dark:text-white">
                 <LanguageTransitionText
                   as="span"
                   mode="fade"
@@ -103,11 +103,11 @@ function AboutSnapshotCard({ language }: AboutProps) {
                   ]}
                   text={item.value}
                 />
-              </dd>
+              </p>
             </div>
-          </div>
+          </li>
         ))}
-      </dl>
+      </ul>
     </AboutCardShell>
   )
 }

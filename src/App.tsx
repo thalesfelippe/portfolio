@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { About } from './components/About'
 import { ContactLinks } from './components/ContactLinks'
 import { CustomCursor } from './components/CustomCursor'
@@ -56,6 +56,11 @@ function App() {
   const theme = themeOverride ?? systemTheme
   const isHeroIntroReady = hasIntroFinished || !showLoader
 
+  const handleLoaderFinish = useCallback(() => {
+    setHasIntroFinished(true)
+    setShowLoader(false)
+  }, [])
+
   useEffect(() => {
     document.documentElement.lang = htmlLanguageByCode[language]
     document.documentElement.dataset.language = language
@@ -88,10 +93,7 @@ function App() {
       {showLoader ? (
         <PortfolioLoader
           language={language}
-          onFinish={() => {
-            setHasIntroFinished(true)
-            setShowLoader(false)
-          }}
+          onFinish={handleLoaderFinish}
           theme={theme}
         />
       ) : null}

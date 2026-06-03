@@ -110,62 +110,67 @@ a {
   }
 
   .custom-cursor {
-    border: 1px solid var(--cursor-color);
     border-radius: 999px;
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.04),
-      0 0 34px var(--cursor-glow);
     height: 2rem;
     opacity: 0.72;
-    transition:
-      border-color 180ms ease,
-      box-shadow 180ms ease,
-      height 180ms ease,
-      opacity 180ms ease,
-      width 180ms ease;
     width: 2rem;
-    will-change: transform, opacity, width, height;
+    will-change: transform, opacity;
   }
 
   .custom-cursor-dot {
-    background: var(--cursor-fill);
     border-radius: 999px;
-    box-shadow: 0 0 18px var(--cursor-glow);
     height: 0.32rem;
     opacity: 0.9;
-    transition:
-      height 160ms ease,
-      opacity 160ms ease,
-      width 160ms ease;
     width: 0.32rem;
-    will-change: transform, opacity, width, height;
+    will-change: transform, opacity;
+  }
+
+  .custom-cursor::before,
+  .custom-cursor-dot::before {
+    border-radius: inherit;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scale(var(--cursor-scale, 1));
+    transition:
+      opacity 160ms ease,
+      transform 180ms ease;
+    will-change: transform, opacity;
+  }
+
+  .custom-cursor::before {
+    border: 1px solid var(--cursor-color);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 0 30px var(--cursor-glow);
+  }
+
+  .custom-cursor-dot::before {
+    background: var(--cursor-fill);
+    box-shadow: 0 0 18px var(--cursor-glow);
   }
 
   .custom-cursor--interactive {
-    border-color: var(--cursor-fill);
-    box-shadow:
-      0 0 0 1px rgba(108, 43, 217, 0.08),
-      0 0 42px var(--cursor-glow);
-    height: 2.7rem;
     opacity: 0.92;
-    width: 2.7rem;
+    --cursor-scale: 1.35;
+  }
+
+  .custom-cursor--interactive::before {
+    border-color: var(--cursor-fill);
   }
 
   .custom-cursor-dot--interactive {
-    height: 0.42rem;
     opacity: 1;
-    width: 0.42rem;
+    --cursor-scale: 1.3;
   }
 
   .custom-cursor--pressed {
-    height: 1.55rem;
     opacity: 0.86;
-    width: 1.55rem;
+    --cursor-scale: 0.78;
   }
 
   .custom-cursor-dot--pressed {
-    height: 0.26rem;
-    width: 0.26rem;
+    --cursor-scale: 0.82;
   }
 
   .custom-cursor--hidden,
@@ -175,15 +180,13 @@ a {
 }
 
 .scroll-reveal {
-  filter: blur(7px);
   opacity: 0;
   transform: translate3d(0, 18px, 0) scale(0.99);
   transition:
     opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
 }
 
 .scroll-reveal[data-reveal-direction="down"] {
@@ -207,7 +210,6 @@ a {
 }
 
 .scroll-reveal.is-visible {
-  filter: blur(0);
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
 }
@@ -751,12 +753,12 @@ a {
 @keyframes portfolio-loader-orbit {
   0%,
   100% {
-    box-shadow: 0 18px 60px rgba(185, 167, 255, 0.14);
+    opacity: 0.92;
     transform: translate3d(0, 0, 0) scale(1);
   }
 
   50% {
-    box-shadow: 0 22px 76px rgba(185, 167, 255, 0.22);
+    opacity: 1;
     transform: translate3d(0, -2px, 0) scale(1.025);
   }
 }
@@ -785,11 +787,37 @@ a {
   .scroll-reveal[data-reveal-direction="right"],
   .scroll-reveal[data-reveal-direction="scale"] {
     transform: translate3d(0, 10px, 0) scale(0.995);
+    transition-duration: 420ms;
+    transition-delay: calc(var(--reveal-delay, 0ms) * 0.5);
   }
 
   .hero-purple-glow-orbit,
+  .hero-light-drift-secondary,
   .projects-showcase-card {
     display: none;
+  }
+
+  .about-system-glow-drift,
+  .about-system-sheen-drift,
+  .about-system-map-float,
+  .about-system-lines,
+  .about-system-nodes,
+  .about-system-orbits,
+  .contact-ambient-glow,
+  .contact-signal-lines,
+  .projects-showcase-glow,
+  .projects-showcase-streak,
+  .stack-mesh-glow,
+  .stack-mesh-map,
+  .stack-mesh-lines,
+  .stack-mesh-nodes {
+    animation: none;
+    will-change: auto;
+  }
+
+  .hero-light-drift-primary {
+    animation-duration: 48s;
+    opacity: 0.68;
   }
 
   .hero-light-drift-primary,
@@ -906,7 +934,6 @@ a {
 
   .scroll-reveal,
   .scroll-reveal[data-reveal-direction] {
-    filter: none;
     opacity: 1;
     transform: none;
     transition: none;

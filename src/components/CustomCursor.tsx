@@ -68,6 +68,7 @@ export function CustomCursor() {
     let currentY = window.innerHeight / 2
     let targetX = currentX
     let targetY = currentY
+    let isInteractiveTarget = false
 
     function setCursorVisible(isVisible: boolean) {
       cursorNode.classList.toggle('custom-cursor--hidden', !isVisible)
@@ -100,14 +101,21 @@ export function CustomCursor() {
       targetY = event.clientY
 
       const target = event.target
+      const nextIsInteractive =
+        target instanceof Element && Boolean(target.closest(interactiveSelector))
+
       setCursorVisible(true)
-      setCursorInteractive(
-        target instanceof Element && Boolean(target.closest(interactiveSelector)),
-      )
+
+      if (nextIsInteractive !== isInteractiveTarget) {
+        isInteractiveTarget = nextIsInteractive
+        setCursorInteractive(nextIsInteractive)
+      }
     }
 
     function handleMouseLeave() {
+      isInteractiveTarget = false
       setCursorVisible(false)
+      setCursorInteractive(false)
     }
 
     function handleMouseEnter() {
@@ -131,6 +139,8 @@ export function CustomCursor() {
     window.addEventListener('mouseenter', handleMouseEnter)
     window.addEventListener('pointerdown', handlePointerDown)
     window.addEventListener('pointerup', handlePointerUp)
+    window.addEventListener('pointercancel', handlePointerUp)
+    window.addEventListener('blur', handlePointerUp)
 
     return () => {
       document.documentElement.classList.remove('custom-cursor-active')
@@ -140,6 +150,8 @@ export function CustomCursor() {
       window.removeEventListener('mouseenter', handleMouseEnter)
       window.removeEventListener('pointerdown', handlePointerDown)
       window.removeEventListener('pointerup', handlePointerUp)
+      window.removeEventListener('pointercancel', handlePointerUp)
+      window.removeEventListener('blur', handlePointerUp)
     }
   }, [isEnabled])
 

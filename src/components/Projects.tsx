@@ -140,8 +140,10 @@ export function Projects({ language }: ProjectsProps) {
                     <img
                       alt={projectCover.alt}
                       className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:h-44"
+                      height="630"
                       loading="lazy"
                       src={projectCover.src}
+                      width="1200"
                     />
                   ) : (
                     <div
