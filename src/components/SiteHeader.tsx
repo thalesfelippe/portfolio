@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { profile } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
 import type { Language } from '../i18n/translations'
@@ -80,6 +80,7 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const headerRef = useRef<HTMLElement | null>(null)
   const activeSection = useActiveSection(navSectionIds)
   const t = translations[language]
   const navItems = [
@@ -137,8 +138,33 @@ export function SiteHeader({
     }
   }, [])
 
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return
+    }
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target
+
+      if (
+        target instanceof Node &&
+        headerRef.current &&
+        !headerRef.current.contains(target)
+      ) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+    }
+  }, [isMenuOpen])
+
   return (
     <header
+      ref={headerRef}
       className={`fixed inset-x-0 top-0 z-50 w-full py-3 transition duration-300 sm:py-4 ${
         isScrolled || isMenuOpen
           ? 'border-b border-violet/10 bg-light-bg/72 shadow-[0_12px_40px_rgba(31,17,71,0.05)] backdrop-blur-xl dark:border-white/10 dark:bg-[#070a18]/72'

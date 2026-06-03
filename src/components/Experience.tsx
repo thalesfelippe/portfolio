@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
@@ -91,6 +91,43 @@ export function Experience({ language }: ExperienceProps) {
   )
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set())
   const t = translations[language]
+  const companyInfoLabel =
+    language === 'pt' ? 'Informações da empresa' : 'Company information'
+
+  useEffect(() => {
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setActiveCompanyContext(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleEscape)
+
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [])
+
+  useEffect(() => {
+    if (activeCompanyContext === null) {
+      return
+    }
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target
+
+      if (
+        target instanceof Element &&
+        !target.closest('[data-company-context-popover="true"]')
+      ) {
+        setActiveCompanyContext(null)
+      }
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+    }
+  }, [activeCompanyContext])
 
   function toggleExpanded(index: number) {
     setExpandedItems((current) => {
@@ -151,7 +188,7 @@ export function Experience({ language }: ExperienceProps) {
         }
       />
 
-      <ol className="relative grid gap-4 before:absolute before:bottom-3 before:left-3.5 before:top-3 before:w-px before:bg-gradient-to-b before:from-violet/35 before:via-violet/18 before:to-transparent dark:before:from-soft-lavender/35 dark:before:via-soft-lavender/15 sm:gap-5 sm:before:left-4 lg:gap-6">
+      <ol className="relative grid gap-4 before:absolute before:bottom-3 before:left-3 before:top-3 before:w-px before:bg-gradient-to-b before:from-violet/35 before:via-violet/18 before:to-transparent dark:before:from-soft-lavender/35 dark:before:via-soft-lavender/15 sm:gap-5 sm:before:left-4 lg:gap-6">
         {t.experience.items.map((item, index) => {
           const companyContextId = `company-context-${index}`
           const enItem = translations.en.experience.items[index]
@@ -166,18 +203,18 @@ export function Experience({ language }: ExperienceProps) {
           const hiddenHighlightCount = item.highlights.length - visibleHighlights.length
 
           return (
-            <li className="relative pl-9 sm:pl-11" key={index}>
-              <span className="absolute left-0 top-4 grid h-7 w-7 place-items-center rounded-xl border border-violet/20 bg-white text-violet shadow-[0_14px_34px_rgba(108,43,217,0.12)] dark:border-soft-lavender/20 dark:bg-deep-navy dark:text-soft-lavender sm:top-5 sm:h-8 sm:w-8">
+            <li className="relative pl-7 sm:pl-11" key={index}>
+              <span className="absolute left-0 top-4 grid h-6 w-6 place-items-center rounded-[10px] border border-violet/20 bg-white text-violet shadow-[0_14px_34px_rgba(108,43,217,0.12)] dark:border-soft-lavender/20 dark:bg-deep-navy dark:text-soft-lavender sm:top-5 sm:h-8 sm:w-8 sm:rounded-xl">
                 <BriefcaseIcon />
               </span>
 
               <Card className="group relative overflow-visible p-0 transition duration-300 hover:-translate-y-0.5 hover:border-violet/25 hover:shadow-[0_24px_70px_rgba(108,43,217,0.12)] dark:hover:border-soft-lavender/20">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet/35 to-transparent dark:via-soft-lavender/30" />
-                <div className="grid gap-4 p-4 sm:gap-5 sm:p-6">
-                  <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+                <div className="grid gap-3 p-3 sm:gap-5 sm:p-6">
+                  <div className="grid gap-3 sm:gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
                     <div className="grid gap-2">
                       <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="min-w-0 text-base font-semibold tracking-tight text-dark-text dark:text-white sm:text-lg">
+                        <h3 className="min-w-0 text-[0.95rem] font-semibold tracking-tight text-dark-text dark:text-white sm:text-lg">
                           <LanguageTransitionText
                             as="span"
                             reserveText={[enItem.company, ptItem.company]}
@@ -187,55 +224,67 @@ export function Experience({ language }: ExperienceProps) {
                         </h3>
                         {hasCompanyContext ? (
                           <span
-                            className="relative inline-flex"
-                            onBlur={(event) => {
-                              if (!event.currentTarget.contains(event.relatedTarget)) {
-                                setActiveCompanyContext(null)
-                              }
-                            }}
+                            className="relative inline-flex shrink-0"
+                            data-company-context-popover="true"
                             onMouseEnter={() => setActiveCompanyContext(index)}
                             onMouseLeave={() => setActiveCompanyContext(null)}
                           >
                             <button
                               aria-describedby={
                                 isCompanyContextActive
-                                  ? companyContextId
+                                  ? `${companyContextId}-desktop-tooltip ${companyContextId}-mobile-tooltip`
                                   : undefined
                               }
                               aria-expanded={isCompanyContextActive}
-                              aria-label={`${item.company} context`}
+                              aria-label={`${companyInfoLabel}: ${item.company}`}
                               className="grid h-8 w-8 place-items-center rounded-[10px] border border-violet/12 bg-white/65 text-violet shadow-[0_8px_22px_rgba(108,43,217,0.08)] transition hover:-translate-y-0.5 hover:border-violet/25 hover:bg-violet/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-soft-lavender dark:hover:bg-white/10 sm:h-7 sm:w-7"
                               onClick={() =>
                                 setActiveCompanyContext((current) =>
                                   current === index ? null : index,
                                 )
                               }
-                              onFocus={() => setActiveCompanyContext(index)}
                               type="button"
                             >
                               <InfoIcon />
                             </button>
                             {isCompanyContextActive ? (
-                              <span
-                                className="absolute left-0 top-full z-30 mt-2 w-[min(17rem,calc(100vw-4rem))] rounded-2xl border border-violet/12 bg-white/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_55px_rgba(31,17,71,0.16)] backdrop-blur-xl dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300"
-                                id={companyContextId}
-                                role="tooltip"
-                              >
-                                <LanguageTransitionText
-                                  as="span"
-                                  mode="fade"
-                                  reserveText={[
-                                    enItem.companyContext ?? '',
-                                    ptItem.companyContext ?? '',
-                                  ]}
-                                  text={item.companyContext ?? ''}
-                                />
-                              </span>
+                              <>
+                                <span
+                                  className="absolute left-0 top-full z-30 mt-2 hidden w-[min(17rem,calc(100vw-4rem))] rounded-2xl border border-violet/12 bg-white/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_55px_rgba(31,17,71,0.16)] backdrop-blur-xl dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300 sm:block"
+                                  id={`${companyContextId}-desktop-tooltip`}
+                                  role="tooltip"
+                                >
+                                  <LanguageTransitionText
+                                    as="span"
+                                    mode="fade"
+                                    reserveText={[
+                                      enItem.companyContext ?? '',
+                                      ptItem.companyContext ?? '',
+                                    ]}
+                                    text={item.companyContext ?? ''}
+                                  />
+                                </span>
+                                <span
+                                  className="absolute left-1/2 top-full z-30 mt-2 w-[min(18rem,calc(100vw-4.5rem))] -translate-x-1/2 rounded-2xl border border-violet/12 bg-white/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_45px_rgba(31,17,71,0.12)] backdrop-blur-xl before:absolute before:-top-1.5 before:left-1/2 before:h-3 before:w-3 before:-translate-x-1/2 before:rotate-45 before:border-l before:border-t before:border-violet/12 before:bg-white/95 dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300 dark:before:border-white/10 dark:before:bg-[#101329]/95 sm:hidden"
+                                  id={`${companyContextId}-mobile-tooltip`}
+                                  role="tooltip"
+                                >
+                                  <LanguageTransitionText
+                                    as="span"
+                                    mode="fade"
+                                    reserveText={[
+                                      enItem.companyContext ?? '',
+                                      ptItem.companyContext ?? '',
+                                    ]}
+                                    text={item.companyContext ?? ''}
+                                  />
+                                </span>
+                              </>
                             ) : null}
                           </span>
                         ) : null}
                         {item.type ? (
-                          <span className="max-w-full rounded-full border border-violet/12 bg-violet/8 px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.11em] text-violet dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender sm:text-[0.68rem] sm:tracking-[0.14em]">
+                          <span className="inline-flex w-fit max-w-full items-center whitespace-nowrap rounded-full border border-violet/12 bg-violet/8 px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.08em] text-violet dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender sm:px-2.5 sm:py-1 sm:text-[0.68rem] sm:tracking-[0.14em]">
                             <LanguageTransitionText
                               as="span"
                               mode="fade"
@@ -254,7 +303,7 @@ export function Experience({ language }: ExperienceProps) {
                       </p>
                     </div>
 
-                    <div className="grid gap-1 text-left text-xs font-semibold uppercase tracking-[0.14em] text-muted-text dark:text-slate-400 lg:text-right">
+                    <div className="grid gap-1 text-left text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-text dark:text-slate-400 sm:text-xs sm:tracking-[0.14em] lg:text-right">
                       <p>
                         <LanguageTransitionText
                           as="span"
@@ -284,7 +333,7 @@ export function Experience({ language }: ExperienceProps) {
                   </p>
 
                 {item.featuredProject ? (
-                  <div className="grid gap-2 rounded-2xl border border-violet/10 bg-white/50 p-3.5 shadow-[0_14px_36px_rgba(31,17,71,0.04)] dark:border-white/10 dark:bg-white/[0.04] sm:p-4">
+                  <div className="grid gap-2 rounded-2xl border border-violet/10 bg-white/50 p-3 shadow-[0_14px_36px_rgba(31,17,71,0.04)] dark:border-white/10 dark:bg-white/[0.04] sm:p-4">
                     <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-violet dark:text-soft-lavender">
                       <ProjectIcon />
                       <LanguageTransitionText
@@ -315,7 +364,7 @@ export function Experience({ language }: ExperienceProps) {
                   <ul className="grid gap-2.5 lg:grid-cols-2">
                     {visibleHighlights.map((highlight, highlightIndex) => (
                       <li
-                        className="flex gap-2.5 text-sm leading-6 text-muted-text dark:text-slate-300 sm:gap-3"
+                        className="flex gap-2 text-sm leading-6 text-muted-text dark:text-slate-300 sm:gap-3"
                         key={highlightIndex}
                       >
                         <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-lg border border-success-accent/20 bg-success-accent/10 text-success-accent">
@@ -358,7 +407,7 @@ export function Experience({ language }: ExperienceProps) {
                   ) : null}
                 </div>
 
-                <div className="grid gap-3 border-t border-violet/8 pt-5 dark:border-white/8">
+                <div className="grid gap-3 border-t border-violet/8 pt-4 dark:border-white/8 sm:pt-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-text dark:text-slate-400">
                     <LanguageTransitionText
                       as="span"

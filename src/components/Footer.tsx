@@ -63,12 +63,15 @@ export function Footer({ language }: FooterProps) {
   return (
     <footer className="relative overflow-hidden border-t border-violet/10 py-5 dark:border-white/10">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet/26 to-transparent dark:via-soft-lavender/22" />
-      <div className="pointer-events-none absolute right-8 top-0 h-20 w-56 rounded-full bg-violet/8 blur-3xl dark:bg-soft-lavender/8" />
+      <div className="pointer-events-none absolute -right-10 top-1/2 h-24 w-44 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(108,43,217,0.1)_0%,rgba(108,43,217,0.045)_38%,transparent_72%)] blur-2xl [mask-image:radial-gradient(circle,black_0%,transparent_72%)] dark:bg-[radial-gradient(circle,rgba(185,167,255,0.09)_0%,rgba(185,167,255,0.035)_40%,transparent_74%)]" />
 
       <div className="relative flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
-        <p className="max-w-[22rem] text-sm font-medium leading-6 text-muted-text dark:text-slate-400 sm:max-w-none">
-          {profile.name} &middot; {profile.role} &middot; &copy; 2026 &middot;{' '}
-          {copy.rights}
+        <p className="grid max-w-[22rem] gap-0.5 text-sm font-medium leading-6 text-muted-text dark:text-slate-400 sm:block sm:max-w-none">
+          <span>{profile.name}</span>
+          <span className="hidden sm:inline"> &middot; </span>
+          <span>{profile.role}</span>
+          <span className="hidden sm:inline"> &middot; </span>
+          <span>&copy; 2026 &middot; {copy.rights}</span>
         </p>
 
         <ul className="flex items-center justify-center gap-2">
