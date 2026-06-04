@@ -1,4 +1,5 @@
 import type { Language } from './languages'
+import { resumeFiles } from './resumeFiles'
 
 type TranslationContent = {
   about: {
@@ -600,7 +601,7 @@ export const translations = {
           description:
             'Broader profile focused on product flows, APIs, integrations, dashboards and operational systems.',
           label: 'Download Full Stack Resume',
-          href: '/resumes/thales-felippe-full-stack.pdf',
+          href: resumeFiles.en.fullStack,
           tags: ['Product', 'APIs', 'Operations'],
           title: 'Full Stack',
         },
@@ -608,7 +609,7 @@ export const translations = {
           description:
             'Focused on React, Next.js, TypeScript, responsive interfaces, UX, performance and product journeys.',
           label: 'Download Front-End Resume',
-          href: '/resumes/thales-felippe-front-end.pdf',
+          href: resumeFiles.en.frontEnd,
           tags: ['React', 'Next.js', 'UX'],
           title: 'Front-End',
         },
@@ -616,7 +617,7 @@ export const translations = {
           description:
             'Focused on Python, Django/DRF, APIs, databases, webhooks, integrations and asynchronous routines.',
           label: 'Download Back-End Resume',
-          href: '/resumes/thales-felippe-back-end.pdf',
+          href: resumeFiles.en.backEnd,
           tags: ['Python', 'Django', 'APIs'],
           title: 'Back-End',
         },
@@ -1085,7 +1086,7 @@ export const translations = {
           description:
             'Perfil mais amplo, com foco em fluxos de produto, APIs, integrações, dashboards e sistemas operacionais.',
           label: 'Baixar currículo Full Stack',
-          href: '/resumes/thales-felippe-full-stack.pdf',
+          href: resumeFiles.pt.fullStack,
           tags: ['Produto', 'APIs', 'Operação'],
           title: 'Full Stack',
         },
@@ -1093,7 +1094,7 @@ export const translations = {
           description:
             'Foco em React, Next.js, TypeScript, interfaces responsivas, UX, performance e jornadas de produto.',
           label: 'Baixar currículo Front-End',
-          href: '/resumes/thales-felippe-front-end.pdf',
+          href: resumeFiles.pt.frontEnd,
           tags: ['React', 'Next.js', 'UX'],
           title: 'Front-End',
         },
@@ -1101,7 +1102,7 @@ export const translations = {
           description:
             'Foco em Python, Django/DRF, APIs, bancos de dados, webhooks, integrações e rotinas assíncronas.',
           label: 'Baixar currículo Back-End',
-          href: '/resumes/thales-felippe-back-end.pdf',
+          href: resumeFiles.pt.backEnd,
           tags: ['Python', 'Django', 'APIs'],
           title: 'Back-End',
         },

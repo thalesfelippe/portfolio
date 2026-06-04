@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { profile } from '../data/profile'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { coreTranslations } from '../i18n/core'
+import { getPrimaryResumeHref } from '../i18n/resumeFiles'
 import type { Language } from '../i18n/translations'
 import { LanguageToggle } from './LanguageToggle'
 import { LanguageTransitionText } from './LanguageTransitionText'
@@ -83,6 +84,7 @@ export function SiteHeader({
   const headerRef = useRef<HTMLElement | null>(null)
   const activeSection = useActiveSection(navSectionIds)
   const t = coreTranslations[language]
+  const primaryResumeHref = getPrimaryResumeHref(language)
   const navItems = [
     {
       id: 'home',
@@ -249,7 +251,8 @@ export function SiteHeader({
             />
             <Button
               className="h-8 gap-1.5 rounded-[10px] px-3 py-0 text-xs"
-              href="#resume"
+              download
+              href={primaryResumeHref}
             >
               <DownloadIcon />
               {t.resume}
@@ -317,7 +320,8 @@ export function SiteHeader({
               />
               <Button
                 className="h-9 gap-1.5 rounded-[10px] px-3 py-0 text-xs"
-                href="#resume"
+                download
+                href={primaryResumeHref}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <DownloadIcon />

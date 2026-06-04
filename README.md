@@ -16,9 +16,9 @@ Building reliable web products for **product, fintech, SaaS and operations**.
 
 <br />
 
-[![Full Stack CV](https://img.shields.io/badge/CV-Full%20Stack-6C2BD9?style=for-the-badge&logo=readme&logoColor=white)](./public/resumes/thales-felippe-full-stack.pdf)
-[![Front--End CV](https://img.shields.io/badge/CV-Front--End-1F1147?style=for-the-badge&logo=react&logoColor=white)](./public/resumes/thales-felippe-front-end.pdf)
-[![Back--End CV](https://img.shields.io/badge/CV-Back--End-1F1147?style=for-the-badge&logo=python&logoColor=white)](./public/resumes/thales-felippe-back-end.pdf)
+[![Full Stack CV](https://img.shields.io/badge/CV-Full%20Stack-6C2BD9?style=for-the-badge&logo=readme&logoColor=white)](./public/resumes/thales-felippe-full-stack-en.pdf)
+[![Front--End CV](https://img.shields.io/badge/CV-Front--End-1F1147?style=for-the-badge&logo=react&logoColor=white)](./public/resumes/thales-felippe-front-end-en.pdf)
+[![Back--End CV](https://img.shields.io/badge/CV-Back--End-1F1147?style=for-the-badge&logo=python&logoColor=white)](./public/resumes/thales-felippe-back-end-en.pdf)
 
 <br />
 
@@ -135,11 +135,11 @@ Meu foco está em entregar interfaces claras, código manutenível, APIs confiá
 
 <div align="center">
 
-| Resume / Currículo | Link |
-|---|---|
-| **Full Stack CV** | [Download](./public/resumes/thales-felippe-full-stack.pdf) |
-| **Front-End CV** | [Download](./public/resumes/thales-felippe-front-end.pdf) |
-| **Back-End CV** | [Download](./public/resumes/thales-felippe-back-end.pdf) |
+| Resume / Currículo | English | Português |
+|---|---|---|
+| **Full Stack CV** | [Download](./public/resumes/thales-felippe-full-stack-en.pdf) | [Download](./public/resumes/thales-felippe-full-stack-pt-br.pdf) |
+| **Front-End CV** | [Download](./public/resumes/thales-felippe-front-end-en.pdf) | [Download](./public/resumes/thales-felippe-front-end-pt-br.pdf) |
+| **Back-End CV** | [Download](./public/resumes/thales-felippe-back-end-en.pdf) | [Download](./public/resumes/thales-felippe-back-end-pt-br.pdf) |
 
 <br />
 

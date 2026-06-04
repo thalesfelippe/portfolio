@@ -1,5 +1,6 @@
 import { profile } from '../data/profile'
 import { coreTranslations, stackBadges } from '../i18n/core'
+import { getPrimaryResumeHref } from '../i18n/resumeFiles'
 import type { Language } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
 import { ScrollReveal } from './ScrollReveal'
@@ -94,6 +95,7 @@ function LocationIcon() {
 export function Hero({ introReady = true, language }: HeroProps) {
   const t = coreTranslations[language]
   const otherLanguage = language === 'en' ? 'pt' : 'en'
+  const primaryResumeHref = getPrimaryResumeHref(language)
 
   return (
     <section
@@ -149,7 +151,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
             </Button>
             <Button
               className="min-h-11 w-full gap-2 px-5 py-0 sm:h-10 sm:w-auto sm:min-w-40"
-              href="#resume"
+              download
+              href={primaryResumeHref}
               variant="secondary"
             >
               <DownloadIcon />
