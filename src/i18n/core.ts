@@ -1,5 +1,7 @@
 import type { Language } from './languages'
 
+// Keep this lightweight initial-viewport copy aligned with content.ts.
+// Do not import the full translations here; that would pull below-the-fold copy into the initial bundle.
 export const stackBadges = [
   'React',
   'Next.js',
@@ -30,7 +32,7 @@ export const coreTranslations = {
         '✓ maintainable systems',
       ],
     },
-    heroTitleAccent: 'building reliable web\nproducts.',
+    heroTitleAccent: 'for products, APIs\nand digital operations.',
     heroTitleLead: 'Full Stack Developer',
     languageToggleLabel: 'Switch language',
     navAbout: 'About',
@@ -43,7 +45,7 @@ export const coreTranslations = {
     resume: 'Resume',
     resumeCta: 'Download Resume',
     subheadline:
-      'I build web applications for product, fintech, SaaS, and operations, connecting front-end, back-end, APIs, integrations, and business rules into systems that are clear, reliable, and easy to evolve.',
+      'I build web applications that connect interfaces, back-end services, integrations and business rules into reliable systems for product and operations.',
     themeSwitchToDark: 'Switch to dark theme',
     themeSwitchToLight: 'Switch to light theme',
     visualLabel: 'Portfolio system visual summary',
@@ -67,7 +69,7 @@ export const coreTranslations = {
         '✓ sistemas manuteníveis',
       ],
     },
-    heroTitleAccent: 'construindo produtos\nweb confiáveis.',
+    heroTitleAccent: 'para produtos, APIs\ne operações digitais.',
     heroTitleLead: 'Full Stack Developer',
     languageToggleLabel: 'Alternar idioma',
     navAbout: 'Sobre',
@@ -80,7 +82,7 @@ export const coreTranslations = {
     resume: 'Currículo',
     resumeCta: 'Baixar currículo',
     subheadline:
-      'Construo aplicações web para ambientes de produto, fintech, SaaS e operação, conectando front-end, back-end, APIs, integrações e regras de negócio em sistemas claros, confiáveis e fáceis de evoluir.',
+      'Desenvolvo aplicações web que conectam interfaces, back-end, integrações e regras de negócio em sistemas confiáveis para produto e operação.',
     themeSwitchToDark: 'Alternar para tema escuro',
     themeSwitchToLight: 'Alternar para tema claro',
     visualLabel: 'Resumo visual do sistema do portfólio',
