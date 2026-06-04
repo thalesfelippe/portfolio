@@ -8,6 +8,5 @@ export const profile = {
   links: {
     github: 'https://github.com/thalesfelippe',
     linkedin: 'https://www.linkedin.com/in/thales-felippe/',
-    resume: undefined as string | undefined,
   },
 } as const

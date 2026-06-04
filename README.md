@@ -1,11 +1,10 @@
-
 <div align="center">
 
-# Thales Felippe — Portfolio
+# Thales Felippe - Portfolio
 
-### Full Stack Developer · React · Next.js · TypeScript · Python · Django
+### Full Stack Developer for products, APIs and digital operations.
 
-Building reliable web products for **product, fintech, SaaS and operations**.
+A bilingual, responsive and theme-aware portfolio built to present my work across product flows, dashboards, APIs, integrations, operational systems and maintainable delivery.
 
 <br />
 
@@ -16,145 +15,85 @@ Building reliable web products for **product, fintech, SaaS and operations**.
 
 <br />
 
-[![Full Stack CV](https://img.shields.io/badge/CV-Full%20Stack-6C2BD9?style=for-the-badge&logo=readme&logoColor=white)](./public/resumes/thales-felippe-full-stack-en.pdf)
-[![Front--End CV](https://img.shields.io/badge/CV-Front--End-1F1147?style=for-the-badge&logo=react&logoColor=white)](./public/resumes/thales-felippe-front-end-en.pdf)
-[![Back--End CV](https://img.shields.io/badge/CV-Back--End-1F1147?style=for-the-badge&logo=python&logoColor=white)](./public/resumes/thales-felippe-back-end-en.pdf)
-
-<br />
-
-[English](#english) · [Português](#português) · [Stack](#tech-stack--stack) · [Contact](#contact--contato)
+[![React](https://img.shields.io/badge/React-0B1020?style=for-the-badge&logo=react&logoColor=61DAFB)](#tech-stack)
+[![TypeScript](https://img.shields.io/badge/TypeScript-0B1020?style=for-the-badge&logo=typescript&logoColor=3178C6)](#tech-stack)
+[![Python](https://img.shields.io/badge/Python-1F1147?style=for-the-badge&logo=python&logoColor=FFD43B)](#tech-stack)
+[![Django](https://img.shields.io/badge/Django-1F1147?style=for-the-badge&logo=django&logoColor=white)](#tech-stack)
 
 </div>
 
 ---
 
-## English
+## About this project
 
-This repository contains my personal portfolio, designed to present my work as a **Full Stack Developer** focused on web products, APIs, integrations, dashboards and operational systems.
+This is my personal portfolio, designed as a recruiter-friendly showcase for my work as a Full Stack Developer. It presents professional experience, delivered projects, technical stack, resume downloads and direct contact paths in a fast static site.
 
-I have experience since 2021 building applications for **product, fintech, SaaS and operations**, connecting front-end, back-end, business rules and integrations into systems that are clear, reliable and easy to evolve.
+The portfolio focuses on web applications that connect interfaces, back-end services, integrations and business rules into reliable systems for product and operations.
 
-### What this portfolio presents
+Live website: [thalesdevflp.com](https://thalesdevflp.com/)
 
-| Area | Highlights |
+## Main features
+
+- Bilingual experience in Portuguese and English.
+- Light and dark themes with persistent user preference.
+- Responsive layout for mobile, tablet and desktop.
+- Recruiter-friendly navigation with smooth scrolling and active section highlight.
+- Project showcase with stack, highlights and cover-ready cards.
+- Experience timeline with company context and technical highlights.
+- Localized resume downloads for Full Stack, Front-End and Back-End versions.
+- Contact actions for LinkedIn, email, GitHub and WhatsApp.
+- Static deployment prepared for GitHub Pages and custom domain usage.
+
+## Portfolio sections
+
+| Section | What it presents |
 |---|---|
-| **Full Stack Development** | React, Next.js, TypeScript, Python, Django/DRF |
-| **Product & Operations** | Dashboards, workflows, operational systems and internal tools |
-| **APIs & Integrations** | REST APIs, webhooks, payment gateways, CRMs and external services |
-| **Business Context** | Fintech, SaaS, financial workflows, fiscal integrations and management platforms |
-| **User Experience** | Responsive UI, dark/light theme, bilingual PT/EN experience and recruiter-friendly navigation |
+| **Hero** | Professional positioning, main stack and primary CTAs |
+| **About** | Profile summary, focus areas and common problem spaces |
+| **Experience** | Professional timeline with business and technical context |
+| **Projects** | Delivered work, stack, highlights and project categories |
+| **Stack** | Technologies grouped by front-end, back-end, integrations, data and DevOps |
+| **Why work with me** | Practical strengths across product, execution and maintainability |
+| **Resume** | Localized resume downloads by role focus |
+| **Contact** | Direct links for opportunities, networking and conversation |
 
-### Featured sections
+## Tech stack
 
-| Section | Purpose |
+| Area | Technologies |
 |---|---|
-| **Hero** | Professional positioning, main stack and quick CTAs |
-| **About** | Profile summary, focus areas and professional context |
-| **Experience** | Timeline with product, fintech, SaaS and operation work |
-| **Projects** | Selected product and engineering projects |
-| **Stack** | Technologies grouped by engineering area |
-| **Contact** | Direct links for hiring, networking and resume download |
+| **Front-end** | React, TypeScript, Vite, Tailwind CSS |
+| **Product stack** | Next.js, TypeScript, React Hook Form, Zod, Recharts |
+| **Back-end experience** | Python, Django, Django REST Framework, Node.js, Laravel |
+| **Data & async** | PostgreSQL, MySQL, Redis, Celery, Pandas |
+| **DevOps & delivery** | Docker, GitHub Actions, CI/CD, Heroku, GCP |
+| **Integrations** | Webhooks, CRMs, WhatsApp, payment gateways, fiscal workflows and e-signature tools |
 
-### Professional focus
+## Performance and accessibility
 
-I build software that connects **business rules, user experience and integrations** into reliable systems for product and operations.
+The project is built as a static Vite application with lazy-loaded sections, optimized production chunks, reduced-motion support, accessible navigation, visible focus states and semantic page structure.
 
-My focus is on delivering clear interfaces, maintainable code, reliable APIs and systems that support real business workflows.
+It also includes SEO metadata, sitemap, robots configuration, custom domain support and a GitHub Pages deployment workflow.
 
----
+## Resume downloads
 
-## Português
-
-Este repositório contém meu portfólio pessoal, criado para apresentar meu trabalho como **Desenvolvedor Full Stack** com foco em produtos web, APIs, integrações, dashboards e sistemas operacionais.
-
-Tenho experiência desde 2021 construindo aplicações para ambientes de **produto, fintech, SaaS e operação**, conectando front-end, back-end, regras de negócio e integrações em sistemas claros, confiáveis e fáceis de evoluir.
-
-### O que este portfólio apresenta
-
-| Área | Destaques |
-|---|---|
-| **Desenvolvimento Full Stack** | React, Next.js, TypeScript, Python, Django/DRF |
-| **Produto & Operação** | Dashboards, fluxos, sistemas operacionais e ferramentas internas |
-| **APIs & Integrações** | REST APIs, webhooks, gateways de pagamento, CRMs e serviços externos |
-| **Contexto de negócio** | Fintech, SaaS, fluxos financeiros, integrações fiscais e plataformas de gestão |
-| **Experiência do usuário** | UI responsiva, tema claro/escuro, experiência PT/EN e navegação amigável para recrutadores |
-
-### Seções em destaque
-
-| Seção | Objetivo |
-|---|---|
-| **Hero** | Posicionamento profissional, stack principal e CTAs rápidos |
-| **Sobre** | Resumo do perfil, áreas de foco e contexto profissional |
-| **Experiência** | Linha do tempo com atuação em produto, fintech, SaaS e operação |
-| **Projetos** | Projetos selecionados de produto e engenharia |
-| **Stack** | Tecnologias agrupadas por área de engenharia |
-| **Contato** | Links diretos para contratação, networking e download de currículo |
-
-### Foco profissional
-
-Construo software que conecta **regras de negócio, experiência do usuário e integrações** em sistemas confiáveis para produto e operação.
-
-Meu foco está em entregar interfaces claras, código manutenível, APIs confiáveis e sistemas que sustentam fluxos reais de negócio.
-
----
-
-## Tech Stack / Stack
-
-<div align="center">
-
-### Front-end
-
-![React](https://img.shields.io/badge/React-0B1020?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-0B1020?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-0B1020?style=for-the-badge&logo=typescript&logoColor=3178C6)
-![JavaScript](https://img.shields.io/badge/JavaScript-0B1020?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0B1020?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8)
-
-### Back-end
-
-![Python](https://img.shields.io/badge/Python-1F1147?style=for-the-badge&logo=python&logoColor=FFD43B)
-![Django](https://img.shields.io/badge/Django-1F1147?style=for-the-badge&logo=django&logoColor=white)
-![DRF](https://img.shields.io/badge/Django_REST_Framework-1F1147?style=for-the-badge&logo=django&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-1F1147?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E)
-![Laravel](https://img.shields.io/badge/Laravel-1F1147?style=for-the-badge&logo=laravel&logoColor=FF2D20)
-
-### Data, Async & DevOps
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0B1020?style=for-the-badge&logo=postgresql&logoColor=4169E1)
-![MySQL](https://img.shields.io/badge/MySQL-0B1020?style=for-the-badge&logo=mysql&logoColor=4479A1)
-![Redis](https://img.shields.io/badge/Redis-0B1020?style=for-the-badge&logo=redis&logoColor=FF4438)
-![Docker](https://img.shields.io/badge/Docker-0B1020?style=for-the-badge&logo=docker&logoColor=2496ED)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-0B1020?style=for-the-badge&logo=githubactions&logoColor=2088FF)
-![Heroku](https://img.shields.io/badge/Heroku-0B1020?style=for-the-badge&logo=heroku&logoColor=79589F)
-
-</div>
-
----
-
-## Resume & Contact / Currículo & Contato
-
-<div align="center">
-
-| Resume / Currículo | English | Português |
+| Resume | English | Portuguese |
 |---|---|---|
-| **Full Stack CV** | [Download](./public/resumes/thales-felippe-full-stack-en.pdf) | [Download](./public/resumes/thales-felippe-full-stack-pt-br.pdf) |
-| **Front-End CV** | [Download](./public/resumes/thales-felippe-front-end-en.pdf) | [Download](./public/resumes/thales-felippe-front-end-pt-br.pdf) |
-| **Back-End CV** | [Download](./public/resumes/thales-felippe-back-end-en.pdf) | [Download](./public/resumes/thales-felippe-back-end-pt-br.pdf) |
+| **Full Stack** | [Download](./public/resumes/thales-felippe-full-stack-en.pdf) | [Download](./public/resumes/thales-felippe-full-stack-pt-br.pdf) |
+| **Front-End** | [Download](./public/resumes/thales-felippe-front-end-en.pdf) | [Download](./public/resumes/thales-felippe-front-end-pt-br.pdf) |
+| **Back-End** | [Download](./public/resumes/thales-felippe-back-end-en.pdf) | [Download](./public/resumes/thales-felippe-back-end-pt-br.pdf) |
 
-<br />
+## Contact
 
-[![Website](https://img.shields.io/badge/Website-thalesdevflp.com-6C2BD9?style=for-the-badge&logo=firefox&logoColor=white)](https://thalesdevflp.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Thales%20Felippe-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thales-felippe/)
-[![GitHub](https://img.shields.io/badge/GitHub-thalesfelippe-0B1020?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thalesfelippe)
-[![Email](https://img.shields.io/badge/Email-thales.dev.flp%40gmail.com-6B7280?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thales.dev.flp@gmail.com)
-
-</div>
+- Website: [thalesdevflp.com](https://thalesdevflp.com/)
+- LinkedIn: [linkedin.com/in/thales-felippe](https://www.linkedin.com/in/thales-felippe/)
+- GitHub: [github.com/thalesfelippe](https://github.com/thalesfelippe)
+- Email: [thales.dev.flp@gmail.com](mailto:thales.dev.flp@gmail.com)
 
 ---
 
 <div align="center">
 
-**Thales Felippe · Full Stack Developer**  
-`React · Next.js · TypeScript · Python · Django · APIs · Integrations`
+**Thales Felippe - Full Stack Developer**  
+React · Next.js · TypeScript · Python · Django · APIs · Integrations
 
 </div>
