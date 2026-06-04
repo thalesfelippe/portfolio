@@ -1,6 +1,8 @@
 import { profile } from '../data/profile'
+import { getWhatsAppUrl } from '../config/contact'
 import type { Language } from '../i18n/translations'
 import { ScrollReveal } from './ScrollReveal'
+import { WhatsAppIcon } from './WhatsAppIcon'
 
 type FooterProps = {
   language: Language
@@ -9,9 +11,11 @@ type FooterProps = {
 const footerCopy = {
   en: {
     rights: 'All rights reserved.',
+    whatsapp: 'Chat on WhatsApp',
   },
   pt: {
     rights: 'Todos os direitos reservados.',
+    whatsapp: 'Conversar pelo WhatsApp',
   },
 } as const
 
@@ -60,6 +64,15 @@ const footerLinks = [
 
 export function Footer({ language }: FooterProps) {
   const copy = footerCopy[language]
+  const links = [
+    ...footerLinks,
+    {
+      ariaLabel: copy.whatsapp,
+      href: getWhatsAppUrl(language),
+      isExternal: true,
+      icon: <WhatsAppIcon />,
+    },
+  ] as const
 
   return (
     <footer className="relative overflow-hidden border-t border-violet/10 py-5 dark:border-white/10">
@@ -79,7 +92,7 @@ export function Footer({ language }: FooterProps) {
         </p>
 
         <ul className="flex items-center justify-center gap-2">
-          {footerLinks.map((link) => (
+          {links.map((link) => (
             <li key={link.ariaLabel}>
               <a
                 aria-label={link.ariaLabel}

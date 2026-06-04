@@ -1,37 +1,31 @@
 import { profile } from '../data/profile'
+import { getWhatsAppUrl } from '../config/contact'
 import type { Language } from '../i18n/translations'
 import { translations } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
 import { ScrollReveal } from './ScrollReveal'
+import { WhatsAppIcon } from './WhatsAppIcon'
 import { Button, Card } from './ui'
 
 type ContactLinksProps = {
   language: Language
 }
 
-const contactItems = [
-  {
-    key: 'linkedin',
-    labelKey: 'linkedin',
-    href: profile.links.linkedin,
-    value: 'linkedin.com/in/thales-felippe',
-    variant: 'primary',
-  },
-  {
-    key: 'email',
-    labelKey: 'email',
-    href: `mailto:${profile.email}`,
-    value: profile.email,
-    variant: 'secondary',
-  },
-  {
-    key: 'github',
-    labelKey: 'github',
-    href: profile.links.github,
-    value: 'github.com/thalesfelippe',
-    variant: 'secondary',
-  },
-] as const
+type ContactItemKey = 'email' | 'github' | 'linkedin' | 'whatsapp'
+type ContactItem = {
+  ariaLabel: string
+  href: string
+  isExternal: boolean
+  key: ContactItemKey
+  label: string
+  reserveText: [string, string]
+  variant: 'primary' | 'secondary'
+}
+
+const whatsappAriaLabels = {
+  en: 'Chat on WhatsApp',
+  pt: 'Conversar pelo WhatsApp',
+} satisfies Record<Language, string>
 
 function ArrowRightIcon() {
   return (
@@ -101,13 +95,17 @@ function GitHubIcon() {
   )
 }
 
-function ContactIcon({ name }: { name: (typeof contactItems)[number]['key'] }) {
+function ContactIcon({ name }: { name: ContactItemKey }) {
   if (name === 'linkedin') {
     return <LinkedInIcon />
   }
 
   if (name === 'email') {
     return <MailIcon />
+  }
+
+  if (name === 'whatsapp') {
+    return <WhatsAppIcon />
   }
 
   return <GitHubIcon />
@@ -155,6 +153,44 @@ function ContactBackground() {
 export function ContactLinks({ language }: ContactLinksProps) {
   const t = translations[language]
   const eyebrow = language === 'pt' ? 'Contato' : 'Contact'
+  const contactItems: ContactItem[] = [
+    {
+      ariaLabel: `${t.linkedin}: linkedin.com/in/thales-felippe`,
+      href: profile.links.linkedin,
+      isExternal: true,
+      key: 'linkedin',
+      label: t.linkedin,
+      reserveText: [translations.en.linkedin, translations.pt.linkedin],
+      variant: 'primary',
+    },
+    {
+      ariaLabel: `${t.email}: ${profile.email}`,
+      href: `mailto:${profile.email}`,
+      isExternal: false,
+      key: 'email',
+      label: t.email,
+      reserveText: [translations.en.email, translations.pt.email],
+      variant: 'secondary',
+    },
+    {
+      ariaLabel: `${t.github}: github.com/thalesfelippe`,
+      href: profile.links.github,
+      isExternal: true,
+      key: 'github',
+      label: t.github,
+      reserveText: [translations.en.github, translations.pt.github],
+      variant: 'secondary',
+    },
+    {
+      ariaLabel: whatsappAriaLabels[language],
+      href: getWhatsAppUrl(language),
+      isExternal: true,
+      key: 'whatsapp',
+      label: 'WhatsApp',
+      reserveText: ['WhatsApp', 'WhatsApp'],
+      variant: 'secondary',
+    },
+  ]
 
   return (
     <section
@@ -208,32 +244,27 @@ export function ContactLinks({ language }: ContactLinksProps) {
               />
             </p>
 
-            <ul className="grid gap-3 sm:grid-cols-3 lg:min-w-[30rem]">
+            <ul className="grid gap-3 sm:grid-cols-2 lg:min-w-[34rem] lg:grid-cols-4">
               {contactItems.map((item, index) => (
                 <li key={item.key}>
                   <Button
-                    aria-label={`${t[item.labelKey]}: ${item.value}`}
+                    aria-label={item.ariaLabel}
                     className={`min-h-11 w-full gap-2.5 px-4 py-0 ${
                       index === 0
                         ? ''
                         : 'hover:border-violet/35 dark:hover:border-soft-lavender/28'
                     }`}
                     href={item.href}
-                    rel={
-                      item.key === 'email' ? undefined : 'noopener noreferrer'
-                    }
-                    target={item.key === 'email' ? undefined : '_blank'}
+                    rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                    target={item.isExternal ? '_blank' : undefined}
                     variant={item.variant}
                   >
                     <ContactIcon name={item.key} />
                     <LanguageTransitionText
                       as="span"
-                      reserveText={[
-                        translations.en[item.labelKey],
-                        translations.pt[item.labelKey],
-                      ]}
+                      reserveText={item.reserveText}
                       speed={12}
-                      text={t[item.labelKey]}
+                      text={item.label}
                     />
                     <ArrowRightIcon />
                   </Button>

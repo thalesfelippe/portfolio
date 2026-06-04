@@ -48,6 +48,11 @@ const StackArea = lazy(() =>
     default: module.StackArea,
   })),
 )
+const WhatsAppWidget = lazy(() =>
+  import('./components/WhatsAppWidget').then((module) => ({
+    default: module.WhatsAppWidget,
+  })),
+)
 
 function isTheme(value: string | null): value is Theme {
   return value === 'light' || value === 'dark'
@@ -272,6 +277,12 @@ function App() {
           </Suspense>
         ) : null}
       </Layout>
+
+      {showDeferredSections ? (
+        <Suspense fallback={null}>
+          <WhatsAppWidget language={language} />
+        </Suspense>
+      ) : null}
     </>
   )
 }

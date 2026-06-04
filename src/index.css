@@ -370,6 +370,11 @@ a {
   transform-origin: left center;
 }
 
+.whatsapp-widget-button {
+  animation: whatsapp-widget-float 6.5s ease-in-out infinite;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
 @keyframes availability-badge-breathe {
   0%,
   100% {
@@ -782,6 +787,16 @@ a {
   }
 }
 
+@keyframes whatsapp-widget-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
 @media (max-width: 640px) {
   .scroll-reveal,
   .scroll-reveal[data-reveal-direction="down"],
@@ -926,6 +941,10 @@ a {
     will-change: auto;
   }
 
+  .whatsapp-widget-button {
+    animation: none;
+    will-change: auto;
+  }
   .portfolio-loader-progress {
     transform: scaleX(1);
   }

@@ -1,10 +1,12 @@
 import { profile } from '../data/profile'
+import { getWhatsAppUrl } from '../config/contact'
 import { coreTranslations, stackBadges } from '../i18n/core'
 import { getPrimaryResumeHref } from '../i18n/resumeFiles'
 import type { Language } from '../i18n/translations'
 import { LanguageTransitionText } from './LanguageTransitionText'
 import { ScrollReveal } from './ScrollReveal'
 import { TechBadgeIcon } from './TechBadgeIcon'
+import { WhatsAppIcon } from './WhatsAppIcon'
 import { Badge, Button } from './ui'
 
 type HeroProps = {
@@ -50,25 +52,6 @@ function DownloadIcon() {
   )
 }
 
-function MailIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-4 w-4"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M4 7.5 12 13l8-5.5M5.5 19h13A1.5 1.5 0 0 0 20 17.5v-11A1.5 1.5 0 0 0 18.5 5h-13A1.5 1.5 0 0 0 4 6.5v11A1.5 1.5 0 0 0 5.5 19Z"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-      />
-    </svg>
-  )
-}
-
 function LocationIcon() {
   return (
     <svg
@@ -96,6 +79,9 @@ export function Hero({ introReady = true, language }: HeroProps) {
   const t = coreTranslations[language]
   const otherLanguage = language === 'en' ? 'pt' : 'en'
   const primaryResumeHref = getPrimaryResumeHref(language)
+  const whatsappHref = getWhatsAppUrl(language)
+  const contactAriaLabel =
+    language === 'pt' ? 'Conversar pelo WhatsApp' : 'Chat on WhatsApp'
 
   return (
     <section
@@ -159,13 +145,15 @@ export function Hero({ introReady = true, language }: HeroProps) {
               {t.resumeCta}
             </Button>
             <Button
-              aria-label={`${t.contactCta}: ${profile.email}`}
+              aria-label={contactAriaLabel}
               className="group min-h-11 w-full min-w-36 gap-2 border-violet/12 bg-white/45 px-5 py-0 text-muted-text shadow-[0_10px_30px_rgba(31,17,71,0.045)] backdrop-blur-md hover:border-violet/28 hover:bg-violet/8 hover:text-violet hover:shadow-[0_16px_40px_rgba(108,43,217,0.09)] dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-300 dark:hover:border-soft-lavender/24 dark:hover:bg-white/[0.08] dark:hover:text-white sm:h-10 sm:w-auto"
-              href={`mailto:${profile.email}`}
+              href={whatsappHref}
+              rel="noopener noreferrer"
+              target="_blank"
               variant="ghost"
             >
               <span className="text-violet transition group-hover:text-violet dark:text-soft-lavender">
-                <MailIcon />
+                <WhatsAppIcon />
               </span>
               {t.contactCta}
             </Button>
