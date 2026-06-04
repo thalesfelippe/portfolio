@@ -375,6 +375,7 @@ a {
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
+
 @keyframes availability-badge-breathe {
   0%,
   100% {
@@ -797,6 +798,7 @@ a {
     transform: translate3d(0, -4px, 0);
   }
 }
+
 @media (max-width: 640px) {
   .scroll-reveal,
   .scroll-reveal[data-reveal-direction="down"],
@@ -830,6 +832,10 @@ a {
   .stack-mesh-nodes {
     animation: none;
     will-change: auto;
+  }
+
+  .contact-signal-lines {
+    display: none;
   }
 
   .hero-light-drift-primary {
@@ -888,18 +894,6 @@ a {
     }
   }
 
-  @keyframes contact-signal-lines {
-    0%,
-    100% {
-      opacity: 0.42;
-      transform: translate3d(0, 0, 0);
-    }
-
-    50% {
-      opacity: 0.58;
-      transform: translate3d(8px, -3px, 0);
-    }
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -945,6 +939,7 @@ a {
     animation: none;
     will-change: auto;
   }
+
   .portfolio-loader-progress {
     transform: scaleX(1);
   }
