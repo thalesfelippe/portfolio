@@ -56,12 +56,13 @@ function ProjectsBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-[-3rem] left-1/2 w-screen -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.92)_16%,rgba(0,0,0,0.92)_84%,transparent_100%)]"
+      className="pointer-events-none absolute inset-y-[-4rem] left-1/2 w-screen -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.9)_14%,rgba(0,0,0,0.92)_82%,transparent_100%)]"
     >
-      <div className="projects-showcase-glow absolute left-[58%] top-10 h-80 w-[32rem] -translate-x-1/2 rounded-full bg-violet/12 blur-3xl dark:bg-violet/18" />
-      <div className="projects-showcase-streak absolute left-[18%] top-20 h-28 w-[62rem] -rotate-12 rounded-full bg-[linear-gradient(90deg,transparent,rgba(108,43,217,0.11),rgba(185,167,255,0.16),transparent)] blur-xl dark:bg-[linear-gradient(90deg,transparent,rgba(108,43,217,0.16),rgba(185,167,255,0.12),transparent)]" />
-      <div className="projects-showcase-card projects-showcase-card-a absolute right-[9%] top-24 h-36 w-56 rotate-[-8deg] rounded-3xl border border-violet/10 bg-white/20 shadow-[0_24px_80px_rgba(108,43,217,0.08)] backdrop-blur-md dark:border-soft-lavender/10 dark:bg-white/[0.035]" />
-      <div className="projects-showcase-card projects-showcase-card-b absolute bottom-20 left-[8%] h-28 w-48 rotate-6 rounded-3xl border border-violet/8 bg-white/18 shadow-[0_18px_70px_rgba(31,17,71,0.06)] backdrop-blur-md dark:border-soft-lavender/8 dark:bg-white/[0.03]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_22%_18%,rgba(108,43,217,0.08),transparent_38%),radial-gradient(ellipse_at_78%_66%,rgba(185,167,255,0.12),transparent_36%)] dark:bg-[radial-gradient(ellipse_at_22%_18%,rgba(108,43,217,0.14),transparent_38%),radial-gradient(ellipse_at_78%_66%,rgba(185,167,255,0.08),transparent_36%)]" />
+      <div className="projects-gallery-spotlight absolute left-1/2 top-14 h-[30rem] w-[72rem] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(ellipse_at_center,rgba(108,43,217,0.12),rgba(185,167,255,0.05)_42%,transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(108,43,217,0.18),rgba(185,167,255,0.05)_42%,transparent_70%)]" />
+      <div className="projects-gallery-plane projects-gallery-plane-a absolute right-[8%] top-24 h-48 w-72 rotate-[-13deg] rounded-[1.7rem] border border-violet/10 bg-white/16 shadow-[0_24px_90px_rgba(108,43,217,0.08)] dark:border-soft-lavender/10 dark:bg-white/[0.035]" />
+      <div className="projects-gallery-plane projects-gallery-plane-b absolute bottom-24 left-[7%] h-40 w-64 rotate-[10deg] rounded-[1.5rem] border border-violet/8 bg-white/12 shadow-[0_20px_80px_rgba(31,17,71,0.06)] dark:border-soft-lavender/8 dark:bg-white/[0.025]" />
+      <div className="projects-gallery-slab absolute left-[17%] top-[30%] h-24 w-[42rem] -rotate-6 rounded-full bg-[linear-gradient(90deg,transparent,rgba(108,43,217,0.08),rgba(185,167,255,0.09),transparent)] blur-2xl dark:bg-[linear-gradient(90deg,transparent,rgba(108,43,217,0.11),rgba(185,167,255,0.06),transparent)]" />
     </div>
   )
 }

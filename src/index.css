@@ -233,9 +233,9 @@ a {
 .about-system-lines,
 .about-system-nodes,
 .about-system-orbits,
-.projects-showcase-glow,
-.projects-showcase-streak,
-.projects-showcase-card,
+.projects-gallery-spotlight,
+.projects-gallery-plane,
+.projects-gallery-slab,
 .stack-mesh-glow,
 .stack-mesh-map,
 .stack-mesh-lines,
@@ -301,20 +301,20 @@ a {
   transform-origin: center;
 }
 
-.projects-showcase-glow {
-  animation: projects-showcase-glow 28s ease-in-out infinite;
+.projects-gallery-spotlight {
+  animation: projects-gallery-spotlight 32s ease-in-out infinite;
 }
 
-.projects-showcase-streak {
-  animation: projects-showcase-streak 34s ease-in-out infinite;
+.projects-gallery-plane-a {
+  animation: projects-gallery-plane-a 34s ease-in-out infinite;
 }
 
-.projects-showcase-card-a {
-  animation: projects-showcase-card-a 30s ease-in-out infinite;
+.projects-gallery-plane-b {
+  animation: projects-gallery-plane-b 38s ease-in-out infinite;
 }
 
-.projects-showcase-card-b {
-  animation: projects-showcase-card-b 36s ease-in-out infinite;
+.projects-gallery-slab {
+  animation: projects-gallery-slab 36s ease-in-out infinite;
 }
 
 .stack-mesh-glow {
@@ -573,60 +573,60 @@ a {
   }
 }
 
-@keyframes projects-showcase-glow {
+@keyframes projects-gallery-spotlight {
   0%,
   100% {
     opacity: 0.72;
     transform: translate3d(0, 0, 0) scale(1);
   }
 
-  48% {
-    opacity: 0.95;
-    transform: translate3d(-20px, 12px, 0) scale(1.04);
+  46% {
+    opacity: 0.9;
+    transform: translate3d(-14px, 10px, 0) scale(1.025);
   }
 
-  76% {
+  74% {
     opacity: 0.66;
-    transform: translate3d(12px, -8px, 0) scale(0.98);
+    transform: translate3d(10px, -8px, 0) scale(0.99);
   }
 }
 
-@keyframes projects-showcase-streak {
+@keyframes projects-gallery-plane-a {
   0%,
   100% {
-    opacity: 0.58;
-    transform: translate3d(0, 0, 0) rotate(-12deg);
+    opacity: 0.64;
+    transform: translate3d(0, 0, 0) rotate(-13deg);
   }
 
   50% {
-    opacity: 0.82;
-    transform: translate3d(34px, -10px, 0) rotate(-12deg);
+    opacity: 0.84;
+    transform: translate3d(-10px, 12px, 0) rotate(-11deg);
   }
 }
 
-@keyframes projects-showcase-card-a {
+@keyframes projects-gallery-plane-b {
   0%,
   100% {
+    opacity: 0.5;
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+
+  50% {
     opacity: 0.72;
-    transform: translate3d(0, 0, 0) rotate(-8deg);
-  }
-
-  50% {
-    opacity: 0.92;
-    transform: translate3d(-10px, 12px, 0) rotate(-6deg);
+    transform: translate3d(12px, -10px, 0) rotate(8deg);
   }
 }
 
-@keyframes projects-showcase-card-b {
+@keyframes projects-gallery-slab {
   0%,
   100% {
-    opacity: 0.58;
-    transform: translate3d(0, 0, 0) rotate(6deg);
+    opacity: 0.44;
+    transform: translate3d(0, 0, 0) rotate(-6deg);
   }
 
   50% {
-    opacity: 0.78;
-    transform: translate3d(12px, -10px, 0) rotate(4deg);
+    opacity: 0.62;
+    transform: translate3d(18px, -8px, 0) rotate(-5deg);
   }
 }
 
@@ -812,7 +812,7 @@ a {
 
   .hero-purple-glow-orbit,
   .hero-light-drift-secondary,
-  .projects-showcase-card {
+  .projects-gallery-plane {
     display: none;
   }
 
@@ -824,8 +824,8 @@ a {
   .about-system-orbits,
   .contact-ambient-glow,
   .contact-signal-lines,
-  .projects-showcase-glow,
-  .projects-showcase-streak,
+  .projects-gallery-spotlight,
+  .projects-gallery-slab,
   .stack-mesh-glow,
   .stack-mesh-map,
   .stack-mesh-lines,
@@ -846,8 +846,6 @@ a {
   .hero-light-drift-primary,
   .hero-light-drift-secondary,
   .hero-light-drift-vertical,
-  .projects-showcase-glow,
-  .projects-showcase-streak,
   .stack-mesh-glow,
   .stack-mesh-map,
   .contact-ambient-glow,
@@ -865,19 +863,6 @@ a {
     50% {
       opacity: 0.9;
       transform: translate3d(10px, -8px, 0) scale(1.02);
-    }
-  }
-
-  @keyframes projects-showcase-streak {
-    0%,
-    100% {
-      opacity: 0.36;
-      transform: translate3d(0, 0, 0) rotate(-12deg);
-    }
-
-    50% {
-      opacity: 0.5;
-      transform: translate3d(14px, -5px, 0) rotate(-12deg);
     }
   }
 
@@ -915,9 +900,9 @@ a {
   .about-system-lines,
   .about-system-nodes,
   .about-system-orbits,
-  .projects-showcase-glow,
-  .projects-showcase-streak,
-  .projects-showcase-card,
+  .projects-gallery-spotlight,
+  .projects-gallery-plane,
+  .projects-gallery-slab,
   .stack-mesh-glow,
   .stack-mesh-map,
   .stack-mesh-lines,
