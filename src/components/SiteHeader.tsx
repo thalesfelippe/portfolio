@@ -27,6 +27,21 @@ const navSectionIds = [
   'contact',
 ] as const
 
+const navigationLabels = {
+  en: {
+    close: 'Close navigation',
+    mobile: 'Mobile navigation',
+    open: 'Open navigation',
+    primary: 'Primary navigation',
+  },
+  pt: {
+    close: 'Fechar navegação',
+    mobile: 'Navegação mobile',
+    open: 'Abrir navegação',
+    primary: 'Navegação principal',
+  },
+} as const
+
 function MenuIcon({ isOpen }: { isOpen: boolean }) {
   return (
     <svg
@@ -84,6 +99,7 @@ export function SiteHeader({
   const headerRef = useRef<HTMLElement | null>(null)
   const activeSection = useActiveSection(navSectionIds)
   const t = coreTranslations[language]
+  const navLabels = navigationLabels[language]
   const primaryResumeHref = getPrimaryResumeHref(language)
   const navItems = [
     {
@@ -203,7 +219,7 @@ export function SiteHeader({
         </a>
 
         <nav
-          aria-label="Primary navigation"
+          aria-label={navLabels.primary}
           className="hidden items-center gap-7 lg:flex"
         >
           {navItems.map((item) => {
@@ -261,7 +277,7 @@ export function SiteHeader({
           <button
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
+            aria-label={isMenuOpen ? navLabels.close : navLabels.open}
             className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] border border-violet/15 bg-white/55 text-dark-text shadow-[0_8px_24px_rgba(31,17,71,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:border-soft-lavender/25 dark:hover:bg-white/12 lg:hidden"
             onClick={() => setIsMenuOpen((current) => !current)}
             type="button"
@@ -277,7 +293,7 @@ export function SiteHeader({
             className="mt-3 grid max-h-[calc(100svh-5rem)] gap-3 overflow-y-auto rounded-2xl border border-violet/10 bg-white/88 p-3 shadow-[0_18px_60px_rgba(31,17,71,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-deep-navy/92"
             id="mobile-navigation"
           >
-            <nav aria-label="Mobile navigation" className="grid gap-1">
+            <nav aria-label={navLabels.mobile} className="grid gap-1">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id
 

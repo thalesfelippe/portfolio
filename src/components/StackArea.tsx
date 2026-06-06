@@ -7,6 +7,11 @@ type StackAreaProps = {
   language: Language
 }
 
+const stackAreaLabels = {
+  en: 'Stack, work style, and resume',
+  pt: 'Stack, estilo de trabalho e currículo',
+} as const
+
 function StackAreaBackground() {
   const nodes = [
     [180, 120],
@@ -75,7 +80,7 @@ function StackAreaBackground() {
 export function StackArea({ language }: StackAreaProps) {
   return (
     <section
-      aria-label="Stack, work style, and resume"
+      aria-label={stackAreaLabels[language]}
       className="relative isolate"
       id="stack"
     >

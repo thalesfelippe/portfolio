@@ -255,24 +255,43 @@ export function Projects({ language }: ProjectsProps) {
                   </ul>
 
                   <div className="mt-auto pt-1">
-                    <a
-                      aria-label={`${t.projects.linkLabel}: ${project.name}`}
-                      className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-violet/15 bg-violet/10 px-3.5 py-2 text-sm font-semibold text-violet transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-violet/14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender"
-                      href={project.href}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <LanguageTransitionText
-                        as="span"
-                        reserveText={[
-                          translations.en.projects.linkLabel,
-                          translations.pt.projects.linkLabel,
-                        ]}
-                        speed={12}
-                        text={t.projects.linkLabel}
-                      />
-                      <LinkIcon />
-                    </a>
+                    {project.href ? (
+                      <a
+                        aria-label={`${t.projects.linkLabel}: ${project.name}`}
+                        className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-violet/15 bg-violet/10 px-3.5 py-2 text-sm font-semibold text-violet transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-violet/14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender"
+                        href={project.href}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <LanguageTransitionText
+                          as="span"
+                          reserveText={[
+                            translations.en.projects.linkLabel,
+                            translations.pt.projects.linkLabel,
+                          ]}
+                          speed={12}
+                          text={t.projects.linkLabel}
+                        />
+                        <LinkIcon />
+                      </a>
+                    ) : (
+                      <button
+                        aria-label={`${t.projects.unavailableLabel}: ${project.name}`}
+                        className="inline-flex min-h-10 cursor-not-allowed items-center gap-2 rounded-xl border border-violet/10 bg-white/45 px-3.5 py-2 text-sm font-semibold text-muted-text/70 dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-400"
+                        disabled
+                        type="button"
+                      >
+                        <LanguageTransitionText
+                          as="span"
+                          reserveText={[
+                            translations.en.projects.unavailableLabel,
+                            translations.pt.projects.unavailableLabel,
+                          ]}
+                          speed={12}
+                          text={t.projects.unavailableLabel}
+                        />
+                      </button>
+                    )}
                   </div>
                 </div>
               </Card>

@@ -42,18 +42,18 @@ type TranslationContent = {
     stackLabel: string
     highlightsLabel: string
     linkLabel: string
+    unavailableLabel: string
     items: {
       name: string
       category: string
       description: string
-      longDescription: string
       cover?: {
         alt: string
         src?: string
       }
       stack: string[]
       highlights: string[]
-      href: string
+      href?: string
     }[]
   }
   stack: {
@@ -387,14 +387,13 @@ export const translations = {
       stackLabel: 'Stack',
       highlightsLabel: 'Highlights',
       linkLabel: 'View project',
+      unavailableLabel: 'Currently unavailable',
       items: [
         {
           name: 'Saiu Acordo',
           category: 'Debt negotiation platform',
           description:
             'Financial platform created to help users negotiate debts through a clear, guided and conversion-focused journey.',
-          longDescription:
-            'Saiu Acordo is a debt negotiation platform designed to turn a sensitive financial flow into a simpler, more transparent and conversion-oriented experience. The project combines a responsive interface, guided steps, payment integrations, CRM connections and conversion events to support both end users and operations teams.',
           cover: {
             alt: 'Saiu Acordo platform homepage',
             src: '/projects/Saiuacordo.png',
@@ -426,8 +425,6 @@ export const translations = {
           category: 'TV media buying web app',
           description:
             'Web app for exploring inventory and requesting TV advertising placements, later sold to Record TV.',
-          longDescription:
-            'Cimtia Ads is a web application created for inventory consultation and TV advertising placement requests. The product organizes media information, supports review before submission and provides an advertiser area to track request history and status.',
           cover: {
             alt: 'Cimtia Ads web app interface',
             src: '/projects/CimtiaAds.png',
@@ -441,15 +438,12 @@ export const translations = {
             'Purchase request with review step',
             'Simple technical base for maintenance and evolution',
           ],
-          href: 'https://www.cimtiaads.com.br/',
         },
         {
           name: 'AMC Construções',
           category: 'Institutional website',
           description:
             'Institutional website update with new real estate developments and blog reactivation within the brand’s native theme.',
-          longDescription:
-            'Maintenance and evolution project for the AMC Construções institutional website, focused on content updates, organization of new developments, blog reactivation and visual adjustments to improve navigation and brand presentation.',
           cover: {
             alt: 'AMC Construções institutional website',
             src: '/projects/amc.png',
@@ -477,8 +471,6 @@ export const translations = {
           category: 'E-book sales page',
           description:
             'Conversion-focused landing page for selling an e-book, with social proof, benefits, chapters, testimonials, gallery, promotional countdown and FAQ.',
-          longDescription:
-            'Paraíso Feminino is a sales page created to present and sell an e-book through a direct, visual and conversion-oriented experience. The landing page organizes the offer into strategic sections, combining social proof, benefits, testimonials, gallery, promotional countdown and FAQ, with clear CTAs distributed throughout the journey.',
           cover: {
             alt: 'Paraíso Feminino e-book sales page',
             src: '/projects/ParaisoFeminino.png',
@@ -498,7 +490,6 @@ export const translations = {
             'Accordion FAQ and visually highlighted testimonials',
             'Semantic structure, performance and SEO with optimized assets',
           ],
-          href: 'https://produtos.paraisofeminino.com.br/codigodeestilo-v1/',
         },
       ],
     },
@@ -869,14 +860,13 @@ export const translations = {
       stackLabel: 'Stack',
       highlightsLabel: 'Destaques',
       linkLabel: 'Ver projeto',
+      unavailableLabel: 'Indisponível no momento',
       items: [
         {
           name: 'Saiu Acordo',
           category: 'Plataforma de negociação de dívidas',
           description:
             'Plataforma financeira criada para ajudar usuários a negociar dívidas por meio de uma jornada guiada, clara e focada em conversão.',
-          longDescription:
-            'O Saiu Acordo é uma plataforma de negociação de dívidas pensada para transformar um fluxo financeiro sensível em uma experiência mais simples, transparente e orientada à conversão. O projeto combina interface responsiva, etapas guiadas, integrações com meios de pagamento, CRM e eventos de conversão para apoiar tanto o usuário final quanto a operação.',
           cover: {
             alt: 'Tela inicial da plataforma Saiu Acordo',
             src: '/projects/Saiuacordo.png',
@@ -908,8 +898,6 @@ export const translations = {
           category: 'Web app para compra de mídia em TV',
           description:
             'Web app para explorar inventário e solicitar veiculações de publicidade em TV, posteriormente vendido à Record TV.',
-          longDescription:
-            'O Cimtia Ads é uma aplicação web criada para consulta de inventário e solicitação de compra de espaços publicitários em TV. O produto organiza informações de mídia, facilita a revisão antes do envio e oferece uma área para anunciantes acompanharem histórico e status das solicitações.',
           cover: {
             alt: 'Tela da plataforma Cimtia Ads',
             src: '/projects/CimtiaAds.png',
@@ -923,15 +911,12 @@ export const translations = {
             'Solicitação de compra com revisão',
             'Base técnica simples para manutenção e evolução',
           ],
-          href: 'https://www.cimtiaads.com.br/',
         },
         {
           name: 'AMC Construções',
           category: 'Site institucional',
           description:
             'Atualização do site institucional com inclusão de novos empreendimentos e reativação do blog no tema nativo da marca.',
-          longDescription:
-            'Projeto de manutenção e evolução do site institucional da AMC Construções, com foco em atualização de conteúdo, organização de novos empreendimentos, reativação do blog e ajustes visuais para melhorar a navegação e a apresentação da marca.',
           cover: {
             alt: 'Site institucional da AMC Construções',
             src: '/projects/amc.png',
@@ -959,8 +944,6 @@ export const translations = {
           category: 'Página de vendas de e-book',
           description:
             'Landing page focada em conversão para venda de e-book, com prova social, benefícios, capítulos, depoimentos, galeria, contador promocional e FAQ.',
-          longDescription:
-            'O Paraíso Feminino é uma página de vendas desenvolvida para apresentar e vender um e-book por meio de uma experiência direta, visual e orientada à conversão. A landing page organiza a oferta em seções estratégicas, combina prova social, benefícios, depoimentos, galeria, contador promocional e FAQ, além de CTAs claros distribuídos ao longo da jornada.',
           cover: {
             alt: 'Página de vendas Paraíso Feminino',
             src: '/projects/ParaisoFeminino.png',
@@ -980,7 +963,6 @@ export const translations = {
             'FAQ em acordeão e depoimentos com destaque visual',
             'Estrutura semântica, performance e SEO com assets otimizados',
           ],
-          href: 'https://produtos.paraisofeminino.com.br/codigodeestilo-v1/',
         },
       ],
     },

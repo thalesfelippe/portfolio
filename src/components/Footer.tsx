@@ -10,10 +10,16 @@ type FooterProps = {
 
 const footerCopy = {
   en: {
+    email: 'Send email',
+    github: 'Open GitHub profile',
+    linkedin: 'Open LinkedIn profile',
     rights: 'All rights reserved.',
     whatsapp: 'Chat on WhatsApp',
   },
   pt: {
+    email: 'Enviar e-mail',
+    github: 'Abrir perfil no GitHub',
+    linkedin: 'Abrir perfil no LinkedIn',
     rights: 'Todos os direitos reservados.',
     whatsapp: 'Conversar pelo WhatsApp',
   },
@@ -21,7 +27,7 @@ const footerCopy = {
 
 const footerLinks = [
   {
-    ariaLabel: 'Open LinkedIn profile',
+    ariaLabelKey: 'linkedin',
     href: profile.links.linkedin,
     isExternal: true,
     icon: (
@@ -31,7 +37,7 @@ const footerLinks = [
     ),
   },
   {
-    ariaLabel: 'Open GitHub profile',
+    ariaLabelKey: 'github',
     href: profile.links.github,
     isExternal: true,
     icon: (
@@ -45,7 +51,7 @@ const footerLinks = [
     ),
   },
   {
-    ariaLabel: 'Send email',
+    ariaLabelKey: 'email',
     href: `mailto:${profile.email}`,
     isExternal: false,
     icon: (
@@ -65,7 +71,10 @@ const footerLinks = [
 export function Footer({ language }: FooterProps) {
   const copy = footerCopy[language]
   const links = [
-    ...footerLinks,
+    ...footerLinks.map((link) => ({
+      ...link,
+      ariaLabel: copy[link.ariaLabelKey],
+    })),
     {
       ariaLabel: copy.whatsapp,
       href: getWhatsAppUrl(language),

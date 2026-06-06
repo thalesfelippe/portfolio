@@ -82,6 +82,8 @@ export function Hero({ introReady = true, language }: HeroProps) {
   const whatsappHref = getWhatsAppUrl(language)
   const contactAriaLabel =
     language === 'pt' ? 'Conversar pelo WhatsApp' : 'Chat on WhatsApp'
+  const techStackAriaLabel =
+    language === 'pt' ? 'Stack técnica' : 'Tech stack'
 
   return (
     <section
@@ -170,7 +172,7 @@ export function Hero({ introReady = true, language }: HeroProps) {
         <ScrollReveal delay={380} trigger={introReady}>
           <ul
             className="flex max-w-3xl flex-wrap gap-1.5"
-            aria-label="Tech stack"
+            aria-label={techStackAriaLabel}
           >
             {stackBadges.map((badge) => (
               <li key={badge}>
