@@ -42,18 +42,18 @@ type TranslationContent = {
     stackLabel: string
     highlightsLabel: string
     linkLabel: string
-    placeholderLinkLabel: string
     items: {
       name: string
       category: string
       description: string
+      longDescription: string
       cover?: {
         alt: string
         src?: string
       }
       stack: string[]
       highlights: string[]
-      href?: string
+      href: string
     }[]
   }
   stack: {
@@ -381,20 +381,23 @@ export const translations = {
     },
     projects: {
       eyebrow: 'Projects',
-      title: 'Delivered work.',
-      subtitle: '',
+      title: 'Selected public work.',
+      subtitle:
+        'Public projects I can share, with a focus on product flows, conversion, institutional presence and operational web apps.',
       stackLabel: 'Stack',
       highlightsLabel: 'Highlights',
       linkLabel: 'View project',
-      placeholderLinkLabel: 'Link coming soon',
       items: [
         {
           name: 'Saiu Acordo',
           category: 'Debt negotiation platform',
           description:
-            'Financial platform built to help users negotiate debts through a guided, clear, and conversion-focused journey.',
+            'Financial platform created to help users negotiate debts through a clear, guided and conversion-focused journey.',
+          longDescription:
+            'Saiu Acordo is a debt negotiation platform designed to turn a sensitive financial flow into a simpler, more transparent and conversion-oriented experience. The project combines a responsive interface, guided steps, payment integrations, CRM connections and conversion events to support both end users and operations teams.',
           cover: {
-            alt: 'Saiu Acordo project cover',
+            alt: 'Saiu Acordo platform homepage',
+            src: '/projects/Saiuacordo.png',
           },
           stack: [
             'React',
@@ -410,98 +413,92 @@ export const translations = {
           ],
           highlights: [
             'Guided negotiation flow',
-            'UX/conversion improvements',
-            'Integrations with payment and CRM tools',
-            'Responsive and accessible UI',
+            'UX and conversion improvements',
+            'Payment and CRM integrations',
+            'Responsive and accessible interface',
+            'Reduced friction in forms and journeys',
+            'Proposal and funnel status tracking',
           ],
-        },
-        {
-          name: 'Clube Fácil Administrative Platform',
-          category: 'Health benefits management system',
-          description:
-            'Administrative system for managing members, dependents, contracts, clinics, charges, invoices, digital signatures, and appointments.',
-          cover: {
-            alt: 'Clube Fácil Administrative Platform project cover',
-          },
-          stack: [
-            'Python',
-            'Django',
-            'DRF',
-            'MySQL',
-            'PostgreSQL',
-            'Redis',
-            'Celery',
-            'GalaxPay',
-            'eNotas',
-            'DocuSign',
-            'Webhooks',
-            'Heroku',
-          ],
-          highlights: [
-            'Financial integrations',
-            'NFS-e and digital signature workflows',
-            'Analytical dashboards',
-            'Asynchronous processing',
-          ],
-        },
-        {
-          name: 'SmartBarber System',
-          category: 'SaaS for barbershops',
-          description:
-            'SaaS platform with online scheduling, digital orders, real-time dashboards, and operational control.',
-          cover: {
-            alt: 'SmartBarber System project cover',
-          },
-          stack: [
-            'Next.js',
-            'TypeScript',
-            'Prisma',
-            'styled-components',
-            'SWR',
-            'Recharts',
-          ],
-          highlights: [
-            'Scheduling flow',
-            'Role-based experience',
-            'Dashboard and operational metrics',
-          ],
+          href: 'https://saiuacordo.com.br/',
         },
         {
           name: 'Cimtia Ads',
           category: 'TV media buying web app',
           description:
             'Web app for exploring inventory and requesting TV advertising placements, later sold to Record TV.',
+          longDescription:
+            'Cimtia Ads is a web application created for inventory consultation and TV advertising placement requests. The product organizes media information, supports review before submission and provides an advertiser area to track request history and status.',
           cover: {
-            alt: 'Cimtia Ads project cover',
+            alt: 'Cimtia Ads web app interface',
+            src: '/projects/CimtiaAds.png',
           },
           stack: ['React', 'TypeScript', 'Node.js', 'Firebase'],
           highlights: [
             'Responsive interface',
             'Advertiser area',
             'Operational workflow',
+            'Inventory exploration with filters',
+            'Purchase request with review step',
+            'Simple technical base for maintenance and evolution',
           ],
+          href: 'https://www.cimtiaads.com.br/',
         },
         {
-          name: 'Landing Pages & Sales Pages',
-          category: 'Conversion-focused front-end',
+          name: 'AMC Construções',
+          category: 'Institutional website',
           description:
-            'Collection of modern landing pages and sales pages for clinics, SaaS products, digital products, and local businesses.',
+            'Institutional website update with new real estate developments and blog reactivation within the brand’s native theme.',
+          longDescription:
+            'Maintenance and evolution project for the AMC Construções institutional website, focused on content updates, organization of new developments, blog reactivation and visual adjustments to improve navigation and brand presentation.',
           cover: {
-            alt: 'Landing Pages and Sales Pages project cover',
+            alt: 'AMC Construções institutional website',
+            src: '/projects/amc.png',
           },
           stack: [
-            'Next.js',
-            'TypeScript',
-            'Tailwind',
-            'Framer Motion',
-            'React Hook Form',
-            'Zod',
+            'HTML',
+            'CSS',
+            'Unsemantic CSS',
+            'JavaScript',
+            'jQuery',
+            'Google Maps API',
           ],
           highlights: [
-            'Responsive design',
-            'Conversion-oriented sections',
-            'Light/dark theme examples',
+            'New development pages and layouts',
+            'Blog enabled within the existing theme',
+            'Responsiveness review',
+            'Lightweight JavaScript/jQuery refactoring',
+            'Visual bug fixes',
+            'On-page SEO with titles, meta tags and images',
           ],
+          href: 'https://www.amc.eng.br/',
+        },
+        {
+          name: 'Paraíso Feminino',
+          category: 'E-book sales page',
+          description:
+            'Conversion-focused landing page for selling an e-book, with social proof, benefits, chapters, testimonials, gallery, promotional countdown and FAQ.',
+          longDescription:
+            'Paraíso Feminino is a sales page created to present and sell an e-book through a direct, visual and conversion-oriented experience. The landing page organizes the offer into strategic sections, combining social proof, benefits, testimonials, gallery, promotional countdown and FAQ, with clear CTAs distributed throughout the journey.',
+          cover: {
+            alt: 'Paraíso Feminino e-book sales page',
+            src: '/projects/ParaisoFeminino.png',
+          },
+          stack: [
+            'HTML',
+            'CSS',
+            'Bootstrap',
+            'JavaScript',
+            'Swiper.js',
+          ],
+          highlights: [
+            'Section architecture guided by copy and clear CTAs',
+            'Hero with social proof and objective value proposition',
+            'Swiper carousels and subtle microinteractions',
+            'Promotional countdown and conversion anchors',
+            'Accordion FAQ and visually highlighted testimonials',
+            'Semantic structure, performance and SEO with optimized assets',
+          ],
+          href: 'https://produtos.paraisofeminino.com.br/codigodeestilo-v1/',
         },
       ],
     },
@@ -866,20 +863,23 @@ export const translations = {
     },
     projects: {
       eyebrow: 'Projetos',
-      title: 'Trabalhos entregues.',
-      subtitle: '',
+      title: 'Projetos públicos selecionados.',
+      subtitle:
+        'Trabalhos que posso compartilhar publicamente, com foco em fluxos de produto, conversão, presença institucional e aplicações web operacionais.',
       stackLabel: 'Stack',
       highlightsLabel: 'Destaques',
       linkLabel: 'Ver projeto',
-      placeholderLinkLabel: 'Link em breve',
       items: [
         {
           name: 'Saiu Acordo',
           category: 'Plataforma de negociação de dívidas',
           description:
             'Plataforma financeira criada para ajudar usuários a negociar dívidas por meio de uma jornada guiada, clara e focada em conversão.',
+          longDescription:
+            'O Saiu Acordo é uma plataforma de negociação de dívidas pensada para transformar um fluxo financeiro sensível em uma experiência mais simples, transparente e orientada à conversão. O projeto combina interface responsiva, etapas guiadas, integrações com meios de pagamento, CRM e eventos de conversão para apoiar tanto o usuário final quanto a operação.',
           cover: {
-            alt: 'Capa do projeto Saiu Acordo',
+            alt: 'Tela inicial da plataforma Saiu Acordo',
+            src: '/projects/Saiuacordo.png',
           },
           stack: [
             'React',
@@ -895,98 +895,92 @@ export const translations = {
           ],
           highlights: [
             'Fluxo guiado de negociação',
-            'Melhorias de UX/conversão',
-            'Integrações com ferramentas de pagamento e CRM',
-            'UI responsiva e acessível',
+            'Melhorias de UX e conversão',
+            'Integrações com pagamento e CRM',
+            'Interface responsiva e acessível',
+            'Redução de atrito em formulários e jornadas',
+            'Acompanhamento de propostas e status do funil',
           ],
-        },
-        {
-          name: 'Plataforma Administrativa Clube Fácil',
-          category: 'Sistema de gestão de benefícios de saúde',
-          description:
-            'Sistema administrativo para gerenciar associados, dependentes, contratos, clínicas, cobranças, notas fiscais, assinaturas digitais e atendimentos.',
-          cover: {
-            alt: 'Capa do projeto Plataforma Administrativa Clube Fácil',
-          },
-          stack: [
-            'Python',
-            'Django',
-            'DRF',
-            'MySQL',
-            'PostgreSQL',
-            'Redis',
-            'Celery',
-            'GalaxPay',
-            'eNotas',
-            'DocuSign',
-            'Webhooks',
-            'Heroku',
-          ],
-          highlights: [
-            'Integrações financeiras',
-            'Fluxos de NFS-e e assinatura digital',
-            'Dashboards analíticos',
-            'Processamento assíncrono',
-          ],
-        },
-        {
-          name: 'SmartBarber System',
-          category: 'SaaS para barbearias',
-          description:
-            'Plataforma SaaS com agendamento online, comandas digitais, dashboards em tempo real e controle operacional.',
-          cover: {
-            alt: 'Capa do projeto SmartBarber System',
-          },
-          stack: [
-            'Next.js',
-            'TypeScript',
-            'Prisma',
-            'styled-components',
-            'SWR',
-            'Recharts',
-          ],
-          highlights: [
-            'Fluxo de agendamento',
-            'Experiência baseada em papéis',
-            'Dashboard e métricas operacionais',
-          ],
+          href: 'https://saiuacordo.com.br/',
         },
         {
           name: 'Cimtia Ads',
           category: 'Web app para compra de mídia em TV',
           description:
             'Web app para explorar inventário e solicitar veiculações de publicidade em TV, posteriormente vendido à Record TV.',
+          longDescription:
+            'O Cimtia Ads é uma aplicação web criada para consulta de inventário e solicitação de compra de espaços publicitários em TV. O produto organiza informações de mídia, facilita a revisão antes do envio e oferece uma área para anunciantes acompanharem histórico e status das solicitações.',
           cover: {
-            alt: 'Capa do projeto Cimtia Ads',
+            alt: 'Tela da plataforma Cimtia Ads',
+            src: '/projects/CimtiaAds.png',
           },
           stack: ['React', 'TypeScript', 'Node.js', 'Firebase'],
           highlights: [
             'Interface responsiva',
             'Área para anunciantes',
             'Fluxo operacional',
+            'Exploração de inventário com filtros',
+            'Solicitação de compra com revisão',
+            'Base técnica simples para manutenção e evolução',
           ],
+          href: 'https://www.cimtiaads.com.br/',
         },
         {
-          name: 'Landing Pages & Sales Pages',
-          category: 'Front-end focado em conversão',
+          name: 'AMC Construções',
+          category: 'Site institucional',
           description:
-            'Coleção de landing pages e páginas de venda modernas para clínicas, produtos SaaS, produtos digitais e negócios locais.',
+            'Atualização do site institucional com inclusão de novos empreendimentos e reativação do blog no tema nativo da marca.',
+          longDescription:
+            'Projeto de manutenção e evolução do site institucional da AMC Construções, com foco em atualização de conteúdo, organização de novos empreendimentos, reativação do blog e ajustes visuais para melhorar a navegação e a apresentação da marca.',
           cover: {
-            alt: 'Capa do projeto Landing Pages & Sales Pages',
+            alt: 'Site institucional da AMC Construções',
+            src: '/projects/amc.png',
           },
           stack: [
-            'Next.js',
-            'TypeScript',
-            'Tailwind',
-            'Framer Motion',
-            'React Hook Form',
-            'Zod',
+            'HTML',
+            'CSS',
+            'Unsemantic CSS',
+            'JavaScript',
+            'jQuery',
+            'Google Maps API',
           ],
           highlights: [
-            'Design responsivo',
-            'Seções orientadas à conversão',
-            'Exemplos com tema claro/escuro',
+            'Cadastro e layout de novos empreendimentos',
+            'Blog habilitado no tema próprio',
+            'Revisão de responsividade',
+            'Refatoração leve em JavaScript/jQuery',
+            'Correção de bugs visuais',
+            'SEO on-page com títulos, meta tags e imagens',
           ],
+          href: 'https://www.amc.eng.br/',
+        },
+        {
+          name: 'Paraíso Feminino',
+          category: 'Página de vendas de e-book',
+          description:
+            'Landing page focada em conversão para venda de e-book, com prova social, benefícios, capítulos, depoimentos, galeria, contador promocional e FAQ.',
+          longDescription:
+            'O Paraíso Feminino é uma página de vendas desenvolvida para apresentar e vender um e-book por meio de uma experiência direta, visual e orientada à conversão. A landing page organiza a oferta em seções estratégicas, combina prova social, benefícios, depoimentos, galeria, contador promocional e FAQ, além de CTAs claros distribuídos ao longo da jornada.',
+          cover: {
+            alt: 'Página de vendas Paraíso Feminino',
+            src: '/projects/ParaisoFeminino.png',
+          },
+          stack: [
+            'HTML',
+            'CSS',
+            'Bootstrap',
+            'JavaScript',
+            'Swiper.js',
+          ],
+          highlights: [
+            'Arquitetura de seções orientada à copy e CTAs claros',
+            'Hero com prova social e proposta de valor objetiva',
+            'Carrosséis com Swiper e microinterações sutis',
+            'Contagem regressiva promocional e âncoras para conversão',
+            'FAQ em acordeão e depoimentos com destaque visual',
+            'Estrutura semântica, performance e SEO com assets otimizados',
+          ],
+          href: 'https://produtos.paraisofeminino.com.br/codigodeestilo-v1/',
         },
       ],
     },
