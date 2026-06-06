@@ -121,8 +121,10 @@ export function Projects({ language }: ProjectsProps) {
         {t.projects.items.map((project, index) => {
           const enProject = translations.en.projects.items[index]
           const projectCover: ProjectCover | undefined = project.cover
-          const projectHref = (project as { href?: string }).href
           const ptProject = translations.pt.projects.items[index]
+          const visibleHighlights = project.highlights.slice(0, 3)
+          const visibleStack = project.stack.slice(0, 6)
+          const hiddenStackCount = project.stack.length - visibleStack.length
 
           return (
             <ScrollReveal
@@ -131,25 +133,32 @@ export function Projects({ language }: ProjectsProps) {
               key={project.name}
             >
               <Card
-                className="group relative grid h-full overflow-hidden p-0 transition duration-300 hover:-translate-y-1 hover:border-violet/25 hover:shadow-[0_28px_80px_rgba(108,43,217,0.14)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/20"
+                className="group relative flex h-full flex-col overflow-hidden p-0 transition duration-300 hover:-translate-y-1 hover:border-violet/22 hover:shadow-[0_24px_70px_rgba(108,43,217,0.12)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/18"
               >
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet/35 to-transparent dark:via-soft-lavender/28" />
-                <div className="pointer-events-none absolute right-[-5rem] top-[-5rem] h-44 w-44 rounded-full bg-violet/10 blur-3xl dark:bg-soft-lavender/8" />
+                <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-36 w-36 rounded-full bg-violet/8 blur-3xl dark:bg-soft-lavender/6" />
 
-                <div className="relative overflow-hidden border-b border-violet/8 bg-violet/7 dark:border-white/8 dark:bg-white/[0.035]">
+                <div className="relative rounded-[1.35rem] border-b border-violet/8 bg-violet/7 p-2.5 dark:border-white/8 dark:bg-white/[0.035] sm:p-3">
                   {projectCover?.src ? (
-                    <img
-                      alt={projectCover.alt}
-                      className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:h-44"
-                      height="630"
-                      loading="lazy"
-                      src={projectCover.src}
-                      width="1200"
-                    />
+                    <div className="relative rounded-[1.18rem] bg-violet/45 p-[2px] shadow-[0_0_0_1px_rgba(108,43,217,0.18),0_18px_48px_rgba(31,17,71,0.08)] transition duration-500 group-hover:-translate-y-0.5 group-hover:bg-violet/70 group-hover:shadow-[0_0_26px_rgba(108,43,217,0.26),0_24px_70px_rgba(108,43,217,0.18)] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0 dark:bg-soft-lavender/32 dark:shadow-[0_0_0_1px_rgba(185,167,255,0.1),0_18px_48px_rgba(11,16,32,0.22)] dark:group-hover:bg-soft-lavender/52 sm:p-[3px]">
+                      <div className="relative rounded-[1.02rem] bg-[linear-gradient(135deg,rgba(248,247,255,0.9),rgba(185,167,255,0.16))] dark:bg-[linear-gradient(135deg,rgba(11,16,32,0.86),rgba(108,43,217,0.12))]">
+                        <img
+                          alt={projectCover.alt}
+                          className="block h-auto w-full rounded-[1.02rem]"
+                          decoding="async"
+                          height="919"
+                          loading="lazy"
+                          src={projectCover.src}
+                          width="1920"
+                        />
+                        <div className="pointer-events-none absolute inset-0 rounded-[1.02rem] ring-1 ring-inset ring-white/35 transition duration-500 group-hover:ring-violet/30 motion-reduce:transition-none dark:ring-white/10 dark:group-hover:ring-soft-lavender/24" />
+                        <div className="pointer-events-none absolute inset-0 rounded-[1.02rem] bg-gradient-to-t from-violet/8 via-transparent to-white/10 opacity-0 transition duration-500 group-hover:opacity-100 motion-reduce:transition-none dark:from-deep-navy/14 dark:to-soft-lavender/8" />
+                      </div>
+                    </div>
                   ) : (
                     <div
                       aria-hidden="true"
-                      className="relative grid h-40 place-items-center overflow-hidden sm:h-44"
+                      className="relative grid aspect-[1920/919] place-items-center overflow-hidden rounded-[1.15rem] border border-violet/20 dark:border-soft-lavender/16"
                     >
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_20%,rgba(185,167,255,0.34),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.18),rgba(248,247,255,0.5)_46%,rgba(31,17,71,0.16))] dark:bg-[radial-gradient(circle_at_24%_20%,rgba(185,167,255,0.22),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.24),rgba(31,17,71,0.38)_48%,rgba(11,16,32,0.72))]" />
                       <div className="absolute inset-0 bg-[linear-gradient(rgba(108,43,217,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(108,43,217,0.08)_1px,transparent_1px)] bg-[size:32px_32px] opacity-45 [mask-image:radial-gradient(ellipse_at_center,black_0%,transparent_76%)] dark:bg-[linear-gradient(rgba(185,167,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(185,167,255,0.07)_1px,transparent_1px)]" />
@@ -160,60 +169,47 @@ export function Projects({ language }: ProjectsProps) {
                   )}
                 </div>
 
-              <div className="relative grid h-full gap-4 p-4 sm:gap-5 sm:p-6">
-                <div className="grid gap-3">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full border border-violet/12 bg-violet/8 px-2.5 py-1 text-[0.64rem] font-bold uppercase tracking-[0.12em] text-violet dark:border-soft-lavender/16 dark:bg-soft-lavender/10 dark:text-soft-lavender sm:px-3 sm:text-[0.68rem] sm:tracking-[0.15em]">
+                <div className="relative flex h-full flex-col gap-4 p-4 sm:gap-5 sm:p-5">
+                  <div className="grid gap-3">
+                    <div className="flex max-w-full flex-wrap items-center gap-2">
+                      <span className="inline-flex w-fit max-w-full items-center rounded-full border border-violet/12 bg-violet/8 px-2 py-0.5 text-[0.62rem] font-bold uppercase leading-5 tracking-[0.1em] text-violet dark:border-soft-lavender/16 dark:bg-soft-lavender/10 dark:text-soft-lavender sm:px-2.5 sm:text-[0.66rem] sm:tracking-[0.12em]">
+                        <LanguageTransitionText
+                          as="span"
+                          mode="fade"
+                          text={project.category}
+                        />
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-semibold tracking-tight text-dark-text dark:text-white sm:text-xl">
+                      <LanguageTransitionText
+                        as="span"
+                        reserveText={[enProject.name, ptProject.name]}
+                        speed={12}
+                        text={project.name}
+                      />
+                    </h3>
+
+                    <p className="text-sm leading-6 text-muted-text dark:text-slate-300">
                       <LanguageTransitionText
                         as="span"
                         mode="fade"
-                        reserveText={[enProject.category, ptProject.category]}
-                        text={project.category}
+                        reserveText={[
+                          enProject.description,
+                          ptProject.description,
+                        ]}
+                        text={project.description}
                       />
-                    </span>
+                    </p>
                   </div>
 
-                  <h3 className="text-lg font-semibold tracking-tight text-dark-text dark:text-white sm:text-xl">
-                    <LanguageTransitionText
-                      as="span"
-                      reserveText={[enProject.name, ptProject.name]}
-                      speed={12}
-                      text={project.name}
-                    />
-                  </h3>
-
-                  <p className="text-sm leading-6 text-muted-text dark:text-slate-300 sm:leading-7">
-                    <LanguageTransitionText
-                      as="span"
-                      mode="fade"
-                      reserveText={[
-                        enProject.description,
-                        ptProject.description,
-                      ]}
-                      text={project.description}
-                    />
-                  </p>
-                </div>
-
-                <div className="grid gap-3">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-text dark:text-slate-400">
-                    <LanguageTransitionText
-                      as="span"
-                      reserveText={[
-                        translations.en.projects.highlightsLabel,
-                        translations.pt.projects.highlightsLabel,
-                      ]}
-                      speed={12}
-                      text={t.projects.highlightsLabel}
-                    />
-                  </p>
-                  <ul className="grid gap-2 sm:grid-cols-2">
-                    {project.highlights.map((highlight, highlightIndex) => (
+                  <ul className="grid gap-2">
+                    {visibleHighlights.map((highlight, highlightIndex) => (
                       <li
                         className="flex gap-2.5 text-sm leading-6 text-muted-text dark:text-slate-300"
                         key={highlight}
                       >
-                        <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-lg border border-success-accent/18 bg-success-accent/10 text-success-accent">
+                        <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full border border-success-accent/18 bg-success-accent/10 text-success-accent">
                           <CheckIcon />
                         </span>
                         <LanguageTransitionText
@@ -228,25 +224,12 @@ export function Projects({ language }: ProjectsProps) {
                       </li>
                     ))}
                   </ul>
-                </div>
 
-                <div className="grid gap-3 border-t border-violet/8 pt-5 dark:border-white/8">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-text dark:text-slate-400">
-                    <LanguageTransitionText
-                      as="span"
-                      reserveText={[
-                        translations.en.projects.stackLabel,
-                        translations.pt.projects.stackLabel,
-                      ]}
-                      speed={12}
-                      text={t.projects.stackLabel}
-                    />
-                  </p>
                   <ul
                     aria-label={`${project.name} ${t.projects.stackLabel}`}
-                    className="flex flex-wrap gap-2"
+                    className="flex flex-wrap gap-2 border-t border-violet/8 pt-4 dark:border-white/8"
                   >
-                    {project.stack.map((tech, techIndex) => (
+                    {visibleStack.map((tech, techIndex) => (
                       <li key={`${project.name}-${tech}`}>
                         <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-white/55 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
                           <TechBadgeIcon name={tech} />
@@ -262,14 +245,20 @@ export function Projects({ language }: ProjectsProps) {
                         </span>
                       </li>
                     ))}
+                    {hiddenStackCount > 0 ? (
+                      <li>
+                        <span className="inline-flex items-center rounded-full border border-violet/10 bg-violet/7 px-2 py-1 text-[0.65rem] font-semibold text-violet dark:border-soft-lavender/12 dark:bg-soft-lavender/8 dark:text-soft-lavender sm:px-2.5 sm:text-[0.68rem]">
+                          +{hiddenStackCount}
+                        </span>
+                      </li>
+                    ) : null}
                   </ul>
-                </div>
 
-                <div className="mt-auto">
-                  {projectHref ? (
+                  <div className="mt-auto pt-1">
                     <a
-                      className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-violet/15 bg-violet/10 px-3.5 py-2 text-sm font-semibold text-violet transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-violet/14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender"
-                      href={projectHref}
+                      aria-label={`${t.projects.linkLabel}: ${project.name}`}
+                      className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-violet/15 bg-violet/10 px-3.5 py-2 text-sm font-semibold text-violet transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-violet/14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-soft-lavender/18 dark:bg-soft-lavender/10 dark:text-soft-lavender"
+                      href={project.href}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -284,21 +273,8 @@ export function Projects({ language }: ProjectsProps) {
                       />
                       <LinkIcon />
                     </a>
-                  ) : (
-                    <span className="inline-flex items-center gap-2 rounded-xl border border-violet/10 bg-white/50 px-3.5 py-2 text-sm font-semibold text-muted-text dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-400">
-                      <LanguageTransitionText
-                        as="span"
-                        mode="fade"
-                        reserveText={[
-                          translations.en.projects.placeholderLinkLabel,
-                          translations.pt.projects.placeholderLinkLabel,
-                        ]}
-                        text={t.projects.placeholderLinkLabel}
-                      />
-                    </span>
-                  )}
+                  </div>
                 </div>
-              </div>
               </Card>
             </ScrollReveal>
           )
