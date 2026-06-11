@@ -47,7 +47,7 @@ function AboutCardShell({
   title: ReactNode
 }) {
   return (
-    <section className="group relative overflow-hidden rounded-2xl border border-violet/12 bg-white/68 p-3.5 shadow-[0_14px_42px_rgba(31,17,71,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-violet/22 hover:shadow-[0_18px_52px_rgba(108,43,217,0.11)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-soft-lavender/12 dark:bg-[#111528]/70 dark:shadow-[0_18px_52px_rgba(0,0,0,0.2)]">
+    <section className="group relative overflow-hidden rounded-2xl border border-violet/12 bg-[#fbfaff]/72 p-3.5 shadow-[0_14px_38px_rgba(31,17,71,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-violet/22 hover:shadow-[0_18px_50px_rgba(108,43,217,0.1)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-soft-lavender/12 dark:bg-[#111528]/70 dark:shadow-[0_18px_52px_rgba(0,0,0,0.2)]">
       <div className="pointer-events-none absolute inset-x-3.5 top-0 h-px bg-gradient-to-r from-transparent via-violet/28 to-transparent dark:via-soft-lavender/24" />
       <div className="pointer-events-none absolute right-[-3rem] top-[-3rem] h-20 w-20 rounded-full bg-violet/8 blur-2xl dark:bg-soft-lavender/8" />
       <div className="relative grid gap-2.5">
@@ -132,7 +132,7 @@ function AboutSolveCard({ language }: AboutProps) {
       <ul className="grid gap-1.5">
         {t.about.usuallySolve.map((item, index) => (
           <li
-            className="flex items-center gap-2 rounded-xl border border-violet/10 bg-violet/[0.035] px-3 py-2 text-[0.84rem] font-semibold text-dark-text dark:border-soft-lavender/10 dark:bg-soft-lavender/[0.045] dark:text-slate-100"
+            className="flex items-center gap-2 rounded-xl border border-violet/10 bg-[#f0ecfa]/54 px-3 py-2 text-[0.84rem] font-semibold text-dark-text dark:border-soft-lavender/10 dark:bg-soft-lavender/[0.045] dark:text-slate-100"
             key={item}
           >
             <span className="grid h-5 w-5 shrink-0 place-items-center rounded-lg border border-success-accent/18 bg-success-accent/10 text-success-accent [&>svg]:h-3.5 [&>svg]:w-3.5">

@@ -60,8 +60,8 @@ function ProjectsBackground() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_22%_18%,rgba(108,43,217,0.08),transparent_38%),radial-gradient(ellipse_at_78%_66%,rgba(185,167,255,0.12),transparent_36%)] dark:bg-[radial-gradient(ellipse_at_22%_18%,rgba(108,43,217,0.14),transparent_38%),radial-gradient(ellipse_at_78%_66%,rgba(185,167,255,0.08),transparent_36%)]" />
       <div className="projects-gallery-spotlight absolute left-1/2 top-14 h-[30rem] w-[72rem] -translate-x-1/2 rounded-[999px] bg-[radial-gradient(ellipse_at_center,rgba(108,43,217,0.12),rgba(185,167,255,0.05)_42%,transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(108,43,217,0.18),rgba(185,167,255,0.05)_42%,transparent_70%)]" />
-      <div className="projects-gallery-plane projects-gallery-plane-a absolute right-[8%] top-24 h-48 w-72 rotate-[-13deg] rounded-[1.7rem] border border-violet/10 bg-white/16 shadow-[0_24px_90px_rgba(108,43,217,0.08)] dark:border-soft-lavender/10 dark:bg-white/[0.035]" />
-      <div className="projects-gallery-plane projects-gallery-plane-b absolute bottom-24 left-[7%] h-40 w-64 rotate-[10deg] rounded-[1.5rem] border border-violet/8 bg-white/12 shadow-[0_20px_80px_rgba(31,17,71,0.06)] dark:border-soft-lavender/8 dark:bg-white/[0.025]" />
+      <div className="projects-gallery-plane projects-gallery-plane-a absolute right-[8%] top-24 h-48 w-72 rotate-[-13deg] rounded-[1.7rem] border border-violet/10 bg-[#fbfaff]/16 shadow-[0_24px_80px_rgba(108,43,217,0.07)] dark:border-soft-lavender/10 dark:bg-white/[0.035]" />
+      <div className="projects-gallery-plane projects-gallery-plane-b absolute bottom-24 left-[7%] h-40 w-64 rotate-[10deg] rounded-[1.5rem] border border-violet/8 bg-[#fbfaff]/12 shadow-[0_20px_70px_rgba(31,17,71,0.05)] dark:border-soft-lavender/8 dark:bg-white/[0.025]" />
       <div className="projects-gallery-slab absolute left-[17%] top-[30%] h-24 w-[42rem] -rotate-6 rounded-full bg-[linear-gradient(90deg,transparent,rgba(108,43,217,0.08),rgba(185,167,255,0.09),transparent)] blur-2xl dark:bg-[linear-gradient(90deg,transparent,rgba(108,43,217,0.11),rgba(185,167,255,0.06),transparent)]" />
     </div>
   )
@@ -133,15 +133,15 @@ export function Projects({ language }: ProjectsProps) {
               key={project.name}
             >
               <Card
-                className="group relative flex h-full flex-col overflow-hidden p-0 transition duration-300 hover:-translate-y-1 hover:border-violet/22 hover:shadow-[0_24px_70px_rgba(108,43,217,0.12)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/18"
+                className="group relative flex h-full flex-col overflow-hidden p-0 transition duration-300 hover:-translate-y-1 hover:border-violet/22 hover:shadow-[0_24px_64px_rgba(108,43,217,0.11)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:hover:border-soft-lavender/18"
               >
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet/35 to-transparent dark:via-soft-lavender/28" />
                 <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-36 w-36 rounded-full bg-violet/8 blur-3xl dark:bg-soft-lavender/6" />
 
-                <div className="relative rounded-[1.35rem] border-b border-violet/8 bg-violet/7 p-2.5 dark:border-white/8 dark:bg-white/[0.035] sm:p-3">
+                <div className="relative rounded-[1.35rem] border-b border-violet/9 bg-violet/[0.055] p-2.5 dark:border-white/8 dark:bg-white/[0.035] sm:p-3">
                   {projectCover?.src ? (
                     <div className="relative rounded-[1.18rem] bg-violet/45 p-[2px] shadow-[0_0_0_1px_rgba(108,43,217,0.18),0_18px_48px_rgba(31,17,71,0.08)] transition duration-500 group-hover:-translate-y-0.5 group-hover:bg-violet/70 group-hover:shadow-[0_0_26px_rgba(108,43,217,0.26),0_24px_70px_rgba(108,43,217,0.18)] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0 dark:bg-soft-lavender/32 dark:shadow-[0_0_0_1px_rgba(185,167,255,0.1),0_18px_48px_rgba(11,16,32,0.22)] dark:group-hover:bg-soft-lavender/52 sm:p-[3px]">
-                      <div className="relative rounded-[1.02rem] bg-[linear-gradient(135deg,rgba(248,247,255,0.9),rgba(185,167,255,0.16))] dark:bg-[linear-gradient(135deg,rgba(11,16,32,0.86),rgba(108,43,217,0.12))]">
+                      <div className="relative rounded-[1.02rem] bg-[linear-gradient(135deg,rgba(251,250,255,0.9),rgba(185,167,255,0.14))] dark:bg-[linear-gradient(135deg,rgba(11,16,32,0.86),rgba(108,43,217,0.12))]">
                         <img
                           alt={projectCover.alt}
                           className="block h-auto w-full rounded-[1.02rem]"
@@ -231,7 +231,7 @@ export function Projects({ language }: ProjectsProps) {
                   >
                     {visibleStack.map((tech, techIndex) => (
                       <li key={`${project.name}-${tech}`}>
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-white/55 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-[#fbfaff]/62 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_22px_rgba(31,17,71,0.035)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
                           <TechBadgeIcon name={tech} />
                           <LanguageTransitionText
                             as="span"
@@ -277,7 +277,7 @@ export function Projects({ language }: ProjectsProps) {
                     ) : (
                       <button
                         aria-label={`${t.projects.unavailableLabel}: ${project.name}`}
-                        className="inline-flex min-h-10 cursor-not-allowed items-center gap-2 rounded-xl border border-violet/10 bg-white/45 px-3.5 py-2 text-sm font-semibold text-muted-text/70 dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-400"
+                        className="inline-flex min-h-10 cursor-not-allowed items-center gap-2 rounded-xl border border-violet/10 bg-[#fbfaff]/52 px-3.5 py-2 text-sm font-semibold text-muted-text/70 dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-400"
                         disabled
                         type="button"
                       >

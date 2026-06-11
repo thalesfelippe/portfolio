@@ -227,8 +227,8 @@ export function ContactLinks({ language }: ContactLinksProps) {
         </ScrollReveal>
 
         <ScrollReveal delay={100}>
-        <Card className="relative isolate overflow-hidden border-violet/14 bg-white/78 p-0 shadow-[0_22px_80px_rgba(31,17,71,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.055] dark:shadow-[0_24px_90px_rgba(0,0,0,0.22)]">
-          <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_86%_4%,rgba(108,43,217,0.13),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.055),transparent_46%)] dark:bg-[radial-gradient(circle_at_84%_6%,rgba(185,167,255,0.11),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.09),transparent_48%)]" />
+        <Card className="relative isolate overflow-hidden border-violet/14 bg-[#fbfaff]/80 p-0 shadow-[0_22px_72px_rgba(31,17,71,0.07)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.055] dark:shadow-[0_24px_90px_rgba(0,0,0,0.22)]">
+          <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_86%_4%,rgba(108,43,217,0.105),transparent_30%),linear-gradient(135deg,rgba(108,43,217,0.045),transparent_46%)] dark:bg-[radial-gradient(circle_at_84%_6%,rgba(185,167,255,0.11),transparent_32%),linear-gradient(135deg,rgba(108,43,217,0.09),transparent_48%)]" />
           <div className="pointer-events-none absolute inset-x-8 top-0 z-0 h-px bg-gradient-to-r from-transparent via-violet/34 to-transparent dark:via-soft-lavender/28" />
 
           <div className="relative z-10 grid gap-5 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-8">

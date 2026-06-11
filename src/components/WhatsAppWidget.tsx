@@ -121,7 +121,7 @@ export function WhatsAppWidget({ language }: WhatsAppWidgetProps) {
       ref={widgetRef}
     >
       <div
-        className={`absolute bottom-[4.65rem] right-0 w-[min(20rem,calc(100vw-2rem))] origin-bottom-right rounded-3xl border border-violet/14 bg-white/86 p-4 text-left shadow-[0_24px_80px_rgba(31,17,71,0.16)] backdrop-blur-xl transition duration-200 ease-out dark:border-white/10 dark:bg-deep-navy/88 dark:shadow-[0_28px_90px_rgba(0,0,0,0.35)] ${
+        className={`absolute bottom-[4.65rem] right-0 w-[min(20rem,calc(100vw-2rem))] origin-bottom-right rounded-3xl border border-violet/14 bg-[#fbfaff]/88 p-4 text-left shadow-[0_24px_72px_rgba(31,17,71,0.13)] backdrop-blur-xl transition duration-200 ease-out dark:border-white/10 dark:bg-deep-navy/88 dark:shadow-[0_28px_90px_rgba(0,0,0,0.35)] ${
           isOpen
             ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
             : 'pointer-events-none translate-y-3 scale-[0.98] opacity-0'
@@ -141,7 +141,7 @@ export function WhatsAppWidget({ language }: WhatsAppWidgetProps) {
             </span>
             <button
               aria-label={copy.close}
-              className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-violet/10 bg-white/60 text-muted-text transition hover:border-violet/24 hover:bg-violet/10 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:hover:border-soft-lavender/24 dark:hover:bg-white/10 dark:hover:text-soft-lavender"
+              className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-violet/10 bg-[#fbfaff]/64 text-muted-text transition hover:border-violet/24 hover:bg-violet/10 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:hover:border-soft-lavender/24 dark:hover:bg-white/10 dark:hover:text-soft-lavender"
               onClick={() => setIsOpen(false)}
               type="button"
             >
@@ -175,7 +175,7 @@ export function WhatsAppWidget({ language }: WhatsAppWidgetProps) {
       <button
         aria-expanded={isOpen}
         aria-label={copy.toggle}
-        className="whatsapp-widget-button relative inline-flex h-12 w-12 items-center justify-center rounded-[1.1rem] border border-violet/18 bg-white/82 text-violet shadow-[0_18px_48px_rgba(31,17,71,0.16)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-violet/34 hover:bg-violet hover:text-white hover:shadow-[0_22px_60px_rgba(108,43,217,0.24)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-white/12 dark:bg-deep-navy/78 dark:text-soft-lavender dark:shadow-[0_20px_56px_rgba(0,0,0,0.35)] dark:hover:border-soft-lavender/28 dark:hover:bg-violet dark:hover:text-white sm:h-14 sm:w-14 sm:rounded-2xl"
+        className="whatsapp-widget-button relative inline-flex h-12 w-12 items-center justify-center rounded-[1.1rem] border border-violet/18 bg-[#fbfaff]/84 text-violet shadow-[0_18px_44px_rgba(31,17,71,0.13)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-violet/34 hover:bg-violet hover:text-white hover:shadow-[0_22px_58px_rgba(108,43,217,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-white/12 dark:bg-deep-navy/78 dark:text-soft-lavender dark:shadow-[0_20px_56px_rgba(0,0,0,0.35)] dark:hover:border-soft-lavender/28 dark:hover:bg-violet dark:hover:text-white sm:h-14 sm:w-14 sm:rounded-2xl"
         onClick={() => setIsOpen((current) => !current)}
         type="button"
       >

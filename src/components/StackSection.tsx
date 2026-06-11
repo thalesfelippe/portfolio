@@ -86,7 +86,7 @@ export function StackSection({ language }: StackSectionProps) {
                   <ul className="flex flex-wrap gap-2">
                     {category.items.map((item, itemIndex) => (
                       <li key={`${category.name}-${item}`}>
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-white/55 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.7rem]">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-[#fbfaff]/62 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_22px_rgba(31,17,71,0.035)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.7rem]">
                           <TechBadgeIcon name={item} />
                           <LanguageTransitionText
                             as="span"

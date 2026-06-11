@@ -7,14 +7,14 @@
   --color-dark-purple: #1f1147;
   --color-violet: #6c2bd9;
   --color-soft-lavender: #b9a7ff;
-  --color-light-bg: #f8f7ff;
-  --color-dark-text: #1f2937;
-  --color-muted-text: #6b7280;
+  --color-light-bg: #f4f1fb;
+  --color-dark-text: #191827;
+  --color-muted-text: #625d74;
   --color-success-accent: #22c55e;
 }
 
 :root {
-  --scrollbar-track: rgba(248, 247, 255, 0.62);
+  --scrollbar-track: rgba(244, 241, 251, 0.72);
   --scrollbar-thumb: rgba(108, 43, 217, 0.48);
   --scrollbar-thumb-hover: rgba(108, 43, 217, 0.7);
   --cursor-color: rgba(108, 43, 217, 0.78);

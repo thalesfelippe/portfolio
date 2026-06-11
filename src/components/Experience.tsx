@@ -210,7 +210,7 @@ export function Experience({ language }: ExperienceProps) {
               delay={Math.min(index * 70, 280)}
               key={index}
             >
-              <span className="absolute left-0 top-4 grid h-6 w-6 place-items-center rounded-[10px] border border-violet/20 bg-white text-violet shadow-[0_14px_34px_rgba(108,43,217,0.12)] dark:border-soft-lavender/20 dark:bg-deep-navy dark:text-soft-lavender sm:top-5 sm:h-8 sm:w-8 sm:rounded-xl">
+              <span className="absolute left-0 top-4 grid h-6 w-6 place-items-center rounded-[10px] border border-violet/20 bg-[#fbfaff] text-violet shadow-[0_14px_32px_rgba(108,43,217,0.1)] dark:border-soft-lavender/20 dark:bg-deep-navy dark:text-soft-lavender sm:top-5 sm:h-8 sm:w-8 sm:rounded-xl">
                 <BriefcaseIcon />
               </span>
 
@@ -243,7 +243,7 @@ export function Experience({ language }: ExperienceProps) {
                               }
                               aria-expanded={isCompanyContextActive}
                               aria-label={`${companyInfoLabel}: ${item.company}`}
-                              className="grid h-8 w-8 place-items-center rounded-[10px] border border-violet/12 bg-white/65 text-violet shadow-[0_8px_22px_rgba(108,43,217,0.08)] transition hover:-translate-y-0.5 hover:border-violet/25 hover:bg-violet/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-soft-lavender dark:hover:bg-white/10 sm:h-7 sm:w-7"
+                              className="grid h-8 w-8 place-items-center rounded-[10px] border border-violet/12 bg-[#fbfaff]/72 text-violet shadow-[0_8px_22px_rgba(108,43,217,0.07)] transition hover:-translate-y-0.5 hover:border-violet/25 hover:bg-violet/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-soft-lavender dark:hover:bg-white/10 sm:h-7 sm:w-7"
                               onClick={() =>
                                 setActiveCompanyContext((current) =>
                                   current === index ? null : index,
@@ -256,7 +256,7 @@ export function Experience({ language }: ExperienceProps) {
                             {isCompanyContextActive ? (
                               <>
                                 <span
-                                  className="absolute left-0 top-full z-30 mt-2 hidden w-[min(17rem,calc(100vw-4rem))] rounded-2xl border border-violet/12 bg-white/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_55px_rgba(31,17,71,0.16)] backdrop-blur-xl dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300 sm:block"
+                                  className="absolute left-0 top-full z-30 mt-2 hidden w-[min(17rem,calc(100vw-4rem))] rounded-2xl border border-violet/12 bg-[#fbfaff]/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_48px_rgba(31,17,71,0.13)] backdrop-blur-xl dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300 sm:block"
                                   id={`${companyContextId}-desktop-tooltip`}
                                   role="tooltip"
                                 >
@@ -271,7 +271,7 @@ export function Experience({ language }: ExperienceProps) {
                                   />
                                 </span>
                                 <span
-                                  className="absolute left-1/2 top-full z-30 mt-2 w-[min(18rem,calc(100vw-4.5rem))] -translate-x-1/2 rounded-2xl border border-violet/12 bg-white/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_45px_rgba(31,17,71,0.12)] backdrop-blur-xl before:absolute before:-top-1.5 before:left-1/2 before:h-3 before:w-3 before:-translate-x-1/2 before:rotate-45 before:border-l before:border-t before:border-violet/12 before:bg-white/95 dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300 dark:before:border-white/10 dark:before:bg-[#101329]/95 sm:hidden"
+                                  className="absolute left-1/2 top-full z-30 mt-2 w-[min(18rem,calc(100vw-4.5rem))] -translate-x-1/2 rounded-2xl border border-violet/12 bg-[#fbfaff]/95 p-3 text-xs font-medium leading-5 text-muted-text shadow-[0_18px_42px_rgba(31,17,71,0.11)] backdrop-blur-xl before:absolute before:-top-1.5 before:left-1/2 before:h-3 before:w-3 before:-translate-x-1/2 before:rotate-45 before:border-l before:border-t before:border-violet/12 before:bg-[#fbfaff]/95 dark:border-white/10 dark:bg-[#101329]/95 dark:text-slate-300 dark:before:border-white/10 dark:before:bg-[#101329]/95 sm:hidden"
                                   id={`${companyContextId}-mobile-tooltip`}
                                   role="tooltip"
                                 >
@@ -339,7 +339,7 @@ export function Experience({ language }: ExperienceProps) {
                   </p>
 
                 {item.featuredProject ? (
-                  <div className="grid gap-2 rounded-2xl border border-violet/10 bg-white/50 p-3 shadow-[0_14px_36px_rgba(31,17,71,0.04)] dark:border-white/10 dark:bg-white/[0.04] sm:p-4">
+                  <div className="grid gap-2 rounded-2xl border border-violet/10 bg-[#fbfaff]/58 p-3 shadow-[0_14px_32px_rgba(31,17,71,0.035)] dark:border-white/10 dark:bg-white/[0.04] sm:p-4">
                     <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-violet dark:text-soft-lavender">
                       <ProjectIcon />
                       <LanguageTransitionText
@@ -428,7 +428,7 @@ export function Experience({ language }: ExperienceProps) {
                   <ul className="flex flex-wrap gap-2" aria-label={t.experience.stackLabel}>
                     {item.skills.map((skill, skillIndex) => (
                       <li key={skillIndex}>
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-white/55 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-[#fbfaff]/62 px-2 py-1 text-[0.65rem] font-semibold text-muted-text shadow-[0_8px_22px_rgba(31,17,71,0.035)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
                           <TechBadgeIcon name={skill} />
                           <LanguageTransitionText
                             as="span"

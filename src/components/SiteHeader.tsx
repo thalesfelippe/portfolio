@@ -201,7 +201,7 @@ export function SiteHeader({
       ref={headerRef}
       className={`fixed inset-x-0 top-0 z-50 w-full py-3 transition duration-300 sm:py-4 ${
         isScrolled || isMenuOpen
-          ? 'border-b border-violet/10 bg-light-bg/72 shadow-[0_12px_40px_rgba(31,17,71,0.05)] backdrop-blur-xl dark:border-white/10 dark:bg-[#070a18]/72'
+          ? 'border-b border-violet/12 bg-[#f4f1fb]/82 shadow-[0_12px_36px_rgba(31,17,71,0.045)] backdrop-blur-xl dark:border-white/10 dark:bg-[#070a18]/72'
           : 'border-b border-transparent bg-transparent'
       }`}
     >
@@ -278,7 +278,7 @@ export function SiteHeader({
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? navLabels.close : navLabels.open}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] border border-violet/15 bg-white/55 text-dark-text shadow-[0_8px_24px_rgba(31,17,71,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:border-soft-lavender/25 dark:hover:bg-white/12 lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] border border-violet/16 bg-[#fbfaff]/66 text-dark-text shadow-[0_8px_24px_rgba(31,17,71,0.045)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-violet/30 hover:bg-[#f7f3ff]/88 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:border-soft-lavender/25 dark:hover:bg-white/12 lg:hidden"
             onClick={() => setIsMenuOpen((current) => !current)}
             type="button"
           >
@@ -290,7 +290,7 @@ export function SiteHeader({
       {isMenuOpen ? (
         <Container className="lg:hidden">
           <div
-            className="mt-3 grid max-h-[calc(100svh-5rem)] gap-3 overflow-y-auto rounded-2xl border border-violet/10 bg-white/88 p-3 shadow-[0_18px_60px_rgba(31,17,71,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-deep-navy/92"
+            className="mt-3 grid max-h-[calc(100svh-5rem)] gap-3 overflow-y-auto rounded-2xl border border-violet/12 bg-[#fbfaff]/90 p-3 shadow-[0_18px_54px_rgba(31,17,71,0.1)] backdrop-blur-xl dark:border-white/10 dark:bg-deep-navy/92"
             id="mobile-navigation"
           >
             <nav aria-label={navLabels.mobile} className="grid gap-1">

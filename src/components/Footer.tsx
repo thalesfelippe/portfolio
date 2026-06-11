@@ -105,7 +105,7 @@ export function Footer({ language }: FooterProps) {
             <li key={link.ariaLabel}>
               <a
                 aria-label={link.ariaLabel}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-violet/12 bg-white/55 text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-violet/26 hover:bg-violet/10 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-white/10 dark:bg-white/[0.055] dark:text-slate-300 dark:hover:border-soft-lavender/22 dark:hover:bg-soft-lavender/10 dark:hover:text-soft-lavender sm:h-9 sm:w-9"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-violet/12 bg-[#fbfaff]/62 text-muted-text shadow-[0_8px_22px_rgba(31,17,71,0.035)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-violet/26 hover:bg-violet/10 hover:text-violet focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-white/10 dark:bg-white/[0.055] dark:text-slate-300 dark:hover:border-soft-lavender/22 dark:hover:bg-soft-lavender/10 dark:hover:text-soft-lavender sm:h-9 sm:w-9"
                 href={link.href}
                 rel={link.isExternal ? 'noopener noreferrer' : undefined}
                 target={link.isExternal ? '_blank' : undefined}

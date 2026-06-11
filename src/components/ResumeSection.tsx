@@ -193,7 +193,7 @@ export function ResumeSection({ language }: ResumeSectionProps) {
                   <ul className="flex flex-wrap gap-2">
                     {button.tags.map((tag, tagIndex) => (
                       <li key={`${button.href}-${tag}`}>
-                        <span className="inline-flex rounded-full border border-violet/12 bg-white/55 px-2.5 py-1 text-[0.68rem] font-semibold text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
+                        <span className="inline-flex rounded-full border border-violet/12 bg-[#fbfaff]/62 px-2.5 py-1 text-[0.68rem] font-semibold text-muted-text shadow-[0_8px_22px_rgba(31,17,71,0.035)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
                           <LanguageTransitionText
                             as="span"
                             reserveText={[

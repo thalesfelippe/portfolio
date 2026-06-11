@@ -148,7 +148,7 @@ export function Hero({ introReady = true, language }: HeroProps) {
             </Button>
             <Button
               aria-label={contactAriaLabel}
-              className="group min-h-11 w-full min-w-36 gap-2 border-violet/12 bg-white/45 px-5 py-0 text-muted-text shadow-[0_10px_30px_rgba(31,17,71,0.045)] backdrop-blur-md hover:border-violet/28 hover:bg-violet/8 hover:text-violet hover:shadow-[0_16px_40px_rgba(108,43,217,0.09)] dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-300 dark:hover:border-soft-lavender/24 dark:hover:bg-white/[0.08] dark:hover:text-white sm:h-10 sm:w-auto"
+              className="group min-h-11 w-full min-w-36 gap-2 border-violet/14 bg-[#fbfaff]/52 px-5 py-0 text-muted-text shadow-[0_10px_30px_rgba(31,17,71,0.04)] backdrop-blur-md hover:border-violet/28 hover:bg-violet/8 hover:text-violet hover:shadow-[0_16px_40px_rgba(108,43,217,0.08)] dark:border-white/10 dark:bg-white/[0.045] dark:text-slate-300 dark:hover:border-soft-lavender/24 dark:hover:bg-white/[0.08] dark:hover:text-white sm:h-10 sm:w-auto"
               href={whatsappHref}
               rel="noopener noreferrer"
               target="_blank"
@@ -176,7 +176,7 @@ export function Hero({ introReady = true, language }: HeroProps) {
           >
             {stackBadges.map((badge) => (
               <li key={badge}>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-white/55 px-2 py-1 text-[0.65rem] font-semibold leading-none text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-violet/12 bg-[#fbfaff]/62 px-2 py-1 text-[0.65rem] font-semibold leading-none text-muted-text shadow-[0_8px_24px_rgba(31,17,71,0.035)] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 sm:px-2.5 sm:text-[0.68rem]">
                   <TechBadgeIcon name={badge} />
                   {badge}
                 </span>
